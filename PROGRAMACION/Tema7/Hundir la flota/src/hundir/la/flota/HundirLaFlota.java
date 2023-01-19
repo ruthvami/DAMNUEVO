@@ -12,7 +12,15 @@ public class HundirLaFlota {
 
     
     public static void crear_tauler(int [][] matriu){
-        
+        for (int i = 1; i < matriu.length; i++) {
+            System.out.print(i);
+            for (int j = 1; j < matriu.length; j++) {
+                System.out.println("");
+                System.out.print(j);
+                
+            }
+            
+        }
     }
     public static void inserir_vaixell(int [][] matriu){
         
@@ -27,6 +35,7 @@ public class HundirLaFlota {
         // TODO code application logic here
         int tauler[][]=new int[10][10];
         int ocult[][]=new int[10][10];
+        crear_tauler(tauler);
     }
     
 }
