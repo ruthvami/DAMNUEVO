@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ej xmlns="http://www.ruth.com/ej2">
+    
+    <equipos>
+        <equipo1>
+            <nom>Valencia CF</nom>
+            <ciutat>Valencia</ciutat>
+            <entrenador>Gennaro Gattuso</entrenador>
+            <jugadores>
+                <jugador nom="Jaume Doménech, Toni Lato"/>
+                <jugador posició="Portero, Lateral izquierdo"/>
+                <jugador nacionalitat="Española, Española"/>
+         </jugadores>
+        
+        </equipo1>
+        <equipo2>
+            <nom>Real Betis Balompié</nom>
+            <ciutat>Sevilla</ciutat>
+            <entrenador>Manuel Luis Pellegrini </entrenador>
+            <jugadores>
+                <jugador nom="Dani Martín, Juan Miranda"/>
+                <jugador posició="Portero, Lateral izquierdo"/>
+                <jugador nacionalitat="Española, Española"/>
+            </jugadores>
+        
+        </equipo2>
+    </equipos>
+</ej>

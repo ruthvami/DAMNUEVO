@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="La meua pàgina web" />
+        <meta name="keywords" content="HTML, CSS, JavaScript" />
+        <meta name="author" content="David" />
+        <meta name="viewport" content="width=device-width, initial-
+        scale=1, shrink-to-fit=no" />
+        <title>FORMULARIOS 3</title>
+    </head>
+    <body>
+        
+        <form>
+            <p>¿Cuantas veces te has visto la serie?</p>
+            <input type="number" name="numero" min="1" max="30" step="1" value="15"/>
+            <p>¿Que puntuacion le pones a la serie?</p>
+            <input type="range" name="valoracion" min="1" max="10" step="1" value="5"
+                oninput="numero.value = this.value" /><br>
+            <input type="number" name="numero" min="1" max="10" step="1" value="5"
+                oninput="valoracion.value = this.value" />
+        </form>
+        <label> ¿En que fecha descubriste esta pagina web?
+            <input type="date" name="fecha" min="1975" max="2022" step="1" /> 
+        </label>
+    </body>
+</html>
+

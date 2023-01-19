@@ -1,0 +1,53 @@
+html {
+    font-family: sans-serif;
+    }
+    body {
+    margin: 0;
+    }
+    header {
+    background: rgb(255, 238, 0);
+    height: 75px;
+    }
+    h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    line-height: 75px;
+    margin: 0;
+    }
+    article {
+    padding: 2%;
+    margin: 1%;
+    background: rgb(255, 192, 18);
+    color: rgb(0, 0, 0);
+    }
+    section {
+        
+        flex-direction: column; 
+        display:
+        inline-flex;
+        flex-wrap:wrap;
+        } 
+article {flex: 3%; }
+img{
+    height: 40%;
+    width:20% ;
+}
+.uno{
+    justify-content:space-around;
+    color: blue;
+}
+.dos{
+    justify-content:space-around;
+    color: blueviolet;
+}
+.tres{
+    justify-content:space-around;
+    color: coral;
+}
+.cuatro{
+    justify-content:space-around;
+    background-color: cornflowerblue;
+}
+.cinco{
+    justify-content:space-around;
+}

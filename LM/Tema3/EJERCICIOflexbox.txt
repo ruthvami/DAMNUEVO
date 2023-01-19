@@ -1,0 +1,62 @@
+EXERCICI 1:
+Indica el selector que utilitzaries per aplicar l’estil a cadascun dels
+següents elements.
+a) Totes les imatges del document.
+img
+b) Els paràgrafs amb classe “anotació”
+p.anotació
+c) Tots els paràgrafs continguts en cel.les de taules.
+table p
+d) Totes les imatges de 300 píxels d’ample.
+[img="width=300px"]
+e) Els contenedors <div> amb id=“sumari” que es troben just
+després d’una taula.
+div#sumari+table
+f) Tots els vídeos que apareguen després d’un <h4>
+h4+video
+g) Tots els elements que estiguen dins de <div>’s.
+div
+
+EXERCICI 2:
+Indica el selector de pseudoclasse que utilitzaries per aplicar l’estil
+a cadascun dels següents elements.
+a) Selecció de paràgrafs que siguen primer fill.
+p first-child
+b) Selecció de h1 que siga últim fill.
+h1 last-child
+c) Selecció de list items(<li>) que siguen primer fill de una <ul>.
+
+d) Selecció de files pars d’una taula.
+trth-child(2tr)
+e) Selecció dels paràgrafs impars dins d’un contenedor
+(<container>).
+containerth-child(2container+1)
+f) Selecció de les imatges que estiguen en la posició 3n+1.
+
+
+EXERCICI 3:
+1. plate
+2. bento
+3. #fancy
+4. plate apple
+5. #fancy pickle
+6. .small
+7. orange.small
+8. bento orange.small
+9. plate, bento
+10. *
+
+EXERCICI 4:
+1.justify-content: flex-end;
+2.justify-content:center;
+3.justify-content: space-around;
+4.justify-content: space-between;
+5.align-items: flex-end;
+6.justify-content: center;
+align-items: center;
+7.justify-content: space-around;
+align-items: flex-end;
+8.flex-direction: row-reverse;
+9.flex-direction: column;
+10.flex-direction: row-reverse;
+justify-content: flex-end;

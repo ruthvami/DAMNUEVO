@@ -1,0 +1,1 @@
+SELECT * FROM detalle_factura AS det,articulo AS art WHERE det.cod_articulo=art.art_id;

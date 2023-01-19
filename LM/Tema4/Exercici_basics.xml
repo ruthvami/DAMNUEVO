@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Exercici1>
+    <comanda>
+        <destinatatio>Juan Delgado Martínez</destinatatio>
+        <articulo>Bicicleta A2023</articulo>
+        <direccion>Carrer Barco 4,tercer pis,lletra A</direccion>
+        <fecha>19-5-2000</fecha>
+    </comanda>
+</Exercici1>
+<Exercici2>
+    <mensaje>
+        <remite>
+            <nombre>Alfredo Reino</nombre>
+            <email>alf@ibium.com</email>
+        </remite>
+        <destinatario>
+            <nombre>Bill Clinton</nombre>
+            <email>president@whitehouse.gov</email>
+        </destinatario>
+        <asunto>Hola Bill</asunto>
+        <texto>
+            <parrafo>¿Hola qué tal?</parrafo>
+            <parrafo> Fa molt temps que no escrius. A veure si crides i quedem prompte.</parrafo>
+            <parrafo>Una salutació.</parrafo>
+        </texto>
+    </mensaje>
+</Exercici2>
+<Exercici3>
+    <menu>
+        <plato>
+            <nombre>Gofres Belgas</nombre>
+            <precio>5.95</precio>
+            <descripcion>Dos de nuestros famosos Gofres belgas con abundante sirope</descripcion>
+            <calorias>650</calorias>
+        </plato>
+        <plato>
+            <nombre>Gofres Belgas con fresas</nombre>
+            <precio>7.95</precio>
+            <descripcion>Ligeros gofres belgas cubiertos de fresas y nata montada</descripcion>
+            <calorias>900</calorias>
+        </plato>
+        <plato>
+            <nombre>Gofres Belgas con frutas del bosque</nombre>
+            <precio>8.95</precio>
+            <descripcion>Ligeros gofres belgas cubiertos con frutas del bosque y nata montada.</descripcion>
+            <calorias>900</calorias>
+        </plato>
+        <plato>
+            <nombre>Tostada Francesa</nombre>
+            <precio>4.50</precio>
+            <descripcion>Dos gruesas rebanadas de nuestro pan francés casero</descripcion>
+            <calorias>600</calorias>
+        </plato>
+        <plato>
+            <nombre>Desayuno de la casa</nombre>
+            <precio>6.95</precio>
+            <descripcion>Dos huevos,bacon o salchicha,tostada y patatas fritas</descripcion>
+            <calorias>950</calorias>
+        </plato>
+    </menu>
+</Exercici3>
+<Exercici4>
+    <Oferta>
+        <cd>
+            <titulo>Still got the blues</titulo>
+            <artista>Gary Moore</artista>
+            <pais>UK</pais>
+            <compañia>Virgin records</compañia>
+            <precio>10.20</precio>
+            <año>1990</año>
+        </cd>
+        <cd>
+            <titulo>One night only</titulo>
+            <artista>Bee Gees</artista>
+            <pais>uk</pais>
+            <compañia>polydor</compañia>
+            <precio>10.90</precio>
+            <año>1998</año>
+        </cd>
+        <cd>
+            <titulo>When a man loves a woman</titulo>
+            <artista>percy sledge</artista>
+            <pais>usa</pais>
+            <compañia>atlantic</compañia>
+            <precio>8.70</precio>
+            <año>1987</año>
+        </cd>
+        <cd>
+            <titulo>big willie style</titulo>
+            <artista>will smith</artista>
+            <pais>usa</pais>
+            <compañia>columbia</compañia>
+            <precio>9.90</precio>
+            <año>1997</año>
+        </cd>
+        <cd>
+            <titulo>la cancion de juan perro</titulo>
+            <artista>radio futura</artista>
+            <pais>españa</pais>
+            <compañia>sony music-ariola</compañia>
+            <precio>9.90</precio>
+            <año>1987</año>
+        </cd>
+        <cd>
+            <titulo>the dock of the day</titulo>
+            <artista>otis redding</artista>
+            <pais>usa</pais>
+            <compañia>atlantic</compañia>
+            <precio>7.90</precio>
+            <año>1987</año>
+        </cd>
+    </Oferta>
+</Exercici4>
+<Exercici5>
+    <Acermonspessulanum>
+        <nombre>Arce de Montpellier, Arce menor</nombre>
+        <vegetacion>caducifolio</vegetacion>
+        <altura>De 6 a 10 metros</altura>
+        <forma> Copa esférica. Tronco principal recto con bifurcaciones.Ramaje colgante</forma>
+        <colorprimavera>Haz verde brillante, envés verde blanquecino</colorprimavera>
+        <resistencia>Heladas fuertes (hasta -15ºC)</resistencia>
+    </Acermonspessulanum>
+    <Oleaeuropea>
+        <nombre>olivo</nombre>
+        <vegetacion>perenne</vegetacion>
+        <altura>de 8 a 15 metros</altura>
+        <forma> Copa irregular. Tronco principal irregular con bifurcaciones.Ramaje tortuoso </forma>
+        <colorprimavera> Haz verde oscuro, envés verde plateado</colorprimavera>
+        <resistencia>Heladas medias (hasta -10ºC)</resistencia>
+    </Oleaeuropea>
+    <platanusorientalis>
+        <nombre>Platano</nombre>
+        <vegetacion>Caducifolio</vegetacion>
+        <altura>De 20 a 25 metros</altura>
+        <forma> Copa ovoidal. Tronco principal recto. Ramaje expandido</forma>
+        <colorotoño>ocre</colorotoño>
+        <colorprimavera>Haz verde medio, enves verde claro</colorprimavera>
+        <resistencia>Heladas fuertes (hasta -20ºC)</resistencia>
+    </platanusorientalis>
+    <quercusilex>
+        <nombre>Encina</nombre>
+        <vegetacion>Perenne</vegetacion>
+        <altura>En torno a 25 metros</altura>
+        <forma> Copa esférica o elíptica irregular. Tronco principal recto.Ramaje tortuoso</forma>
+        <colorprimavera>Plateado en hojas jóvenes. En hojas antiguas, haz verde oscuro, envés plateado</colorprimavera>
+        <resistencia>Heladas fuertes (hasta -15ºC)</resistencia>
+    </quercusilex>
+</Exercici5>
+<Exercici6>
+    <document1>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <documento>
+        <p>Mi Primer <destacar importancia="1">documentoXML</destacar></p>
+        <p>Comienza con la etiqueta </p>
+        <p>A continuacion colocamos un elemento sin contenido</p>
+        <imagen fichero="imagen.gif">
+        </documento>
+    </document1>
+    <document2>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <libros>
+        <libro id="quijote">
+        <titulo>El Quijote</titulo>
+        <autor nombre="cervantes" nombre="cervantes">
+        <descripcion>Es el mejor libro de cervantes.</descripcion>
+        </libro>
+        </libros>
+    </document2>
+    <document3>
+        <? xml version="1.0" encoding="UTF-8" ?>
+        <terrestres>
+            <vehiculo>bicicleta</vehiculo>
+            <vehiculo>coche</vehiculo>
+            <vehiculo>tractor</vehiculo>
+        </terrestres>
+        <acuaticos>
+            <vehiculo>canoa</vehiculo>
+        </acuaticos>
+        <aereos>
+            <vehiculo>avioneta</vehiculo>
+            <vehiculo>helicotero</vehiculo>
+        </aereos>
+    </document3>
+    <document4>
+        <? xml version="1.0" encoding="UTF-8" ?>
+        <figuras>
+            <figura>
+                <nombre>cuadrado</nombre>
+                <lados>4</lados>
+            </figura>
+            <figuraplana>
+                <nombre>triangulo</nombre>
+                <lados>3</lados>
+            </figuraplana>
+            <figuratridimensional>
+                <nombre>cubo</nombre>
+                <artistas>12</artistas>
+                <caras>6</caras>
+            </figuratridimensional>
+        </figuras>
+    </document4>
+    <document5>
+        <? xml version="1.0" encoding="UTF-8" ?>
+        <triangulo base="7" altura="5"></triangulo>
+        <triangulo base="2" altura="6"></triangulo>
+        <triangulo base="3" altura="3"></triangulo>
+    </document5>
+    <document6>
+        <? xml version="1.0" encoding="UTF-8" ?>
+        <numeros>
+            <1 letra1="u" letra2="n" letra3="o">1</1>
+            <2 letra1="d" letra2="o" letra3="s">22</2>
+            <6 letra1="s" letra2="e" letra3="i" letra4="s">666666</6>
+        </numeros>
+    </document6>
+</Exercici6>
+<Exercicifinal>
+    <a>
+        <?xml version="1.0" encoding="UTF-8"?>
+        <llibreria1>
+            <libro>
+                <ISBN>123457909876</ISBN>
+                <titulo>historia de una escalera</titulo>
+                <profundidad>intermedio</profundidad>
+                <autor>Antonio Buero Vallejo</autor>
+                <editorial>austral educacion</editorial>
+                <fechapublicacion>14 d’octubre de 1949</fechapublicacion>
+                <web>https://nomesesunblog.files.wordpress.com/2010/11/historia-de-una-escalera.pdf</web>
+                <precio>8.50</precio>
+            </libro>
+            <libro>
+                <ISBN>9788491290083</ISBN>
+                <titulo>Don Quijote de la Mancha</titulo>
+                <profundidad>intermedio</profundidad>
+                <autor>Miguel de Cervantes Saavedra</autor>
+                <editorial>austral educacion</editorial>
+                <fechapublicacion>1605</fechapublicacion>
+                <web>https://www.amazon.es/El-Quijote-Edici%C3%B3n-Austral-Educaci%C3%B3n/dp/8467041927/ref=sr_1_1?hvadid=80676697606766&hvbmt=bp&hvdev=c&hvqmt=p&keywords=el+quijote+de+cervantes&qid=1674045838&sr=8-1</web>
+                <precio>10.40</precio>
+            </libro>
+            <libro>
+                <ISBN>9788468315775</ISBN>
+                <titulo>Mentira</titulo>
+                <profundidad>avanzado</profundidad>
+                <autor>Care Santos</autor>
+                <editorial>edebé</editorial>
+                <fechapublicacion>2015</fechapublicacion>
+                <web>https://www.casadellibro.com/libro-mentira-premio-edebe-2015/9788468315775/2529758</web>
+                <precio>10.40</precio>
+            </libro>
+        </llibreria1>
+        <llibreria2>
+            <libro>
+                <ISBN>9788498988363</ISBN>
+                <titulo>Los Renglones Torcidos De Dios</titulo>
+                <profundidad>basica</profundidad>
+                <autor>Torcuato Luca de Tena</autor>
+                <editorial></editorial>
+                <fechapublicacion>2014</fechapublicacion>
+                <web>https://www.casadellibro.com/libro-los-renglones-torcidos-de-dios/9788408093497/1700683</web>
+                <precio>8.50</precio>
+            </libro>
+            <libro>
+                <ISBN>893146382378734</ISBN>
+                <titulo>LA ENVIDIA DE LOS MEDIOCRES</titulo>
+                <profundidad>basica</profundidad>
+                <autor>Lucas Acevedo </autor>
+                <editorial></editorial>
+                <fechapublicacion>2021</fechapublicacion>
+                <web>https://www.amazon.es/ENVIDIA-LOS-MEDIOCRES-Lucas-Acevedo/dp/B09NH3PZ3V/ref=tmm_hrd_swatch_0?_encoding=UTF8&qid=1674046310&sr=8-4</web>
+                <precio>20</precio>
+            </libro>
+            <libro>
+                <ISBN>3598543593846</ISBN>
+                <titulo>Punto ciego</titulo>
+                <profundidad>basica</profundidad>
+                <autor>paula hawkins</autor>
+                <editorial>Planeta Internacional</editorial>
+                <fechapublicacion>2022</fechapublicacion>
+                <web>https://www.amazon.es/Punto-ciego-Planeta-Internacional-Hawkins/dp/840826348X?_encoding=UTF8&qid=1666107445&sr=8-1&linkCode=sl1&tag=regalos-lectores-21&linkId=e894b2a1db02dbe2253229f5c2582017&language=es_ES&ref_=as_li_ss_tl</web>
+                <precio>15</precio>
+            </libro>
+        </llibreria2>
+    </a>
+    <b>
+        <pizzas>
+            <pizza nombre="Barbacoa" precio="8">
+                <ingrediente nombre="Salsa Barbacoa"/>
+                <ingrediente nombre="Mozzarella"/>
+                <ingrediente nombre="Pollo"/>
+                <ingrediente nombre="Bacon"/>
+                <ingrediente nombre="Ternera"/>
+                <procedimiento>
+                    <pasos>Poner la salsa de barbacoa en la masa de pizza</pasos>
+                    <pasos>Despues añadir la mozzarella y por encima el pollo, bacon y la ternera</pasos>
+                    <pasos>Poner dentro del horno a 180º</pasos>
+                </procedimiento>
+            </pizza>
+            <pizza nombre="Margarita" precio="6">
+                <ingrediente nombre="Tomate"/>
+                <ingrediente nombre="Jamón"/>
+                <ingrediente nombre="Queso"/>
+                <ingrediente nombre="Oregano"/>
+                <procedimiento>
+                    <pasos>Poner el tomate en la masa de pizza</pasos>
+                    <pasos>Despues añadir el queso y por encima jamon y oregano</pasos>
+                    <pasos>Poner dentro del horno a 180º</pasos>
+                </procedimiento>
+            </pizza>
+        </pizzas>
+    </b>
+</Exercicifinal>

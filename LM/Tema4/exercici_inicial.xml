@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persona>
+    <nom></nom>
+    <cognoms></cognoms>
+    <any_de_naixement></any_de_naixement>
+    <residència>
+        <ciutat></ciutat>
+        <país></país>
+    </residència>
+    <dades_de_contacte>
+        <telèfon></telèfon>
+        <correu_electrònic></correu_electrònic>
+        <perfil_linkedin></perfil_linkedin>
+    </dades_de_contacte>
+    <breu_descripció_general></breu_descripció_general>
+    <llistat_de_competències>
+        <nom></nom>
+        <nivell></nivell>
+    </llistat_de_competències>
+    <formació_acadèmica>
+        <titulació></titulació>
+        <centre_de_formació></centre_de_formació>
+        <any_de_la_titulació></any_de_la_titulació>
+    </formació_acadèmica>
+    <experiència_professional>
+        <lloc></lloc>
+        <empresa></empresa>
+        <any_de_finalització></any_de_finalització>
+    </experiència_professional>
+</persona>

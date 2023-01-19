@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ej xmlns="http://www.ruth.com/ej1">
+    <web1>
+        <nombre>Wikipedia</nombre>
+        <descripción> La enciclopedia libre.</descripción>
+        <link>http://www.wikipedia.org</link>
+    </web1>
+    <web2>
+        <nombre>W3C</nombre>
+        <descripción> World Wide Web Consortium.</descripción>
+        <link>http://www.w3.org/</link>
+    </web2>
+    <web3>
+        <nombre>Google</nombre>
+        <descripción>Buscador web. </descripción>
+        <link>https://www.google.es/</link>
+    </web3>
+</ej>

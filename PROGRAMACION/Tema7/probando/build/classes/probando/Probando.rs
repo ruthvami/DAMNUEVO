@@ -1,0 +1,2 @@
+probando.QuadratMagic
+probando.Probando

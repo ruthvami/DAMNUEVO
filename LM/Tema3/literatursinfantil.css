@@ -1,0 +1,122 @@
+body{
+    padding-top: 20px;
+    text-align: center;
+    background-image: url("l_rosa.png");
+}
+#page{
+    width: 960px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.titulo{
+    font-family:Courier, monospace;
+    color: white;
+    font-size: 1.1em;
+    font-style: italic;
+    border-bottom: 6px solid #BF407D;
+    background-color: #FF6699;
+    
+}
+h1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+nav{
+    font-family: Courier, monospace;
+    color: rgb(0, 0, 0);
+    font-size: 1.4em;
+    text-align: center;
+    background-color: hsl(0, 100%, 90%);
+    border-bottom: 6px solid #BF407D;
+    margin-top: -22px;
+}
+li{
+    padding-top: 80px;
+    margin-top: 0px;
+    margin-left: 90px;
+    margin-bottom: 20px;
+    margin-right: 90px;
+    list-style: none;
+    display: inline-block;
+    text-align:center;
+    cursor:default;
+}
+li:first-child{
+    margin-top: 10px;
+    background-image: url("inicio(1).png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+li:nth-child(2){
+    margin-top: 10px;
+    background-image: url("media.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+li:last-child{
+    margin-top: 10px;
+    background-image: url("libros.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+a{
+    text-decoration: none;
+    color: #FF6699;
+    
+}
+a:hover{
+    color: white;
+}
+.clearfix:before,
+.clearfix:after,
+main{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+    background-color: #FFCCFF;
+    width: 100%;
+    display: table;
+    
+}
+article{
+    width: 360px;
+    border: 1px solid lightgray;
+    background-color: white;
+    text-align: center;
+    line-height: 1.8em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 22px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left: 48px;
+    margin-right: 48px;
+    display: inline-block;
+    flex-direction: row;
+}
+.clase {
+    border-bottom: 1px solid #999999;
+}
+.imagen h2{
+    padding: 10px;
+    font-size: 1.2em;
+    
+}
+img.imagen{
+    width: 240px;
+    height: 180px;
+}
+footer{
+    color: white;
+    font-size: 0.7em;
+    text-align: center;
+    background-color: #FF6699;
+    border-top: 6px #BF407D solid;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,84 @@
+html{
+    background-color:rgb(236, 236, 230) ;
+    font-family: 'Inconsolata', monospace;
+}
+table {
+    border-collapse: collapse;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: 40px;
+    text-align: center;
+}
+
+.titulo {
+    background-color: rgb(115, 166, 255);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 40px;
+}
+
+.imagen {
+    background-color: rgb(115, 166, 255);
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    float: left;
+    border-top: 200px;
+    margin-bottom: 40px;
+}
+
+.parrafo {
+    font-size: small;
+}
+
+th,
+td {
+    border: 1px solid rgb(0, 0, 0);
+}
+
+
+
+.boton1 {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 20px;
+    color: #000000;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: transparent;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #000000;
+    margin-bottom: 40px;
+}
+.mw-parser-output{
+clear: center; 
+font-size: 95%; 
+background: #A4936F;
+color:black;
+width: 300px; 
+
+}
+h1{
+   
+    text-shadow: 1px 1px 6px rgb(255, 0, 0);
+    
+}
+.inicio{
+    text-align: center;
+}
+.foto{
+    margin-left: 7%;
+    margin-right: 2%;
+    margin-top: 4%;
+}
+.t{
+    margin-left: 8%;
+}
+.c{
+    margin-left: 25%;
+}
