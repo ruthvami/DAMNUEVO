@@ -22,6 +22,7 @@ public class QUADRATMAGIC {
             }
 
         }
+        System.out.println(matriu);
     }
 
     public static boolean comprovar(int[][] matriu) {
@@ -59,7 +60,7 @@ public class QUADRATMAGIC {
         System.out.println("Introduce la dimensión de la matriz:");
         dim = sc.nextInt();
 
-        while (dim <= 1) {                                                  //Para detectar que se ha introducido un numero positivo y diferente al 1
+        while (dim <=1) {                                                  //Para detectar que se ha introducido un numero positivo y diferente al 1
             System.out.println("ERROR");
             System.out.println("Introduce la anchura de la matriz:");
             dim = sc.nextInt();
