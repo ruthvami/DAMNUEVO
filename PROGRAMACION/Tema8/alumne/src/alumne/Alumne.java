@@ -19,24 +19,29 @@ public class Alumne {
 //        Roger1rC.setNom("Roger");
 //        Roger1rC.setEdat(19);
 //        System.out.println(Roger1rC.toString());
-          Aalumne p1 =new Aalumne();
-          Aalumne p2=new Aalumne();
+//          
+//          Aalumne p1 =new Aalumne();
+//          Aalumne p2=new Aalumne();
+//          
+//          p1.titol="Transformers";
+//          p1.cod="5586";
+//          p1.format="DVD";
+//          p1.preu_lloguer=1.25;
+//          
+//          p2.titol="Barbie";
+//          p2.cod="4132184";
+//          p2.format="bluerray";
+//          p2.preu_lloguer = 3;
           
-          p1.titol="Transformers";
-          p1.cod="5586";
-          p1.format="DVD";
-          p1.preu_lloguer=1.25;
+          Aalumne p3 =new Aalumne("555","u","u",5);
+          Aalumne p4=new Aalumne("3445df","e","h",45);
           
-          p2.titol="Barbie";
-          p2.cod="4132184";
-          p2.format="bluerray";
-          p2.preu_lloguer = 3;
-          
-          System.out.println("La pelicula "+ p1.titol+" alquilar un dia costaria "+ p1.undia()+", dos dias vale "+p1.dosdies()+" y una semana vale "+ p1.setmana());
-          System.out.println("Su formato es "+p1.format+" y su codigo es "+ p1.cod);
-          System.out.println("La pelicula "+ p2.titol+" alquilar un dia costaria "+ p2.undia()+", dos dias vale "+p2.dosdies()+" y una semana vale "+ p2.setmana());
-          System.out.println("Su formato es "+p2.format+" y su codigo es "+ p2.cod);
+          System.out.println("La pelicula "+ p3.titol+" alquilar un dia costaria "+ p3.undia()+", dos dias vale "+p3.dosdies()+" y una semana vale "+ p3.setmana());
+          System.out.println("Su formato es "+p3.format+" y su codigo es "+ p3.cod);
+          System.out.println("La pelicula "+ p4.titol+" alquilar un dia costaria "+ p4.undia()+", dos dias vale "+p4.dosdies()+" y una semana vale "+ p4.setmana());
+          System.out.println("Su formato es "+p4.format+" y su codigo es "+ p4.cod);
 
+            
     }
     
 }

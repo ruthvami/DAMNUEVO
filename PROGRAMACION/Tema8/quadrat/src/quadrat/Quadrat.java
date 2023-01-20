@@ -27,11 +27,11 @@ public class Quadrat {
         b.x2=2;
         b.y2=3;
         
-        System.out.println("Diagonal1:"+a.diagonal());
+        System.out.println("Diagonal:"+a.diagonal());
         System.out.println("Area:"+a.area(a.diagonal(),0));
         System.out.println("Perimetro:"+a.perimetre());
         System.out.println(" ");
-        System.out.println("Diagonal1:"+b.diagonal());
+        System.out.println("Diagonal:"+b.diagonal());
         System.out.println("Area:"+b.area(b.diagonal(),0));
         System.out.println("Perimetro:"+b.perimetre());
 

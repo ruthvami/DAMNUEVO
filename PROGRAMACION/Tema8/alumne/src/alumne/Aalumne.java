@@ -28,6 +28,12 @@ public class Aalumne {
 //}
     String cod,titol,format;
     double preu_lloguer;
+    public Aalumne(String cod,String titol,String format,double preu_lloguer){
+           this.cod=cod;
+           this.titol=titol;
+           this.format=format;
+           this.preu_lloguer=preu_lloguer;
+    }
     
     public double undia(){
         return preu_lloguer;
