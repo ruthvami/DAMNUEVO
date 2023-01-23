@@ -9,14 +9,14 @@ package b2.persona;
  * @author rutvac
  */
 public class Persona {
-    String dni,nom,cognom;
+
+    String dni, nom, cognom;
     int edat;
-public Persona(String dni,String nom,String cognom,int edat){
-    this.dni=dni;
-    this.nom=nom;
-    this.cognom=cognom;
-    this.edat=edat;
-}
-}
 
-
+    public Persona(String dni, String nom, String cognom, int edat) {
+        this.dni = dni;
+        this.nom = nom;
+        this.cognom = cognom;
+        this.edat = edat;
+    }
+}

@@ -27,7 +27,7 @@ public class B2Persona {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        String dni,nom,cognom;
+        String dni, nom, cognom;
         int edad;
 
         Scanner sc = new Scanner(System.in);
@@ -39,13 +39,11 @@ public class B2Persona {
         cognom = sc.nextLine();
         System.out.println("Persona 1- Introduce tu edad:");
         edad = sc.nextInt();
-        
-        
-        
+
         Persona p1 = new Persona(dni, nom, cognom, edad);
-        
+
         sc.nextLine();
-        
+
         System.out.println("Persona 2- Introduce tu DNI:");
         dni = sc.nextLine();
         System.out.println("Persona 2- Introduce tu nombre:");
@@ -54,9 +52,9 @@ public class B2Persona {
         cognom = sc.nextLine();
         System.out.println("Persona 2- Introduce tu edad:");
         edad = sc.nextInt();
-        
+
         Persona p2 = new Persona(dni, nom, cognom, edad);
-        
+
         System.out.print(p1.nom + " " + p1.cognom + " con DNI " + p1.dni);
         edad(p1.edat);
         System.out.print(p2.nom + " " + p2.cognom + " con DNI " + p2.dni);

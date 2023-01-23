@@ -20,11 +20,12 @@ public class Digits {
          return i;
     }
     public static int suma(int a){
-        int suma;
-        for (int i = 0; a > 0; i++) {
-           suma = a.charAt(i);
-           suma+=suma;
+        
+        while( a > 0){
+            a+=a%10;
+            a/=10;
         }
+         return a;
         
     }
     public static void  main(String[] args) {
@@ -33,8 +34,8 @@ public class Digits {
         Scanner sc=new Scanner(System.in);
         System.out.println("Introduce un numero: ");
         num=sc.nextInt();
-        System.out.println("El nombre de dígits del "+ num +" és " + cantidad(num));
-                System.out.print("i la suma dels seus dígits és "+suma(num));
+        System.out.print("El nombre de dígits del "+ num +" és " + cantidad(num));
+                System.out.println(" i la suma dels seus dígits és "+suma(num));
     }
 
     
