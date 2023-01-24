@@ -22,7 +22,7 @@ public class HundirLaFlota {
         }
         System.out.println(" ");
         {
-            for (c = 'A'; c <= 'J'; ++c) {
+            for (c = 'A'; c <= 'J'; c++) {
                 System.out.print(c);
                 for (int i = 0; i < matriu.length; i++) {
                     System.out.print(" ");
