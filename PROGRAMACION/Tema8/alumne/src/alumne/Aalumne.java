@@ -9,25 +9,33 @@ package alumne;
  * @author rutvac
  */
 public class Aalumne {
-//    private String nom;
-//    private String cognom;
-//    private int edat;
-//    
-//
-//public void setNom( String inNom){
-//    nom=inNom;
-//}
-//public void setCognom(String inCognom){
-//    cognom=inCognom;
-//}
-//public void setEdat(int inEdat){
-//    edat = inEdat;
-//}
-//public String toString(){
-//    return (nom +" té "+edat+" anys");
-//}
-    String cod,titol,format;
-    double preu_lloguer;
+    private String cod;
+    private String titol;
+    private String format;
+    private double preu_lloguer;
+    
+    public String getCod(){
+        return this.cod;
+    }
+    public String getTitol(){
+        return this.titol;
+    }
+    public String getFormat(){
+        return this.format;
+    }
+    public double getPre_lloguer(){
+        return this.preu_lloguer;
+    }
+    
+    public void modific(String cod,String titol,String format,double preu_lloguer){
+    this.cod=cod;
+    this.titol=titol;
+    this.format=format;
+    this.preu_lloguer=preu_lloguer;
+    }
+    
+//    String cod,titol,format;
+//    double preu_lloguer;
     public Aalumne(String cod,String titol,String format,double preu_lloguer){
            this.cod=cod;
            this.titol=titol;
@@ -44,4 +52,8 @@ public class Aalumne {
     public double setmana(){
         return preu_lloguer*5;
     }
+    public static final double IVA=1.21;
+    private static int num;
+    public final String id=null;
+
 }

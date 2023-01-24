@@ -76,7 +76,7 @@ public class HundirLaFlota {
                 intents=10;
                 break;
         }
-        return intents,vaixell;
+        return intents;
     }
     public static void random() {
         int num=Math.random();
