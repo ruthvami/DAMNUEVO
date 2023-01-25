@@ -2,38 +2,38 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
  */
-package hundir.la.flota;
+package barcos2;
 
 import java.util.Scanner;
-
 /**
  *
- * @author ruthv
+ * @author rutvac
  */
-public class HundirLaFlota {
+public class Barcos2 {
 
-    public static void mostrar_tauler(String[][] matriu) {
+    public static void crear_tauler(String[][] matriu) {
+        char c;
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
             System.out.print(" ");
             System.out.print(i);
         }
         System.out.println(" ");
-        for (int i = 0; i < matriu.length; i++) {
+        {
+            for (c = 'A'; c <= 'J'; c++) {
+                System.out.print(c);
+                for (int i = 0; i < matriu.length; i++) {
+                    System.out.print(" ");
+                    System.out.print("-");
 
-            for (int j = 0; j < matriu.length; j++) {
-                if (matriu[i][j] == null) {
-                    matriu[i][j] = "-";
                 }
-                System.out.print(matriu[i][j] + " ");
-
+                System.out.println(" ");
             }
-            System.out.println(" ");
         }
     }
 
     public static void inserir_vaixell(String[][] matriu) {
-        mostrar_tauler(matriu);
+        crear_tauler(matriu);
         random(matriu);
     }
 
@@ -41,26 +41,27 @@ public class HundirLaFlota {
 ////            inserir_vaixell(matriu);
 //            
 //    }
-    public static void crear_tauler(String[][] matriu) {
-        random(matriu);
+    public static void mostrar_tauler(String[][] matriu) {
+        char c;
+
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
             System.out.print(" ");
             System.out.print(i);
         }
         System.out.println(" ");
-        for (int i = 0; i < matriu.length; i++) {
-
-            for (int j = 0; j < matriu.length; j++) {
-                if (matriu[i][j] == null) {
-                    matriu[i][j] = "-";
+        {
+            for (c = 'A'; c <= 'J'; ++c) {
+                System.out.print(c);
+                for (int i = 0; i < matriu.length; i++) {
+                    System.out.print(" ");
+                    System.out.print("-");
                 }
-                System.out.print(matriu[i][j] + " ");
-
+                System.out.println(" ");
             }
-            System.out.println(" ");
         }
-
+        System.out.println("-------------------------");
+        random(matriu);
     }
 
     public static int menu(int a) {
@@ -83,10 +84,16 @@ public class HundirLaFlota {
     }
 
     public static void random(String[][] matriu) {
-
+        char c;
+        System.out.print(" ");
+        for (int i = 0; i < matriu.length; i++) {
+            System.out.print(" ");
+            System.out.print(i);
+        }
+        System.out.println(" ");
         for (int i = 0; i < 5; i++) {
-            int x = (int) (Math.random() * 10);
-            int y = (int) (Math.random() * 10);
+            int x = (int) (Math.random() * 9);
+            int y = (int) (Math.random() * 9);
 
             if (matriu[x][y] != null) {
                 i--;
@@ -95,8 +102,8 @@ public class HundirLaFlota {
             }
         }
         for (int i = 0; i < 3; i++) {
-            int x = (int) (Math.random() * 10);
-            int y = (int) (Math.random() * 8);
+            int x = (int) (Math.random() * 7);
+            int y = (int) (Math.random() * 7);
 
             if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null) {
                 i--;
@@ -107,8 +114,8 @@ public class HundirLaFlota {
             }
         }
         for (int i = 0; i < 1; i++) {
-            int x = (int) (Math.random() * 10);
-            int y = (int) (Math.random() * 7);
+            int x = (int) (Math.random() * 6);
+            int y = (int) (Math.random() * 6);
 
             if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null || matriu[x][y + 3] != null) {
                 i--;
@@ -120,8 +127,8 @@ public class HundirLaFlota {
             }
         }
         for (int i = 0; i < 1; i++) {
-            int x = (int) (Math.random() * 6);
-            int y = (int) (Math.random() * 10);
+            int x = (int) (Math.random() * 5);
+            int y = (int) (Math.random() * 5);
 
             if (matriu[x][y] != null || matriu[x][y] != null || matriu[x + 1][y] != null || matriu[x + 2][y] != null || matriu[x + 3][y] != null || matriu[x + 4][y] != null) {
                 i--;
@@ -132,6 +139,21 @@ public class HundirLaFlota {
                 matriu[x + 3][y] = "P";
                 matriu[x + 4][y] = "P";
             }
+        }
+        for (c = 'A'; c <= 'J'; c++) {
+            int i=0;
+            System.out.print(c);
+            for (int j = 0; j < matriu.length; j++) {
+                
+                if (matriu[i][j] != null) {
+                } else {
+                    matriu[i][j] = "-";
+                }
+                System.out.print(matriu[i][j] + " ");
+
+            }
+            System.out.println(" ");
+            i++;
         }
 
     }
@@ -147,8 +169,8 @@ public class HundirLaFlota {
 //        System.out.println("Elige un nivel: ");
 //        nivel=sc.nextInt();
 
-//        mostrar_tauler(tauler);
-        crear_tauler(tauler);
+//        crear_tauler(tauler);
+        mostrar_tauler(tauler);
     }
 
 }
