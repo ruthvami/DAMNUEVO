@@ -26,7 +26,7 @@ public class HundirLaFlota {
                     matriu[i2][j] = "-";
                 }
                 System.out.print(matriu[i2][j] + " ");
-                    i2++;
+                i2++;
             }
             System.out.println(" ");
         }
@@ -43,6 +43,7 @@ public class HundirLaFlota {
 //    }
     public static void crear_tauler(String[][] matriu) {
         random(matriu);
+        char[] letra = { 'A', 'B', 'C', 'D', 'E','F','G','H','I','J' };
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
             System.out.print(" ");
@@ -50,7 +51,7 @@ public class HundirLaFlota {
         }
         System.out.println(" ");
         for (int i = 0; i < matriu.length; i++) {
-
+            System.out.print(letra[i]+" ");
             for (int j = 0; j < matriu.length; j++) {
                 if (matriu[i][j] == null) {
                     matriu[i][j] = "-";
@@ -63,24 +64,26 @@ public class HundirLaFlota {
 
     }
 
-    public static int menu(int a) {
-        int intents = 0,vaixell=0;
+    public static void menu(int a) {
+        int intents = 0, vaixell = 0;
         
         switch (a) {
             case 1:
                 vaixell = 10;
-                intents=50;
+                intents = 50;
+                
                 break;
             case 2:
                 vaixell = 5;
-                intents=30;
+                intents = 30;
+                
                 break;
             case 3:
                 vaixell = 2;
-                intents=10;
+                intents = 10;
                 break;
         }
-        return intents;
+        
     }
 
     public static void random(String[][] matriu) {
@@ -142,14 +145,15 @@ public class HundirLaFlota {
         int nivel;
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
-//        Scanner sc=new Scanner(System.in);
-//        System.out.println("Niveles: ");
-//        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
-//        System.out.println("Elige un nivel: ");
-//        nivel=sc.nextInt();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Niveles: ");
+        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
+        System.out.println("Elige un nivel: ");
+        nivel=sc.nextInt();
 
 //        mostrar_tauler(tauler);
         crear_tauler(tauler);
+        menu(nivel);
     }
 
 }
