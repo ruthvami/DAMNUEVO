@@ -34,7 +34,7 @@ public class HundirLaFlota {
 
     public static void inserir_vaixell(String[][] matriu) {
         crear_tauler(matriu);
-        random(matriu);
+//        random(matriu);
     }
 
 //    public static boolean dispara_tret(String[][] matriu) {
@@ -42,8 +42,8 @@ public class HundirLaFlota {
 //            
 //    }
     public static void crear_tauler(String[][] matriu) {
-        random(matriu);
-        char[] letra = { 'A', 'B', 'C', 'D', 'E','F','G','H','I','J' };
+//        random(matriu);
+        char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
             System.out.print(" ");
@@ -51,7 +51,8 @@ public class HundirLaFlota {
         }
         System.out.println(" ");
         for (int i = 0; i < matriu.length; i++) {
-            System.out.print(letra[i]+" ");
+
+            System.out.print(letra[i] + " ");
             for (int j = 0; j < matriu.length; j++) {
                 if (matriu[i][j] == null) {
                     matriu[i][j] = "-";
@@ -64,31 +65,43 @@ public class HundirLaFlota {
 
     }
 
-    public static void menu(int a) {
-        int intents = 0, vaixell = 0;
-        
+    public static char menu(int a) {
+        int niveles[] = {int L,int B, int Z,int P,int intents};
         switch (a) {
-            case 1:
-                vaixell = 10;
-                intents = 50;
-                
-                break;
-            case 2:
-                vaixell = 5;
-                intents = 30;
-                
-                break;
-            case 3:
-                vaixell = 2;
-                intents = 10;
-                break;
-        }
-        
+        case 1:
+            L = 5;
+            B = 3;
+            Z = 1;
+            P = 1;
+            intents = 50;
+
+            break;
+        case 2:
+            L = 2;
+            B = 1;
+            Z = 1;
+            P = 1;
+            intents = 30;
+
+            break;
+        case 3:
+            L = 1;
+            B = 1;
+            intents = 10;
+            break;
+
     }
+        
+    return niveles[] ;
 
-    public static void random(String[][] matriu) {
+}
 
-        for (int i = 0; i < 5; i++) {
+public static void random(String[][] matriu,int niveles[]) {
+        menu(niveles);
+        for (int i = 0; i <5; i++) {
+            System.out.println(niveles[i]); 
+                }
+        for (int i = 0; i < L; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 10);
 
@@ -98,7 +111,7 @@ public class HundirLaFlota {
                 matriu[x][y] = "L";
             }
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < B; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 8);
 
@@ -110,7 +123,7 @@ public class HundirLaFlota {
                 matriu[x][y + 2] = "B";
             }
         }
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < Z; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
 
@@ -123,7 +136,7 @@ public class HundirLaFlota {
                 matriu[x][y + 3] = "Z";
             }
         }
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < P; i++) {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);
 
