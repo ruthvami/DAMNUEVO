@@ -38,10 +38,10 @@ public class Persona {
     public void setCognom(String cognom){
         this.cognom=cognom;
     }
-    public void setNom(String cognom){
+    public void setNom(String nom){
         this.nom=nom;
     }
-    public void setDni(String cognom){
+    public void setDni(String dni){
         this.dni=dni;
     }
 }

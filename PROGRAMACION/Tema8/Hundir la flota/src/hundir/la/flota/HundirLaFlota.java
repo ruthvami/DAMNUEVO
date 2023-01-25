@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package hundir.la.flota;
 
 import java.util.Scanner;
@@ -13,27 +9,31 @@ import java.util.Scanner;
 public class HundirLaFlota {
 
     public static void mostrar_tauler(String[][] matriu) {
+        char c;
+        int i2 = 0;
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
             System.out.print(" ");
             System.out.print(i);
         }
         System.out.println(" ");
-        for (int i = 0; i < matriu.length; i++) {
-
+        for (c = 'A'; c <= 'J'; c++) {
+//           for (int i = 0; i < matriu.length; i++) {
             for (int j = 0; j < matriu.length; j++) {
-                if (matriu[i][j] == null) {
-                    matriu[i][j] = "-";
-                }
-                System.out.print(matriu[i][j] + " ");
+                System.out.print(c);
 
+                if (matriu[i2][j] == null) {
+                    matriu[i2][j] = "-";
+                }
+                System.out.print(matriu[i2][j] + " ");
+                    i2++;
             }
             System.out.println(" ");
         }
     }
 
     public static void inserir_vaixell(String[][] matriu) {
-        mostrar_tauler(matriu);
+        crear_tauler(matriu);
         random(matriu);
     }
 
@@ -64,22 +64,23 @@ public class HundirLaFlota {
     }
 
     public static int menu(int a) {
-        int vaixell = 0;
+        int intents = 0,vaixell=0;
+        
         switch (a) {
             case 1:
                 vaixell = 10;
-//                intents=50;
+                intents=50;
                 break;
             case 2:
                 vaixell = 5;
-//                intents=30;
+                intents=30;
                 break;
             case 3:
                 vaixell = 2;
-//                intents=10;
+                intents=10;
                 break;
         }
-        return vaixell;
+        return intents;
     }
 
     public static void random(String[][] matriu) {

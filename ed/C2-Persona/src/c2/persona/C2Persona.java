@@ -55,10 +55,11 @@ public class C2Persona {
 
         Persona p2 = new Persona(dni, nom, cognom, edad);
         
-        p2.setNom("ROberto");
+        
         
         System.out.print(p1.getNom() + " " + p1.getCognom() + " con DNI " + p1.getDni());
         edad(p1.getEdat());
+        p2.setNom("ROberto");
         System.out.print(p2.getNom()+ " " + p2.getCognom() + " con DNI " + p2.getDni());
         edad(p2.getEdat());
         
