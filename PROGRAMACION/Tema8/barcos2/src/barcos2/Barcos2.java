@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class Barcos2 {
 
     public static void mostrar_tauler(String[][] matriu) {
-//        disparar_tiro(matriu,x,y);
+        int x = 0, y = 0;
+        disparar_tiro(matriu, x, y);
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
@@ -46,7 +47,7 @@ public class Barcos2 {
 //            
 //    }
     public static void crear_tauler(String[][] matriu) {
-        random(matriu);
+
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
@@ -144,35 +145,40 @@ public class Barcos2 {
         }
 
     }
+    
 
     public static boolean preguntar(String[][] matriu) {
-        String fila, columna;
+        String fila;
+        int columna;
         random(matriu);
         Scanner sc = new Scanner(System.in);
         System.out.println("Donde quieres disparar? ");
-        
-        for (int i = 0; i <50; i++) {
-            System.out.print("Fila: ");
-            fila = sc.nextLine().toUpperCase();
-            System.out.print("Columna: ");
-            columna = sc.nextLine();
-            
+
+        for (int i = 0; i < 50; i++) {
+//            
+            do {
+                System.out.print("Ingresa una fila (A-J): ");
+                fila = sc.nextLine().toUpperCase();
+                if (!(fila.matches("[A-J]"))) {
+                    System.out.println("Error: la fila debe ser entre A y J");
+                }
+            } while (!(fila.matches("[A-J]")));
+            do {
+                System.out.print("Ingresa una columna (0-9): ");
+                columna = sc.nextInt();
+                if (columna < 0 || columna > 9) {
+                    System.out.println("Error: la columna debe ser entre 0 y 9");
+                }
+            } while (columna < 0 || columna > 9);
+            sc.nextLine();
+            crear_tauler(matriu);
         }
         return true;
-  
+
     }
 
     public static boolean disparar_tiro(String[][] matriu, int x, int y) {
-        if (matriu[x][y]=="L") {
-            matriu[x][y] = "X";
-            return true;
-        } else if (matriu[x][y]=="B") {
-            matriu[x][y] = "X";
-            return true;
-        } else if (matriu[x][y]=="Z") {
-            matriu[x][y] = "X";
-            return true;
-        } else if (matriu[x][y]=="P") {
+        if (matriu[x][y] != "-") {
             matriu[x][y] = "X";
             return true;
         } else {
@@ -187,14 +193,12 @@ public class Barcos2 {
 
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("Niveles: ");
-//        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
-//        System.out.println("Elige un nivel: ");
-//        nivel=sc.nextInt();
+        
+        preguntar(ocult);
+//       
 
 //        mostrar_tauler(tauler);
-        crear_tauler(tauler);
+//        crear_tauler(tauler);
 //        menu(nivel);
     }
 
