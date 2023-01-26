@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Barcos2 {
 
     public static void mostrar_tauler(String[][] matriu) {
-        disparar_tiro(matriu,x,y);
+//        disparar_tiro(matriu,x,y);
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
@@ -158,25 +158,25 @@ public class Barcos2 {
             columna = sc.nextLine();
             
         }
-        
-        
+        return true;
+  
     }
 
-    public static boolean disparar_tiro(String[][] matriz, int x, int y) {
-        if (matriz[x][y]=="L") {
-            matriz[x][y] = "X";
+    public static boolean disparar_tiro(String[][] matriu, int x, int y) {
+        if (matriu[x][y]=="L") {
+            matriu[x][y] = "X";
             return true;
-        } else if (matriz[x][y]=="B") {
-            matriz[x][y] = "X";
+        } else if (matriu[x][y]=="B") {
+            matriu[x][y] = "X";
             return true;
-        } else if (matriz[x][y]=="Z") {
-            matriz[x][y] = "X";
+        } else if (matriu[x][y]=="Z") {
+            matriu[x][y] = "X";
             return true;
-        } else if (matriz[x][y]=="P") {
-            matriz[x][y] = "X";
+        } else if (matriu[x][y]=="P") {
+            matriu[x][y] = "X";
             return true;
         } else {
-            matriz[x][y] = "A";
+            matriu[x][y] = "A";
             return false;
         }
     }
@@ -187,14 +187,14 @@ public class Barcos2 {
 
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
-        Scanner sc = new Scanner(System.in);
+//        Scanner sc = new Scanner(System.in);
 //        System.out.println("Niveles: ");
 //        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
 //        System.out.println("Elige un nivel: ");
 //        nivel=sc.nextInt();
 
-        mostrar_tauler(tauler);
-//        crear_tauler(tauler);
+//        mostrar_tauler(tauler);
+        crear_tauler(tauler);
 //        menu(nivel);
     }
 
