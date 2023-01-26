@@ -65,7 +65,7 @@ public class HundirLaFlota {
 
     }
 
-    public static char menu(int a) {
+    public static int menu(int a) {
         int niveles[] = {int L,int B, int Z,int P,int intents};
         switch (a) {
         case 1:
