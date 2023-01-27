@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class Barcos2 {
 
     public static void mostrar_tauler(String[][] matriu) {
-        int x = 0, y = 0;
+        
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
@@ -110,7 +110,7 @@ public class Barcos2 {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
 
-            if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null|| matriu[x][y + 3] != null) {
+            if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null || matriu[x][y + 3] != null) {
                 i--;
             } else {
                 matriu[x][y] = "Z";
@@ -123,7 +123,7 @@ public class Barcos2 {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);
 
-            if (matriu[x][y] != null || matriu[x][y] != null || matriu[x + 1][y] != null || matriu[x + 2][y] != null|| matriu[x + 3][y] != null || matriu[x + 4][y] != null) {
+            if (matriu[x][y] != null || matriu[x][y] != null || matriu[x + 1][y] != null || matriu[x + 2][y] != null || matriu[x + 3][y] != null || matriu[x + 4][y] != null) {
                 i--;
             } else {
                 matriu[x][y] = "P";
@@ -137,14 +137,18 @@ public class Barcos2 {
     }
 
     public static boolean preguntar(String[][] matriu, String[][] dos) {
-        int fila;
-        int columna;
+        int fila,suma=0,columna,cont=0;
+        boolean r = true;
         random(matriu);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
-       
+
         for (int i = 0; i < 50; i++) {
-            crear_tauler(dos);     
+            if(cont==23){
+                suma=1;
+            }
+            while(suma!=1){
+            crear_tauler(dos);
             crear_tauler(matriu);
             System.out.println("Donde quieres disparar? ");
             do {
@@ -162,20 +166,25 @@ public class Barcos2 {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-            disparar_tiro(matriu, fila, columna,dos);
+            disparar_tiro(matriu, fila, columna, dos,cont);
+            System.out.println(cont);
+            }
+            r= false;
         }
-        return false;
-
+        
+            return r;
     }
 
-    public static void disparar_tiro(String[][] matriu, int x, int y,String[][] dos) {
+    public static void disparar_tiro(String[][] matriu, int x, int y, String[][] dos,int cont) {
+        
         if (matriu[x][y] != "-") {
             dos[x][y] = "X";
-                 
+            cont++;
         } else {
             dos[x][y] = "A";
-            
+
         }
+       
     }
 
     public static void main(String[] args) {
