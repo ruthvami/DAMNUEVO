@@ -38,17 +38,18 @@ public class Alumne {
 //          p4.modific("unos", "pan", "y", 2.9);
 
         Aalumne ob[] = new Aalumne[10];
-        String cod;
-        String titol;
-        String format;
-        double preu_lloguer;
+        
         for (int i = 0; i < 10; i++) {
-            ob[i] = new Aalumne(cod);
+            ob[i] = new Aalumne(i,"Terminator","DVD",Math.random()*9);
+            
         }
-        System.out.println("La pelicula " + p3.getTitol() + " alquilar un dia costaria " + p3.getPre_lloguer() + ", dos dias vale " + p3.dosdies() + " y una semana vale " + p3.setmana());
-        System.out.println("Su formato es " + p3.getFormat() + " y su codigo es " + p3.getCod());
-//          System.out.println("La pelicula "+ p4.getTitol()+" alquilar un dia costaria "+ p4.getPre_lloguer()+", dos dias vale "+p4.dosdies()+" y una semana vale "+ p4.setmana());
-//          System.out.println("Su formato es "+p4.getFormat()+" y su codigo es "+ p4.getCod());
+        for (Aalumne v : ob) {
+//            
+            System.out.println("La pelicula " + v.getTitol() + " alquilar un dia costaria " + v.getPre_lloguer() + ", dos dias vale " + v.dosdies() + " y una semana vale " + v.setmana());
+            System.out.println("Su formato es " + v.getFormat() + " y su codigo es " + v.getCod()+"\n");
+        }
+        
+        
 
     }
 

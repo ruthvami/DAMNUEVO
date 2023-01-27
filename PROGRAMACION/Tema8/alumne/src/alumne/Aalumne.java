@@ -9,12 +9,12 @@ package alumne;
  * @author rutvac
  */
 public class Aalumne {
-    private String cod;
+    private int cod;
     private String titol;
     private String format;
     private double preu_lloguer;
     
-    public String getCod(){
+    public int getCod(){
         return this.cod;
     }
     public String getTitol(){
@@ -27,7 +27,7 @@ public class Aalumne {
         return this.preu_lloguer;
     }
     
-    public void modific(String cod,String titol,String format,double preu_lloguer){
+    public void modific(int cod,String titol,String format,double preu_lloguer){
     this.cod=cod;
     this.titol=titol;
     this.format=format;
@@ -36,7 +36,7 @@ public class Aalumne {
     
 //    String cod,titol,format;
 //    double preu_lloguer;
-    public Aalumne(String cod,String titol,String format,double preu_lloguer){
+    public Aalumne(int cod,String titol,String format,double preu_lloguer){
            this.cod=cod;
            this.titol=titol;
            this.format=format;

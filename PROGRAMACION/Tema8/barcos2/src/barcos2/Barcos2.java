@@ -142,13 +142,11 @@ public class Barcos2 {
         random(matriu);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
-        System.out.println("Donde quieres disparar? ");
+       
         for (int i = 0; i < 50; i++) {
             crear_tauler(dos);     
-            
             crear_tauler(matriu);
-               
-
+            System.out.println("Donde quieres disparar? ");
             do {
                 System.out.print("Ingresa una fila (A-J): ");
                 fila = sc.nextLine().toUpperCase().charAt(0) - 'A';
@@ -170,13 +168,13 @@ public class Barcos2 {
 
     }
 
-    public static boolean disparar_tiro(String[][] matriu, int x, int y,String[][] dos) {
+    public static void disparar_tiro(String[][] matriu, int x, int y,String[][] dos) {
         if (matriu[x][y] != "-") {
             dos[x][y] = "X";
-            return true;
+                 
         } else {
             dos[x][y] = "A";
-            return false;
+            
         }
     }
 
@@ -191,9 +189,6 @@ public class Barcos2 {
 //        System.out.println("Elige un nivel: ");
 //        nivel=sc.nextInt();
         preguntar(ocult, tauler);
-//       
-//        mostrar_tauler(tauler);
-//        crear_tauler(tauler);
 //        menu(nivel);
     }
 }
