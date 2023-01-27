@@ -32,18 +32,24 @@ public class Alumne {
 //          p2.cod="4132184";
 //          p2.format="bluerray";
 //          p2.preu_lloguer = 3;
-          
-          Aalumne p3 =new Aalumne("555","u","u",5);
-          Aalumne p4=new Aalumne("3445df","e","h",4);
-          
-          p4.modific("unos", "pan", "y", 2.9);
-          
-          System.out.println("La pelicula "+ p3.getTitol()+" alquilar un dia costaria "+ p3.getPre_lloguer()+", dos dias vale "+p3.dosdies()+" y una semana vale "+ p3.setmana());
-          System.out.println("Su formato es "+p3.getFormat()+" y su codigo es "+ p3.getCod());
-          System.out.println("La pelicula "+ p4.getTitol()+" alquilar un dia costaria "+ p4.getPre_lloguer()+", dos dias vale "+p4.dosdies()+" y una semana vale "+ p4.setmana());
-          System.out.println("Su formato es "+p4.getFormat()+" y su codigo es "+ p4.getCod());
+//           Aalumne p3 =new Aalumne("555","u","u",5);
+//          Aalumne p4=new Aalumne("3445df","e","h",4);
+//          
+//          p4.modific("unos", "pan", "y", 2.9);
 
-            
+        Aalumne ob[] = new Aalumne[10];
+        String cod;
+        String titol;
+        String format;
+        double preu_lloguer;
+        for (int i = 0; i < 10; i++) {
+            ob[i] = new Aalumne(cod);
+        }
+        System.out.println("La pelicula " + p3.getTitol() + " alquilar un dia costaria " + p3.getPre_lloguer() + ", dos dias vale " + p3.dosdies() + " y una semana vale " + p3.setmana());
+        System.out.println("Su formato es " + p3.getFormat() + " y su codigo es " + p3.getCod());
+//          System.out.println("La pelicula "+ p4.getTitol()+" alquilar un dia costaria "+ p4.getPre_lloguer()+", dos dias vale "+p4.dosdies()+" y una semana vale "+ p4.setmana());
+//          System.out.println("Su formato es "+p4.getFormat()+" y su codigo es "+ p4.getCod());
+
     }
-    
+
 }
