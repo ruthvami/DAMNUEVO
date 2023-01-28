@@ -14,9 +14,11 @@ public class D1Punt {
      * @param args the command line arguments
      */
     public void imprimeix(int A,int B, int C,int D){
-        System.out.println("Las coordenadas son (" + A.getX() + "," + A.getY() + ")");
-        System.out.println("Las coordenadas son (" + B.getX()+ "," + B.getY() + ")");
-        System.out.println("Las coordenadas son (" + C.getX()+ "," + C.getY()+ ")");
+        
+    }
+    public void desplaza(int dx,int dy){
+    
+    
     }
     public static void main(String[] args) {
         // TODO code application logic here

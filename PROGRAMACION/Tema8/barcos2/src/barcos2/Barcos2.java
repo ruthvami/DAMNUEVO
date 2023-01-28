@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 package barcos2;
 
 import java.util.Scanner;
@@ -137,15 +133,15 @@ public class Barcos2 {
     }
 
     public static boolean preguntar(String[][] matriu, String[][] dos) {
-        int fila,suma=0,columna,cont=0;
+        int fila=0,suma=0,columna=0,disparar=0;
         boolean r = true;
         random(matriu);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
 
         for (int i = 0; i < 50; i++) {
-            if(cont==23){
-                suma=1;
+            if(disparar_tiro(matriu, fila, columna, dos,disparar)==23){
+                r=false;
             }
             while(suma!=1){
             crear_tauler(dos);
@@ -166,25 +162,25 @@ public class Barcos2 {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-            disparar_tiro(matriu, fila, columna, dos,cont);
-            System.out.println(cont);
+            disparar_tiro(matriu, fila, columna, dos,disparar);
             }
+            
             r= false;
         }
         
             return r;
     }
 
-    public static void disparar_tiro(String[][] matriu, int x, int y, String[][] dos,int cont) {
+    public static int disparar_tiro(String[][] matriu, int x, int y, String[][] dos,int disparar) {
         
         if (matriu[x][y] != "-") {
             dos[x][y] = "X";
-            cont++;
+            disparar++;
         } else {
             dos[x][y] = "A";
 
         }
-       
+       return disparar;
     }
 
     public static void main(String[] args) {
