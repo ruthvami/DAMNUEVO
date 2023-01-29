@@ -13,8 +13,10 @@ public class D1Punt {
     /**
      * @param args the command line arguments
      */
-    public void imprimeix(int A,int B, int C,int D){
-        
+    public void imprimeix(int A,int B, int C){
+        System.out.println("Las coordenadas son (" + A.getX() + "," + A.getY() + ")");
+        System.out.println("Las coordenadas son (" + B.getX()+ "," + B.getY() + ")");
+        System.out.println("Las coordenadas son (" + C.getX()+ "," + C.getY()+ ")");
     }
     public void desplaza(int dx,int dy){
     
@@ -25,10 +27,8 @@ public class D1Punt {
         Punt A = new Punt(5, 0);
         Punt B = new Punt(10, 10);
         Punt C = new Punt(-3, 7);
-
-        System.out.println("Las coordenadas son (" + A.getX() + "," + A.getY() + ")");
-        System.out.println("Las coordenadas son (" + B.getX()+ "," + B.getY() + ")");
-        System.out.println("Las coordenadas son (" + C.getX()+ "," + C.getY()+ ")");
+        imprimeix(A,B,C);
+        
 
         System.out.println(" ");
         A.setX(88); A.setY(C.getX()+B.getX());

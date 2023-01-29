@@ -15,17 +15,30 @@ public class D2Persona {
     /**
      * @param args the command line arguments
      */
-    public static void edad(int a) {
+    public static boolean edad(int a) {
         if (a >= 18) {
-            System.out.println(" es mayor de edad");
 
+            return true;
         } else {
-            System.out.println(" no es mayor de edad");
+
+            return false;
         }
     }
-    public String imprimeix(String dni,String nom,String cognom,int edad){
-        
+
+    public void imprimeix(int edat, String nom, String cognom, String dni) {
+        System.out.println("Dni: " + dni + "\n Nom: " + nom + " \n Cognom: " + cognom + "\n Edat: " + edat);
     }
+
+    public boolean jubilat(int a) {
+        if (a >= 65) {
+
+            return true;
+        } else {
+
+            return false;
+        }
+    }
+
     public static void main(String[] args) {
         // TODO code application logic here
 
@@ -57,10 +70,18 @@ public class D2Persona {
 
         Persona p2 = new Persona(dni, nom, cognom, edad);
 
-        System.out.print(p1.nom + " " + p1.cognom + " con DNI " + p1.dni);
-        edad(p1.edat);
-        System.out.print(p2.nom + " " + p2.cognom + " con DNI " + p2.dni);
-        edad(p2.edat);
+        imprimeix(p1.edat, p1.dni, p1.nom, p1.cognom);
+        imprimeix(p2.edat, p2.dni, p2.nom, p2.cognom);
+        if (edad(edad) == true) {
+            System.out.println(" es mayor de edad");
+        } else {
+            System.out.println(" no es mayor de edad");
+        }
+        if (jubilat(edad) == true) {
+            System.out.println(" esta jubilado");
+        } else {
+            System.out.println(" no esta jubilado");
+        }
     }
 
 }
