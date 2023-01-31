@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Barcos2 {
 
     public static void mostrar_tauler(String[][] matriu) {
-        
+
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < matriu.length; i++) {
@@ -133,17 +133,17 @@ public class Barcos2 {
     }
 
     public static boolean preguntar(String[][] matriu, String[][] dos) {
-        int fila=0,suma=0,columna=0,disparar=0;
+        int fila = 0, suma = 0, columna = 0;
         boolean r = true;
         random(matriu);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < 50; i++) {
-            if(disparar_tiro(matriu, fila, columna, dos,disparar)==23){
-                r=false;
+        for (int i = 0; i < 5; i++) {
+            if (end(dos) == 1) {
+                r = true;
             }
-            while(suma!=1){
+
             crear_tauler(dos);
             crear_tauler(matriu);
             System.out.println("Donde quieres disparar? ");
@@ -162,25 +162,37 @@ public class Barcos2 {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-            disparar_tiro(matriu, fila, columna, dos,disparar);
-            }
-            
-            r= false;
+            disparar_tiro(matriu, fila, columna, dos);
+            end(dos);
+            r = false;
         }
-        
-            return r;
+
+        return r;
     }
 
-    public static int disparar_tiro(String[][] matriu, int x, int y, String[][] dos,int disparar) {
-        
+    public static void disparar_tiro(String[][] matriu, int x, int y, String[][] dos) {
+
         if (matriu[x][y] != "-") {
             dos[x][y] = "X";
-            disparar++;
+
         } else {
             dos[x][y] = "A";
 
         }
-       return disparar;
+    }
+
+    public static int end(String[][] dos) {
+        int compr = 0;
+        for (int i = 0; i < dos.length; i++) {
+            for (int j = 0; j < dos.length; j++) {
+                if (dos[i][j] == "X") {
+                    compr++;
+                }
+
+            }
+        }
+        return compr;
+
     }
 
     public static void main(String[] args) {
@@ -193,7 +205,12 @@ public class Barcos2 {
 //        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
 //        System.out.println("Elige un nivel: ");
 //        nivel=sc.nextInt();
-        preguntar(ocult, tauler);
 //        menu(nivel);
+        if (preguntar(ocult, tauler)) {
+            System.out.println("Has ganado!!");
+        } else {
+            System.out.println("Has perdido :(");
+        }
+
     }
 }
