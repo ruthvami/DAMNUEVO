@@ -1,0 +1,18 @@
+<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="producto" type="tipoProducto">
+<xsd:complexType name="tipoProducto">
+<xsd:simpleContent>
+<xsd:extension base="xsd:string">
+<xsd:attribute name="cantidad" type "xsd:unsignedInt" use="">
+<xsd:attribute name="unidad" type "tipoUnidad">
+</xsd:extension>
+</xsd:simpleContent>
+</xsd:complexType>
+<xsd:complexType>
+    <xsd:simpleType name="tipoUnidad">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="caja"/>
+            <xsd:enumeration  value="pale"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+</xsd:complexType>
