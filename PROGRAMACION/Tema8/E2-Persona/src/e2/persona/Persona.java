@@ -10,7 +10,7 @@ package e2.persona;
  */
 public class Persona {
 
-    private String dni;
+    private final String dni;
     private String nom;
     private String cognom;
     private int edat;
@@ -21,12 +21,13 @@ public class Persona {
         this.cognom = cognom;
         this.edat = edat;
     }
+
     public void imprimeix() {
         System.out.println("Dni: " + getDni() + "\n Nom: " + getNom() + " \n Cognom: " + getCognom() + "\n Edat: " + getEdat());
     }
 
     public boolean jubilat() {
-        if (this.getEdat()>= 65) {
+        if (this.getEdat() >= 65) {
 
             return true;
         } else {
@@ -34,10 +35,9 @@ public class Persona {
             return false;
         }
     }
-    public boolean edad(){
-    return (this.getEdat()>= 18);
 
-             
+    public boolean edad() {
+        return (this.getEdat() >= 18);
 
     }
 
@@ -46,13 +46,6 @@ public class Persona {
      */
     public String getDni() {
         return dni;
-    }
-
-    /**
-     * @param dni the dni to set
-     */
-    public void setDni(String dni) {
-        this.dni = dni;
     }
 
     /**
