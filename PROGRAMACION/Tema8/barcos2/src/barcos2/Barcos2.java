@@ -133,15 +133,16 @@ public class Barcos2 {
     }
 
     public static boolean preguntar(String[][] matriu, String[][] dos) {
-        int fila = 0, suma = 0, columna = 0;
+        int fila = 0, columna = 0;
         boolean r = true;
         random(matriu);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
+            end(dos);
             if (end(dos) == 1) {
-                r = true;
+               return true;
             }
 
             crear_tauler(dos);
@@ -163,7 +164,7 @@ public class Barcos2 {
             } while (columna < 0 || columna > 9);
             sc.nextLine();
             disparar_tiro(matriu, fila, columna, dos);
-            end(dos);
+            
             r = false;
         }
 
@@ -171,7 +172,6 @@ public class Barcos2 {
     }
 
     public static void disparar_tiro(String[][] matriu, int x, int y, String[][] dos) {
-
         if (matriu[x][y] != "-") {
             dos[x][y] = "X";
 

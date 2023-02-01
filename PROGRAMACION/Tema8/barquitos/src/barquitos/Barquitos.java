@@ -64,4 +64,4 @@ public class Barquitos {
         }
         System.out.println("¡GANASTE!");
     }
-}}
+}

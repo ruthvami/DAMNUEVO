@@ -65,7 +65,7 @@ public class MesclaArrays {
 
         int array1[] = new int[primero];
         int array2[] = new int[segundo];
-
+        mescla(array1,array2);
         System.out.println("La mezcla de los arrays ");
         System.out.println(Arrays.toString(array1));
         System.out.println(Arrays.toString(array2));
