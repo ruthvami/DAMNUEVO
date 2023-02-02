@@ -23,7 +23,7 @@ public class Persona {
     }
 
     public void imprimeix() {
-        System.out.println("Dni: " + getDni() + "\n Nom: " + getNom() + " \n Cognom: " + getCognom() + "\n Edat: " + getEdat());
+        System.out.println("Dni: " + getDni() + "\nNom: " + getNom() + " \nCognom: " + getCognom() + "\nEdat: " + getEdat());
     }
 
     public boolean jubilat() {
@@ -88,5 +88,28 @@ public class Persona {
      */
     public void setEdat(int edat) {
         this.edat = edat;
+    }
+
+    public final boolean majoredat() {
+        if ( edat == 18) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+    public static void validarDNI(String dni) {
+        int n_dig = 1;
+
+        char[] dnies = {};
+        for (int i = 0; i < dnies.length; i++) {
+            dnies[i] = dni.charAt(i);
+            System.out.println(dnies[i]);
+        }
+
+//        if (dni) {
+//
+//        }
     }
 }
