@@ -1,13 +1,12 @@
-<fichas xmlns:xsi="http://www.w3.org/2001/XMLSchema">
-<xsd:element name="fichas.xsd" type="tipoFicha">
-<xsd:complexType name="tipoFicha">
-<xsd:simpleContent>
-<xsd:extension base="xsd:string">
-<xsd:attribute name="edad" type "xsd:unsignedInt" >
-<xsd:attribute name="nombre" type "xsd:unsignedString">
-<xsd:attribute name="ciudad" type "xsd:unsignedString">
-<xsd:attribute name="pais" type "xsd:unsignedString">
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema  xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xsd:element name="ordenadors" >
+<xsd:complexType >
+<xsd:sequence>
+    <xsd:element name="ordinador" maxOccurs="unbounded">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="nom" type="xsd:string"/>
 
-</xsd:extension>
-</xsd:simpleContent>
-</xsd:complexType>
+            </xsd:sequence>
+        </xsd:complexType>
