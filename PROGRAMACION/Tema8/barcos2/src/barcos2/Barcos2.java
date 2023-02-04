@@ -8,23 +8,23 @@ import java.util.Scanner;
  */
 public class Barcos2 {
 
-    public static void mostrar_tauler(String[][] matriu) {
+    public static void mostrar_tauler(String[][] tauler) {
 
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
-        for (int i = 0; i < matriu.length; i++) {
+        for (int i = 0; i < tauler.length; i++) {
             System.out.print(" ");
             System.out.print(i);
         }
         System.out.println(" ");
-        for (int i = 0; i < matriu.length; i++) {
+        for (int i = 0; i < tauler.length; i++) {
 
             System.out.print(letra[i] + " ");
-            for (int j = 0; j < matriu.length; j++) {
-                if (matriu[i][j] == null) {
-                    matriu[i][j] = "-";
+            for (int j = 0; j < tauler.length; j++) {
+                if (tauler[i][j] == null) {
+                    tauler[i][j] = "-";
                 }
-                System.out.print(matriu[i][j] + " ");
+                System.out.print(tauler[i][j] + " ");
 
             }
             System.out.println(" ");
@@ -32,121 +32,108 @@ public class Barcos2 {
 
     }
 
-    public static void crear_tauler(String[][] matriu) {
+    public static void crear_tauler(String[][] tauler) {
 
-        char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
-        System.out.print(" ");
-        for (int i = 0; i < matriu.length; i++) {
-            System.out.print(" ");
-            System.out.print(i);
-        }
-        System.out.println(" ");
-        for (int i = 0; i < matriu.length; i++) {
+        for (int i = 0; i < tauler.length; i++) {
 
-            System.out.print(letra[i] + " ");
-            for (int j = 0; j < matriu.length; j++) {
-                if (matriu[i][j] == null) {
-                    matriu[i][j] = "-";
+            for (int j = 0; j < tauler.length; j++) {
+                if (tauler[i][j] == null) {
+                    tauler[i][j] = "-";
                 }
-                System.out.print(matriu[i][j] + " ");
 
             }
-            System.out.println(" ");
         }
 
     }
 
-    public static void menu(int a) {
-        int intents = 0, vaixell = 0;
-
+    public static int[] menu(int a) {
         switch (a) {
             case 1:
-                vaixell = 10;
-                intents = 50;
-
-                break;
+                return new int[]{5, 3, 1, 1,50,23};
             case 2:
-                vaixell = 5;
-                intents = 30;
-
-                break;
+                return new int[]{2, 1, 1, 1,30,14};
             case 3:
-                vaixell = 2;
-                intents = 10;
-                break;
+                return new int[]{1, 1, 0, 0,10,4};
         }
-
+        return null;
     }
 
-    public static void random(String[][] matriu) {
+    public static void random(String[][] tauler, int a) {
+        int[] arr = menu(a);
+        int L = arr[0];
+        int B = arr[1];
+        int Z = arr[2];
+        int P = arr[3];
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < L; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 10);
 
-            if (matriu[x][y] != null) {
+            if (tauler[x][y] != null) {
                 i--;
             } else {
-                matriu[x][y] = "L";
+                tauler[x][y] = "L";
             }
         }
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < B; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 8);
 
-            if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null) {
+            if (tauler[x][y] != null || tauler[x][y + 1] != null || tauler[x][y + 2] != null) {
                 i--;
             } else {
-                matriu[x][y] = "B";
-                matriu[x][y + 1] = "B";
-                matriu[x][y + 2] = "B";
+                tauler[x][y] = "B";
+                tauler[x][y + 1] = "B";
+                tauler[x][y + 2] = "B";
             }
         }
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < Z; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
 
-            if (matriu[x][y] != null || matriu[x][y + 1] != null || matriu[x][y + 2] != null || matriu[x][y + 3] != null) {
+            if (tauler[x][y] != null || tauler[x][y + 1] != null || tauler[x][y + 2] != null || tauler[x][y + 3] != null) {
                 i--;
             } else {
-                matriu[x][y] = "Z";
-                matriu[x][y + 1] = "Z";
-                matriu[x][y + 2] = "Z";
-                matriu[x][y + 3] = "Z";
+                tauler[x][y] = "Z";
+                tauler[x][y + 1] = "Z";
+                tauler[x][y + 2] = "Z";
+                tauler[x][y + 3] = "Z";
             }
         }
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < P; i++) {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);
 
-            if (matriu[x][y] != null || matriu[x][y] != null || matriu[x + 1][y] != null || matriu[x + 2][y] != null || matriu[x + 3][y] != null || matriu[x + 4][y] != null) {
+            if (tauler[x][y] != null || tauler[x][y] != null || tauler[x + 1][y] != null || tauler[x + 2][y] != null || tauler[x + 3][y] != null || tauler[x + 4][y] != null) {
                 i--;
             } else {
-                matriu[x][y] = "P";
-                matriu[x + 1][y] = "P";
-                matriu[x + 2][y] = "P";
-                matriu[x + 3][y] = "P";
-                matriu[x + 4][y] = "P";
+                tauler[x][y] = "P";
+                tauler[x + 1][y] = "P";
+                tauler[x + 2][y] = "P";
+                tauler[x + 3][y] = "P";
+                tauler[x + 4][y] = "P";
             }
         }
 
     }
 
-    public static boolean preguntar(String[][] matriu, String[][] dos) {
+    public static boolean preguntar(String[][] tauler, String[][] ocult,int a) {
         int fila = 0, columna = 0;
         boolean r = true;
-        random(matriu);
+        random(tauler,a);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
-
-        for (int i = 0; i < 3; i++) {
-            end(dos);
-            if (end(dos) == 1) {
-               return true;
+        int[] arr = menu(a);
+        int intentos = arr[4];
+        int aciertos = arr[5];
+        for (int i = 0; i < intentos; i++) {
+            end(ocult);
+            if (end(ocult) == aciertos) {
+                return true;
             }
 
-            crear_tauler(dos);
-            crear_tauler(matriu);
+            mostrar_tauler(ocult);
+            crear_tauler(tauler);
             System.out.println("Donde quieres disparar? ");
             do {
                 System.out.print("Ingresa una fila (A-J): ");
@@ -163,29 +150,30 @@ public class Barcos2 {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-            disparar_tiro(matriu, fila, columna, dos);
-            
+//            System.out.printf("%20d","*");
+            disparar_tiro(tauler, fila, columna, ocult);
+
             r = false;
         }
 
         return r;
     }
 
-    public static void disparar_tiro(String[][] matriu, int x, int y, String[][] dos) {
-        if (matriu[x][y] != "-") {
-            dos[x][y] = "X";
-
+    public static void disparar_tiro(String[][] tauler, int x, int y, String[][] ocult) {
+        if (tauler[x][y] != "-") {
+            ocult[x][y] = "X";
+            System.out.println("***********TOCADO***********");
         } else {
-            dos[x][y] = "A";
-
+            ocult[x][y] = "A";
+            System.out.println("************AGUA************");
         }
     }
 
-    public static int end(String[][] dos) {
+    public static int end(String[][] ocult) {
         int compr = 0;
-        for (int i = 0; i < dos.length; i++) {
-            for (int j = 0; j < dos.length; j++) {
-                if (dos[i][j] == "X") {
+        for (int i = 0; i < ocult.length; i++) {
+            for (int j = 0; j < ocult.length; j++) {
+                if (ocult[i][j] == "X") {
                     compr++;
                 }
 
@@ -197,19 +185,20 @@ public class Barcos2 {
 
     public static void main(String[] args) {
         // TODO code application logic here
-//        int nivel;
+        int nivel;
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
-//        Scanner sc=new Scanner(System.in);
-//        System.out.println("Niveles: ");
-//        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
-//        System.out.println("Elige un nivel: ");
-//        nivel=sc.nextInt();
-//        menu(nivel);
-        if (preguntar(ocult, tauler)) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Niveles: ");
+        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
+        System.out.println("Elige un nivel: ");
+        nivel = sc.nextInt();
+        menu(nivel);
+        if (preguntar(ocult, tauler,nivel)) {
             System.out.println("Has ganado!!");
         } else {
             System.out.println("Has perdido :(");
+            mostrar_tauler(ocult);
         }
 
     }

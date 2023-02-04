@@ -48,9 +48,9 @@ public class E2Persona {
 
 //      
         p1.imprimeix();
-        validarDNI(dni());
+        validarDNI(dni);
         
-        if (p1.majoredat() ) {
+        if (p1.major() ) {
             System.out.print("Es mayor de edad");
         } else {
             System.out.print("No es mayor de edad");

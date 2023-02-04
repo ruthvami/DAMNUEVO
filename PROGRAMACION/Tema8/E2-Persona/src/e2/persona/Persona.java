@@ -14,8 +14,13 @@ public class Persona {
     private String nom;
     private String cognom;
     private int edat;
+    private static final int MAJOREDAT = 18;
 
     public Persona(String dni, String nom, String cognom, int edat) {
+        while(!validarDNI(dni)){
+            
+        }
+        
         this.dni = dni;
         this.nom = nom;
         this.cognom = cognom;
@@ -90,8 +95,8 @@ public class Persona {
         this.edat = edat;
     }
 
-    public final boolean majoredat() {
-        if ( edat == 18) {
+    public final boolean major() {
+        if (edat >= MAJOREDAT) {
             return true;
         } else {
             return false;
@@ -99,17 +104,9 @@ public class Persona {
 
     }
 
-    public static void validarDNI(String dni) {
-        int n_dig = 1;
-
-        char[] dnies = {};
-        for (int i = 0; i < dnies.length; i++) {
-            dnies[i] = dni.charAt(i);
-            System.out.println(dnies[i]);
-        }
-
-//        if (dni) {
-//
-//        }
+    public static boolean validarDNI(String dni) {
+        return dni.toUpperCase().matches("\\d{8}[A-HJ-NP-TV-Z]");
     }
 }
+
+
