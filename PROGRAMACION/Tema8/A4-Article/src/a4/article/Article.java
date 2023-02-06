@@ -16,7 +16,7 @@ public class Article {
     private int existencies;
     private int stock;
     private int quantsQueden=getExistencies() / getStock();
-    public Article(String nom, double preu, double iva,int compra) {
+    public Article(String nom, double preu, double iva,int quantsQueden) {
         if (!(preu < 0 || iva < 0)) {
             this.nom = nom;
             this.preu = preu;
