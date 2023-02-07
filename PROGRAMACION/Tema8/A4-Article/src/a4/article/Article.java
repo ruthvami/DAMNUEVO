@@ -70,7 +70,7 @@ public class Article {
             this.quantsQueden -= prenda;
             return true;
         } else {
-            this.quantsQueden = 0;
+
             return false;
         }
     }
@@ -85,6 +85,7 @@ public class Article {
         }
 
     }
+
     public void imprimeix() {
         System.out.println(getNom() + " - Precio: " + getPreu() + "€" + "- IVA: " + getIva() + "% - PVP: " + getPVP() + " -Quedan: " + getQuantsQueden());
     }
@@ -95,7 +96,7 @@ public class Article {
     }
 
     public void setPreu(double preu) {
-        if ((preu <= 0)) {
+        if ((preu <= 1)) {
 
             System.out.println("*** ERROR al introducir el precio ");
         } else {
@@ -107,7 +108,7 @@ public class Article {
         if ((iva == 10 || iva == 21 || iva == 4)) {
             this.iva = iva;
         } else {
-            this.iva = 0;
+
             System.out.println("*** ERROR al introducir el IVA");
         }
     }
