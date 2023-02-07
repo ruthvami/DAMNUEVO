@@ -158,7 +158,7 @@ public class HundirLaFlota {
             sc.nextLine();
 
             disparar_tiro(tauler, fila, columna, ocult);
-            System.out.println("Llevas " + (i+1) + "/" + intentos);
+            System.out.println("Llevas " + i + "/" + intentos);
             r = false;
         }
 
@@ -195,6 +195,7 @@ public class HundirLaFlota {
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
         Scanner sc = new Scanner(System.in);
+        System.out.println("\nJUEGO HUNDIR LA FLOTA");
         System.out.println("\nNiveles: \n1-Para facil\n2-Para medio\n3-Para dificil\nElige un nivel: ");
         nivel = sc.nextInt();
         menu(nivel);
