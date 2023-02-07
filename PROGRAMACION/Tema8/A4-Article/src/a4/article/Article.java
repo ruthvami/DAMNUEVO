@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package a4.article;
 
 /**
@@ -16,7 +12,6 @@ public class Article {
     private int quantsQueden;
 //Solo se asigna un valor al constructor si se cumple que el precio es positivo,
 //si el iva es o 10,21 o 4 y si la cantidad de stock es positiva
-
     public Article(String nom, double preu, double iva, int quantsQueden) {
         this.nom = nom;
         if (preu >= 1) {
@@ -52,13 +47,10 @@ public class Article {
     public int getQuantsQueden() {
         return quantsQueden;
     }
-//para calcular el IVA se multiplica el precio por el iva mas cien y esto dividido entre 100
 
     public double getPVP() {
         return (this.preu * ((this.iva + 100) / 100));
     }
-//Para  calcular el descunto se resta el precio del iva  a el porcentaje de descuento
-//dividido entre 100 y se multiplica por el iva
 
     public double getPVPDescompte(double per) {
         return (this.getPVP() - ((per / 100) * this.getPVP()));
@@ -75,7 +67,6 @@ public class Article {
         }
     }
 //devuelve una suma del porcentaje junto con el stock si se suma lo introducido mas stock
-
     public boolean emmagatzema(int per) {
         if (per + this.quantsQueden > 0) {
             this.quantsQueden += per;

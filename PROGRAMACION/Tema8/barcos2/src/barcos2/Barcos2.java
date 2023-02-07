@@ -9,7 +9,9 @@ import java.util.Scanner;
 public class Barcos2 {
 
     public static void mostrar_tauler(String[][] tauler) {
-
+//Esta funcion sirve para mostrar por pantalla el tablero 
+//Tiene de entrada el tablero que quieres mostrar para que el usuario lo vea
+//No se devuelve nada ya que es un void
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < tauler.length; i++) {
@@ -31,7 +33,8 @@ public class Barcos2 {
         }
 
     }
-
+//Crea un tablero que esta completo de guiones
+//
     public static void crear_tauler(String[][] tauler) {
 
         for (int i = 0; i < tauler.length; i++) {
@@ -54,8 +57,10 @@ public class Barcos2 {
                 return new int[]{2, 1, 1, 1,30,14};
             case 3:
                 return new int[]{1, 1, 0, 0,10,4};
+            default:
+                return null;
         }
-        return null;
+        
     }
 
     public static void random(String[][] tauler, int a) {
@@ -150,7 +155,6 @@ public class Barcos2 {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-//            System.out.printf("%20d","*");
             disparar_tiro(tauler, fila, columna, ocult);
 
             r = false;
@@ -189,8 +193,7 @@ public class Barcos2 {
         String tauler[][] = new String[10][10];
         String ocult[][] = new String[10][10];
         Scanner sc = new Scanner(System.in);
-        System.out.println("Niveles: ");
-        System.out.println("1-Para facil\n2-Para medio\n3-Para dificil");
+        System.out.println("Niveles: \"1-Para facil\n2-Para medio\n3-Para dificil");
         System.out.println("Elige un nivel: ");
         nivel = sc.nextInt();
         menu(nivel);
