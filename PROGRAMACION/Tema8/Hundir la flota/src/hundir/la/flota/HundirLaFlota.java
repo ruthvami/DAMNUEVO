@@ -7,11 +7,12 @@ import java.util.Scanner;
  * @author ruthv
  */
 public class HundirLaFlota {
-
-    public static void mostrar_tauler(String[][] tauler) {
 //Esta funcion sirve para mostrar por pantalla el tablero 
 //Tiene de entrada el tablero que quieres mostrar para que el usuario lo vea
 //No se devuelve nada ya que es un void
+
+    public static void mostrar_tauler(String[][] tauler) {
+
         char[] letra = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
         System.out.print(" ");
         for (int i = 0; i < tauler.length; i++) {
@@ -34,21 +35,21 @@ public class HundirLaFlota {
 
     }
 //Crea un tablero que esta completo de guiones
-//Tiene de entrada el tablero que quieres crear
+//Tiene de entrada el tablero que quieres rellenar con guiones
+//No se devuelve nada ya que es un void
 
     public static void crear_tauler(String[][] tauler) {
-
         for (int i = 0; i < tauler.length; i++) {
-
             for (int j = 0; j < tauler.length; j++) {
                 if (tauler[i][j] == null) {
                     tauler[i][j] = "-";
                 }
-
             }
         }
-
     }
+//Esta funcion sirve para poder saber el nombre de barcos e intentos y aciertos que tienes dependiendo del nivel
+//Tiene de entrada un numero que se introduce desde el main para saber que nivel has elegido
+//Devuelve el numero de lanchas,barcos,acorazados,portaviones,intentos y los aciertos que tienes que hacer
 
     public static int[] menu(int a) {
         switch (a) {
@@ -61,8 +62,10 @@ public class HundirLaFlota {
             default:
                 return null;
         }
-
     }
+//Esta funcion rellena un tauler con los barcos
+//Tiene de entrada el tablero que quieres rellenar y el numero del nivel que se ha escogido
+//No se devuelve nada ya que es un void
 
     public static void random(String[][] tauler, int a) {
         int[] arr = menu(a);
@@ -70,12 +73,11 @@ public class HundirLaFlota {
         int B = arr[1];
         int Z = arr[2];
         int P = arr[3];
-
+        crear_tauler(tauler);
         for (int i = 0; i < L; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 10);
-
-            if (tauler[x][y] != null) {
+            if (tauler[x][y] != "-") {
                 i--;
             } else {
                 tauler[x][y] = "L";
@@ -84,8 +86,7 @@ public class HundirLaFlota {
         for (int i = 0; i < B; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 8);
-
-            if (tauler[x][y] != null || tauler[x][y + 1] != null || tauler[x][y + 2] != null) {
+            if (tauler[x][y] != "-" || tauler[x][y + 1] != "-" || tauler[x][y + 2] != "-") {
                 i--;
             } else {
                 tauler[x][y] = "B";
@@ -96,8 +97,7 @@ public class HundirLaFlota {
         for (int i = 0; i < Z; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
-
-            if (tauler[x][y] != null || tauler[x][y + 1] != null || tauler[x][y + 2] != null || tauler[x][y + 3] != null) {
+            if (tauler[x][y] != "-" || tauler[x][y + 1] != "-" || tauler[x][y + 2] != "-" || tauler[x][y + 3] != "-") {
                 i--;
             } else {
                 tauler[x][y] = "Z";
@@ -109,8 +109,7 @@ public class HundirLaFlota {
         for (int i = 0; i < P; i++) {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);
-
-            if (tauler[x][y] != null || tauler[x][y] != null || tauler[x + 1][y] != null || tauler[x + 2][y] != null || tauler[x + 3][y] != null || tauler[x + 4][y] != null) {
+            if (tauler[x][y] != "-" || tauler[x][y] != "-" || tauler[x + 1][y] != "-" || tauler[x + 2][y] != "-" || tauler[x + 3][y] != "-" || tauler[x + 4][y] != "-") {
                 i--;
             } else {
                 tauler[x][y] = "P";
@@ -120,8 +119,10 @@ public class HundirLaFlota {
                 tauler[x + 4][y] = "P";
             }
         }
-
     }
+//Esta funcion es para preguntar por las filas y columnas que quieres disparar y comprueba que los datos que introduce son correctos
+//Tiende de entrada el tablero que ese rellena y el que tiene los barcos ya puestos y tambien el nivel que has introducido
+//Devulve un true si has acertado todos los barcos y un false si se acaban los intentos
 
     public static boolean preguntar(String[][] tauler, String[][] ocult, int a) {
         int fila = 0, columna = 0;
@@ -137,7 +138,6 @@ public class HundirLaFlota {
             if (end(ocult) == aciertos) {
                 return true;
             }
-
             mostrar_tauler(ocult);
             crear_tauler(tauler);
             System.out.println("Donde quieres disparar? ");
@@ -156,14 +156,15 @@ public class HundirLaFlota {
                 }
             } while (columna < 0 || columna > 9);
             sc.nextLine();
-
             disparar_tiro(tauler, fila, columna, ocult);
             System.out.println("Llevas " + i + "/" + intentos);
             r = false;
         }
-
         return r;
     }
+//Comprueba que en el lugar que se ha disparado sea diferente a - para ver si hay un barco o es agua
+//Tiene de entrada los dos tableros uno que tiene los barcos y el otro que apunta los disparos, tambien entran los lugares donde quieres disparar
+//No se devuelve nada ya que es un void
 
     public static void disparar_tiro(String[][] tauler, int x, int y, String[][] ocult) {
         if (tauler[x][y] != "-") {
@@ -174,6 +175,9 @@ public class HundirLaFlota {
             System.out.println("************AGUA************");
         }
     }
+//Comprueba las x que hay en el tablero
+//Tiene de entrada el tablero que introduces los disparos
+//Devuelve el numero de X que hay en el tablero
 
     public static int end(String[][] ocult) {
         int compr = 0;
@@ -182,11 +186,9 @@ public class HundirLaFlota {
                 if (ocult[i][j] == "X") {
                     compr++;
                 }
-
             }
         }
         return compr;
-
     }
 
     public static void main(String[] args) {
@@ -205,6 +207,5 @@ public class HundirLaFlota {
             System.out.println("Has perdido :(");
             mostrar_tauler(ocult);
         }
-
     }
 }
