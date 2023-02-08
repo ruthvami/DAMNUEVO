@@ -16,8 +16,8 @@ public class Productes {
         this.quantitat=quantitat;
     }
     public Productes(){//esto es un constructor
-       nom="manolo";
-       quantitat=3;
+       this.nom="NoData";
+       this.quantitat=0;
     }
 
     /**

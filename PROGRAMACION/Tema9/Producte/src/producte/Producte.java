@@ -20,16 +20,18 @@ public class Producte {
         // TODO code application logic here
         
         ArrayList lista=new ArrayList();
-        lista.add("peras");
-        lista.add("manzanas");
-        lista.add("limones");
-        lista.add("sandia");
-        lista.add("platano");
+        lista.add(new Productes("peras",7));
+        lista.add(new Productes("manzanas",3));
+        lista.add(new Productes("limones",5));
+        lista.add(new Productes("sandia",9));
+        lista.add(new Productes("platano",2));
         lista.add(2,"melocotones");
+        Productes prod;
+        
         for (Iterator iter=lista.iterator(); iter.hasNext() ; ) {
-            System.out.println(iter.next());
+           prod=(Productes)iter.next();
+            System.out.println(prod.getNom()+"-"+prod.getQuantitat());
         }
-         Producte p1=(Producte)lista.get(0);
         
         
     }

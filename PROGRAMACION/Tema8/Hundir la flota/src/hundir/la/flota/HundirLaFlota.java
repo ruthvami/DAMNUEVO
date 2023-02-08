@@ -74,6 +74,13 @@ public class HundirLaFlota {
         int Z = arr[2];
         int P = arr[3];
         crear_tauler(tauler);
+        Lanchas(tauler, L);
+        Barcos(tauler, B);
+        Acorazados(tauler, Z);
+        Portaaviones(tauler, P);
+    }
+
+    public static void Lanchas(String[][] tauler, int L) {
         for (int i = 0; i < L; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 10);
@@ -83,6 +90,9 @@ public class HundirLaFlota {
                 tauler[x][y] = "L";
             }
         }
+    }
+
+    public static void Barcos(String[][] tauler, int B) {
         for (int i = 0; i < B; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 8);
@@ -94,6 +104,9 @@ public class HundirLaFlota {
                 tauler[x][y + 2] = "B";
             }
         }
+    }
+
+    public static void Acorazados(String[][] tauler, int Z) {
         for (int i = 0; i < Z; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
@@ -106,6 +119,9 @@ public class HundirLaFlota {
                 tauler[x][y + 3] = "Z";
             }
         }
+    }
+
+    public static void Portaaviones(String[][] tauler, int P) {
         for (int i = 0; i < P; i++) {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);
@@ -118,7 +134,7 @@ public class HundirLaFlota {
                 tauler[x + 3][y] = "P";
                 tauler[x + 4][y] = "P";
             }
-        }
+        }   
     }
 //Esta funcion es para preguntar por las filas y columnas que quieres disparar y comprueba que los datos que introduce son correctos
 //Tiende de entrada el tablero que ese rellena y el que tiene los barcos ya puestos y tambien el nivel que has introducido
