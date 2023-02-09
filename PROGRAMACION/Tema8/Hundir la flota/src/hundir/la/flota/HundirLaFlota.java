@@ -254,7 +254,7 @@ public class HundirLaFlota {
             System.out.println("Has ganado!!");
         } else {
             System.out.println("Has perdido :(");
-            mostrar_tauler(ocult);
         }
+        mostrar_tauler(ocult);
     }
 }
