@@ -239,6 +239,7 @@ public class HundirLaFlota {
         }
         return compr;
     }
+//La funcion main te pregunta por el nivel que quieres seleccionar y te dice si has ganado o perdido
 
     public static void main(String[] args) {
         // TODO code application logic here
