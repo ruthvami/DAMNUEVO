@@ -79,18 +79,18 @@ public class HundirLaFlota {
         int Z = arr[2];
         int P = arr[3];
         crear_tauler(tauler);
-        Lanchas(tauler, L);
-        Barcos(tauler, B);
-        Acorazados(tauler, Z);
-        Portaaviones(tauler, P);
+        lanchas(tauler, L);
+        barcos(tauler, B);
+        acorazados(tauler, Z);
+        portaaviones(tauler, P);
     }
-//La función Lanchas dependiendo del valor introducido se ejecutan un número de Lanchas diferentes y se añaden al tablero
+//La función lanchas dependiendo del valor introducido se ejecutan un número de lanchas diferentes y se añaden al tablero
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
 //          -int L: número introducido desde la función random
 //          -String[][] tauler:Referencia al tablero que se va a rellenar
 
-    public static void Lanchas(String[][] tauler, int L) {
+    public static void lanchas(String[][] tauler, int L) {
         for (int i = 0; i < L; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 10);
@@ -101,13 +101,13 @@ public class HundirLaFlota {
             }
         }
     }
-//La función Barcos dependiendo del valor introducido se ejecutan un número de Barcos diferentes y se añaden al tablero
+//La función barcos dependiendo del valor introducido se ejecutan un número de barcos diferentes y se añaden al tablero
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
 //          -int B: número introducido desde la función random
 //          -String[][] tauler:Referencia al tablero que se va a rellenar
 
-    public static void Barcos(String[][] tauler, int B) {
+    public static void barcos(String[][] tauler, int B) {
         for (int i = 0; i < B; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 8);
@@ -120,13 +120,13 @@ public class HundirLaFlota {
             }
         }
     }
-//La función Acorazados dependiendo del valor introducido se ejecutan un número de Acorazados diferentes y se añaden al tablero
+//La función acorazados dependiendo del valor introducido se ejecutan un número de acorazados diferentes y se añaden al tablero
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
-//      -int Z: número introducido desde la función random
-//      -String[][] tauler:Referencia al tablero que se va a rellenar
+//          -int Z: número introducido desde la función random
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
-    public static void Acorazados(String[][] tauler, int Z) {
+    public static void acorazados(String[][] tauler, int Z) {
         for (int i = 0; i < Z; i++) {
             int x = (int) (Math.random() * 10);
             int y = (int) (Math.random() * 7);
@@ -140,13 +140,13 @@ public class HundirLaFlota {
             }
         }
     }
-//La función Portaaviones dependiendo del valor introducido se ejecutan un número de Portaaviones diferentes y se añaden al tablero
+//La función portaaviones dependiendo del valor introducido se ejecutan un número de portaaviones diferentes y se añaden al tablero
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
-//      -int P: número introducido desde la función random
-//      -String[][] tauler:Referencia al tablero que se va a rellenar
+//          -int P: número introducido desde la función random
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
-    public static void Portaaviones(String[][] tauler, int P) {
+    public static void portaaviones(String[][] tauler, int P) {
         for (int i = 0; i < P; i++) {
             int x = (int) (Math.random() * 6);
             int y = (int) (Math.random() * 10);

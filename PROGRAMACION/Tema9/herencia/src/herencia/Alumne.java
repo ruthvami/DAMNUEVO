@@ -8,7 +8,7 @@ package herencia;
  *
  * @author rutvac
  */
-public class Alumne extends Persona {
+public class Alumne extends Persona2 {
 
     private String assignatura;
     private double nota;
@@ -17,6 +17,9 @@ public class Alumne extends Persona {
         super(nom, DNI);
         this.assignatura = assignatura;
         this.nota = nota;
+        
+        super.nom="Pere";
+        super.DNI="122345342654";
     }
     public void mostrarPersona(){
         super.mostrarPersona();
