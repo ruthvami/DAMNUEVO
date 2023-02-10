@@ -7,10 +7,10 @@ import java.util.Scanner;
  * @author ruthv
  */
 public class HundirLaFlota {
-//La funcion mostrar_tauler crea un tablero, lo rellena  y lo muestra por pantalla
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función mostrar_tauler crea un tablero, lo rellena y lo muestra por pantalla
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void mostrar_tauler(String[][] tauler) {
 
@@ -35,10 +35,10 @@ public class HundirLaFlota {
         }
 
     }
-//La funcion crear_tauler es para rellenar la matriz de guiones
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función crear_tauler es para rellenar la matriz de guiones
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void crear_tauler(String[][] tauler) {
         for (int i = 0; i < tauler.length; i++) {
@@ -49,10 +49,10 @@ public class HundirLaFlota {
             }
         }
     }
-//La funcion menu dependiendo del valor que se introduce se devolvera un array diferente
+//La función menu dependiendo del valor que se introduce se devolverá un array diferente
 //      *Devuelve:un array lleno de int
-//      *Parametros de entrada:
-//          -int nivel: numero introducido desde el main
+//      *Parámetros de entrada:
+//           -int nivel: número introducido desde el main
 
     public static int[] menu(int nivel) {
         switch (nivel) {
@@ -66,11 +66,11 @@ public class HundirLaFlota {
                 return null;
         }
     }
-//La funcion random dependiendo del valor que se introduce el valor de los barcos sera diferente y se introducen dentro de la matriz 
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -int nivel: numero introducido desde el main
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función random dependiendo del valor que se introduce, el valor de los barcos será diferente y se introducen dentro de la matriz
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int nivel: número introducido desde el main
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void random(String[][] tauler, int nivel) {
         int[] arr = menu(nivel);
@@ -84,11 +84,11 @@ public class HundirLaFlota {
         Acorazados(tauler, Z);
         Portaaviones(tauler, P);
     }
-//La funcion Lanchas dependiendo del valor introducido se ejecutan un numero de lanchas diferentes y se añaden al tablero
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -int L: numero introducido desde la funcion random 
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función Lanchas dependiendo del valor introducido se ejecutan un número de Lanchas diferentes y se añaden al tablero
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int L: número introducido desde la función random
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void Lanchas(String[][] tauler, int L) {
         for (int i = 0; i < L; i++) {
@@ -101,11 +101,11 @@ public class HundirLaFlota {
             }
         }
     }
-//La funcion Barcos dependiendo del valor introducido se ejecutan un numero de lanchas diferentes y se añaden al tablero
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -int B: numero introducido desde la funcion random 
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función Barcos dependiendo del valor introducido se ejecutan un número de Barcos diferentes y se añaden al tablero
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int B: número introducido desde la función random
+//          -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void Barcos(String[][] tauler, int B) {
         for (int i = 0; i < B; i++) {
@@ -120,11 +120,11 @@ public class HundirLaFlota {
             }
         }
     }
-//La funcion Acorazados dependiendo del valor introducido se ejecutan un numero de lanchas diferentes y se añaden al tablero
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -int Z: numero introducido desde la funcion random 
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función Acorazados dependiendo del valor introducido se ejecutan un número de Acorazados diferentes y se añaden al tablero
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//      -int Z: número introducido desde la función random
+//      -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void Acorazados(String[][] tauler, int Z) {
         for (int i = 0; i < Z; i++) {
@@ -140,11 +140,11 @@ public class HundirLaFlota {
             }
         }
     }
-//La funcion Portaaviones dependiendo del valor introducido se ejecutan un numero de lanchas diferentes y se añaden al tablero
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
-//          -int P: numero introducido desde la funcion random 
-//          -String[][] tauler:Referencia a el tablero que se va a rellenar
+//La función Portaaviones dependiendo del valor introducido se ejecutan un número de Portaaviones diferentes y se añaden al tablero
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//      -int P: número introducido desde la función random
+//      -String[][] tauler:Referencia al tablero que se va a rellenar
 
     public static void Portaaviones(String[][] tauler, int P) {
         for (int i = 0; i < P; i++) {
@@ -161,12 +161,12 @@ public class HundirLaFlota {
             }
         }
     }
-//La funcion preguntar pregunta a donde quieres disparar y hace los intentos que se han introducido
-//      *Devuelve:un booleno true si se aciertan todos los barcos y un false si se hacen todos los intentos
-//      *Parametros de entrada:
-//          -int nivel: numero introducido desde el main
-//          -String[][] tauler:Referencia a el tablero que tiene los barcos
-//          -String[][] ocult:Referencia a el tablero que se muestra por pantalla
+//La función preguntar pregunta a donde quieres disparar y hace los intentos que se han introducido
+//      *Devuelve:un booleano true si se aciertan todos los barcos y un false si se hacen todos los intentos
+//      *Parámetros de entrada:
+//          -int nivel: número introducido desde el main
+//          -String[][] tauler:Referencia al tablero que tiene los barcos
+//          -String[][] ocult:Referencia al tablero que se muestra por pantalla
 
     public static boolean preguntar(String[][] tauler, String[][] ocult, int nivel) {
         int fila = 0, columna = 0;
@@ -206,13 +206,13 @@ public class HundirLaFlota {
         }
         return r;
     }
-//La funcion disparar_tiro añade una x y dice el texto tocado si has disparado bien y una a y el texto agua si no se ha acertado al disparar
-//      *Devuelve:es un void por lo que no devulve nada
-//      *Parametros de entrada:
+//La función disparar_tiro añade una x y dice el texto tocado si has disparado bien y una a y el texto agua si no se ha acertado al disparar
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
 //          -int x: fila donde se ha disparado
 //          -int y: columna donde se ha disparado
-//          -String[][] tauler:Referencia a el tablero que tiene los barcos
-//          -String[][] ocult:Referencia a el tablero que se muestra por pantalla
+//          -String[][] tauler:Referencia al tablero que tiene los barcos
+//          -String[][] ocult:Referencia al tablero que se muestra por pantalla
 
     public static void disparar_tiro(String[][] tauler, int x, int y, String[][] ocult) {
         if (tauler[x][y] != "-") {
@@ -223,10 +223,10 @@ public class HundirLaFlota {
             System.out.println("************AGUA************");
         }
     }
-//La funcion end recorre toda la matriz contando las X que hay
-//      *Devuelve:el numero de X que se han encontrado
-//      *Parametros de entrada:
-//          -String[][] ocult:Referencia a el tablero que se muestra por pantalla
+//La función end recorre toda la matriz contando las X que hay
+//      *Devuelve:el número de X que se han encontrado
+//      *Parámetros de entrada:
+//          -String[][] ocult:Referencia al tablero que se muestra por pantalla
 
     public static int end(String[][] ocult) {
         int compr = 0;
@@ -239,7 +239,7 @@ public class HundirLaFlota {
         }
         return compr;
     }
-//La funcion main te pregunta por el nivel que quieres seleccionar y te dice si has ganado o perdido
+//La función main te pregunta por el nivel que quieres seleccionar y te dice si has ganado o perdido
 
     public static void main(String[] args) {
         // TODO code application logic here
