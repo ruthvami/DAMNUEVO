@@ -52,10 +52,10 @@ public class HundirLaFlota {
 //La funcion menu dependiendo del valor que se introduce se devolvera un array diferente
 //      *Devuelve:un array lleno de int
 //      *Parametros de entrada:
-//          -int a: numero introducido desde el main
+//          -int nivel: numero introducido desde el main
 
-    public static int[] menu(int a) {
-        switch (a) {
+    public static int[] menu(int nivel) {
+        switch (nivel) {
             case 1:
                 return new int[]{5, 3, 1, 1, 50, 23};
             case 2:
@@ -69,11 +69,11 @@ public class HundirLaFlota {
 //La funcion random dependiendo del valor que se introduce el valor de los barcos sera diferente y se introducen dentro de la matriz 
 //      *Devuelve:es un void por lo que no devulve nada
 //      *Parametros de entrada:
-//          -int a: numero introducido desde el main
+//          -int nivel: numero introducido desde el main
 //          -String[][] tauler:Referencia a el tablero que se va a rellenar
 
-    public static void random(String[][] tauler, int a) {
-        int[] arr = menu(a);
+    public static void random(String[][] tauler, int nivel) {
+        int[] arr = menu(nivel);
         int L = arr[0];
         int B = arr[1];
         int Z = arr[2];
@@ -164,17 +164,17 @@ public class HundirLaFlota {
 //La funcion preguntar pregunta a donde quieres disparar y hace los intentos que se han introducido
 //      *Devuelve:un booleno true si se aciertan todos los barcos y un false si se hacen todos los intentos
 //      *Parametros de entrada:
-//          -int a: numero introducido desde el main
+//          -int nivel: numero introducido desde el main
 //          -String[][] tauler:Referencia a el tablero que tiene los barcos
 //          -String[][] ocult:Referencia a el tablero que se muestra por pantalla
 
-    public static boolean preguntar(String[][] tauler, String[][] ocult, int a) {
+    public static boolean preguntar(String[][] tauler, String[][] ocult, int nivel) {
         int fila = 0, columna = 0;
         boolean r = true;
-        random(tauler, a);
+        random(tauler, nivel);
         System.out.println(" ");
         Scanner sc = new Scanner(System.in);
-        int[] arr = menu(a);
+        int[] arr = menu(nivel);
         int intentos = arr[4];
         int aciertos = arr[5];
         for (int i = 1; i <= intentos; i++) {
