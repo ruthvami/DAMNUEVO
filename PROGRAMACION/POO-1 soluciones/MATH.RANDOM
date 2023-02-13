@@ -1,0 +1,2 @@
+ 
+int x = MIN + (int) (Math.random() * (MAX - MIN + 1));
