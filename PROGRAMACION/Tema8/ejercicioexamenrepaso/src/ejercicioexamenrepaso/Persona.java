@@ -77,7 +77,8 @@ public class Persona {
         char letras[] = {'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B', 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
         int x = 10000000 + (int) (Math.random() * (99999999 - 10000000 + 1));
         int res = x %23;
-        return Integer.toString(res);
+        String dnipersona = Integer.toString(x)+letras[res];
+        return dnipersona;
     }
 
     public void setNombre(String nombre) {
