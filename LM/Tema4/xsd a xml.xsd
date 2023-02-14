@@ -1,46 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:element name="aeroport">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element name="nom" type="xs:string" />
-        <xs:element name="vols">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="vol">
-                <xs:complexType>
-                  <xs:sequence>
-                    <xs:element minOccurs="0" name="diari" />
-                    <xs:element name="origen" type="xs:string" />
-                    <xs:element name="destinacio" type="xs:string" />
-                    <xs:element name="hora-eixida" type="xs:time" />
-                    <xs:element name="hora-arribada" type="xs:time" />
-                  </xs:sequence>
-                  <xs:attribute name="codi" type="xs:string" use="required" />
-                  <xs:attribute name="estat" type="xs:string" use="required" />
-                </xs:complexType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="data" type="xs:date" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-</xs:schema>
-
-
+1-
 
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="aeroport">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element name="nom" type="xs:string"/>
         <xs:element name="vols">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="vol" maxOccurs="unbounded">
+              <xs:element name="vol" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="diari" minOccurs="0"/>
@@ -49,8 +18,8 @@
                     <xs:element name="hora-eixida" type="xs:time"/>
                     <xs:element name="hora-arribada" type="xs:time"/>
                   </xs:sequence>
-                  <xs:attribute name="codi" type="xs:ID"/>
-                  <xs:attribute name="estat">
+                  <xs:attribute name="codi" type="xs:ID" use="required"/>
+                  <xs:attribute name="estat" default="E">
                     <xs:simpleType>
                       <xs:restriction base="xs:string">
                         <xs:enumeration value="C"/>
@@ -65,7 +34,60 @@
           </xs:complexType>
         </xs:element>
         <xs:element name="data" type="xs:date"/>
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+2-
+
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="factura">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dades-emissor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nom" type="xs:string" />
+              <xs:element name="cif" type="xs:string" />
+              <xs:element name="telefon" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="dades-client">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nom" type="xs:string" />
+              <xs:element name="cif" type="xs:string" />
+              <xs:element name="telefon" type="xs:unsignedInt" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="detall-factura">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="linea">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="descripcio" type="xs:string" />
+                    <xs:element name="quantitat" type="xs:unsignedByte" />
+                    <xs:element minOccurs="0" name="oferta" />
+                    <xs:element name="pvp" type="xs:decimal" />
+                  </xs:sequence>
+                  <xs:attribute name="codi-article" type="xs:string" use="required" />
+                  <xs:attribute name="tipus" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="import" type="xs:decimal" use="required" />
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
+      <xs:attribute name="número" type="xs:unsignedByte" use="required" />
+      <xs:attribute name="data" type="xs:date" use="required" />
+      <xs:attribute name="moneda" type="xs:string" use="required" />
     </xs:complexType>
   </xs:element>
 </xs:schema>

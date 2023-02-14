@@ -1,0 +1,138 @@
+ColPositions_connform.ListSessions<|||>1<|||>0,1,2,3,4,5,6
+ColPositions_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColPositions_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColPositions_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColPositions_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColPositions_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColPositions_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColPositions_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColPositions_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18
+ColPositions_MainForm.ListVariables<|||>1<|||>0,1,2
+ColSort_connform.ListSessions<|||>1<|||>0,0
+ColSort_frmTableEditor.listCheckConstraints<|||>1<|||>-1,0
+ColSort_frmTableEditor.listColumns<|||>1<|||>-1,0
+ColSort_frmTableEditor.listForeignKeys<|||>1<|||>-1,0
+ColSort_frmTableEditor.treeIndexes<|||>1<|||>-1,0
+ColSort_MainForm.ListCommandStats<|||>1<|||>1,1
+ColSort_MainForm.ListDatabases<|||>1<|||>0,0
+ColSort_MainForm.ListProcesses<|||>1<|||>0,1
+ColSort_MainForm.ListStatus<|||>1<|||>0,0
+ColSort_MainForm.ListTables<|||>1<|||>0,0
+ColSort_MainForm.ListVariables<|||>1<|||>0,0
+ColsVisible_connform.ListSessions<|||>1<|||>0,1,4,6
+ColsVisible_frmTableEditor.listCheckConstraints<|||>1<|||>0,1
+ColsVisible_frmTableEditor.listColumns<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10,11
+ColsVisible_frmTableEditor.listForeignKeys<|||>1<|||>0,1,2,3,4,5
+ColsVisible_frmTableEditor.treeIndexes<|||>1<|||>0,1,2,3
+ColsVisible_MainForm.ListCommandStats<|||>1<|||>0,1,2,3,4
+ColsVisible_MainForm.ListDatabases<|||>1<|||>0,1,2,3,4,5,6,7,8,9,10
+ColsVisible_MainForm.ListProcesses<|||>1<|||>0,1,2,3,4,5,6,7
+ColsVisible_MainForm.ListStatus<|||>1<|||>0,1,2,3
+ColsVisible_MainForm.ListTables<|||>1<|||>0,1,2,3,4,5,6,18
+ColsVisible_MainForm.ListVariables<|||>1<|||>0,1,2
+ColWidths_connform.ListSessions<|||>1<|||>163,50,50,50,50,50,10
+ColWidths_frmTableEditor.listCheckConstraints<|||>1<|||>200,408
+ColWidths_frmTableEditor.listColumns<|||>1<|||>58,139,159,90,91,93,114,119,130,142,70,64
+ColWidths_frmTableEditor.listForeignKeys<|||>1<|||>10,192,374,140,114,92
+ColWidths_frmTableEditor.treeIndexes<|||>1<|||>302,100,80,120
+ColWidths_MainForm.ListCommandStats<|||>1<|||>120,100,100,100,368
+ColWidths_MainForm.ListDatabases<|||>1<|||>150,80,50,50,50,50,50,50,50,50,120
+ColWidths_MainForm.ListProcesses<|||>1<|||>70,80,80,80,80,50,50,298
+ColWidths_MainForm.ListStatus<|||>1<|||>160,428,100,100
+ColWidths_MainForm.ListTables<|||>1<|||>120,70,70,120,120,70,100,50,70,70,70,70,70,90,120,70,70,70,50
+ColWidths_MainForm.ListVariables<|||>1<|||>160,200,428
+CreateDbCollation<|||>1<|||>utf8mb4_general_ci
+DateTimeEditor_CursorPos_Type4<|||>3<|||>3
+DoUsageStatistics<|||>3<|||>1
+ExportSQL_CreateDatabases<|||>3<|||>1
+ExportSQL_CreateTables<|||>3<|||>1
+ExportSQL_DataHow<|||>3<|||>2
+ExportSQL_Filenames<|||>1<|||>Z:\home\rutvac\Documents\DAMNUEVO\BASE DE DATOS\facturas_RuthVacas.sql<{{{><}}}>Z:\home\rutvac\Documents\HTML RUTH\test2.sql<{{{><}}}>
+FileDialogEncoding_MainForm<|||>3<|||>0
+LastActiveSession<|||>1<|||>mysql
+LastSessions<|||>1<|||>mysql
+LastUsageStatisticCall<|||>1<|||>2023-02-09 16:34:01
+MainWinHeight<|||>3<|||>512
+MainWinLeft<|||>3<|||>212
+MainWinMaximized<|||>3<|||>1
+MainWinOnMonitor<|||>3<|||>0
+MainWinTop<|||>3<|||>134
+MainWinWidth<|||>3<|||>985
+querymemoheight<|||>3<|||>362
+SessionManager_WindowHeight<|||>3<|||>866
+SessionManager_WindowLeft<|||>3<|||>-4
+SessionManager_WindowTop<|||>3<|||>38
+SessionManager_WindowWidth<|||>3<|||>1608
+SQLFile0<|||>1<|||>C:\users\rutvac\Application Data\HeidiSQL\Backups\query-tab-2022-12-07_20-37-22-912.sql
+SQLFile1<|||>1<|||>C:\users\rutvac\Els meus documents\DAMNUEVO\BASE DE DATOS\Consulta1_RuthVacas.sql
+SQLFile2<|||>1<|||>C:\users\rutvac\Els meus documents\dsf.sql
+SQLFile3<|||>1<|||>C:\users\rutvac\Application Data\HeidiSQL\Backups\query-tab-2022-10-11_18-21-21-860.sql
+TableTools_WindowWidth<|||>3<|||>727
+Updatecheck<|||>3<|||>1
+UpdatecheckLastrun<|||>1<|||>2023-02-14 18:30:58
+Servers\mysql\CleartextPluginEnabled<|||>3<|||>0
+Servers\mysql\Comment<|||>1<|||>Conexión a mysql local
+Servers\mysql\Compressed<|||>3<|||>0
+Servers\mysql\ConnectCount<|||>3<|||>40
+Servers\mysql\Databases<|||>1<|||>
+Servers\mysql\FullTableStatus<|||>3<|||>1
+Servers\mysql\Host<|||>1<|||>127.0.0.1
+Servers\mysql\IgnoreDatabasePattern<|||>1<|||>
+Servers\mysql\KeepAlive<|||>3<|||>20
+Servers\mysql\LastConnect<|||>1<|||>2023-02-14 18:48:20
+Servers\mysql\lastUsedDB<|||>1<|||>VUELOS
+Servers\mysql\Library<|||>1<|||>libmariadb.dll
+Servers\mysql\LocalTimeZone<|||>3<|||>0
+Servers\mysql\LogFileDdl<|||>3<|||>0
+Servers\mysql\LogFileDml<|||>3<|||>0
+Servers\mysql\LogFilePath<|||>1<|||>C:\users\rutvac\Application Data\HeidiSQL\Logs\%session\%db\%y%m%d.sql
+Servers\mysql\LoginPrompt<|||>3<|||>0
+Servers\mysql\NetType<|||>3<|||>0
+Servers\mysql\Password<|||>1<|||>1
+Servers\mysql\Port<|||>1<|||>3306
+Servers\mysql\QueryTimeout<|||>3<|||>30
+Servers\mysql\RefusedCount<|||>3<|||>8
+Servers\mysql\ServerVersion<|||>3<|||>100424
+Servers\mysql\ServerVersionFull<|||>1<|||>10.4.24-MariaDB - Source distribution
+Servers\mysql\SessionCreated<|||>1<|||>2022-09-22 21:25:35
+Servers\mysql\SshExecutable<|||>1<|||>plink.exe
+Servers\mysql\SSHtunnelHost<|||>1<|||>
+Servers\mysql\SSHtunnelHostPort<|||>3<|||>22
+Servers\mysql\SSHtunnelPassword<|||>1<|||>8
+Servers\mysql\SSHtunnelPort<|||>3<|||>3307
+Servers\mysql\SSHtunnelPrivateKey<|||>1<|||>
+Servers\mysql\SSHtunnelTimeout<|||>3<|||>4
+Servers\mysql\SSHtunnelUser<|||>1<|||>
+Servers\mysql\SSL_Active<|||>3<|||>0
+Servers\mysql\SSL_CA<|||>1<|||>
+Servers\mysql\SSL_Cert<|||>1<|||>
+Servers\mysql\SSL_Cipher<|||>1<|||>
+Servers\mysql\SSL_Key<|||>1<|||>
+Servers\mysql\StartupScriptFilename<|||>1<|||>
+Servers\mysql\TreeBackground<|||>3<|||>536870911
+Servers\mysql\User<|||>1<|||>root
+Servers\mysql\WindowsAuth<|||>3<|||>0
+Servers\mysql\QueryHistory\1<|||>1<|||>2022-11-15 19:49:42|FACTURA|39|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN E HIJOS' WHERE CLI_NOMBRE='RUBEN';<{{{><}}}>
+Servers\mysql\QueryHistory\10<|||>1<|||>2022-12-01 21:39:30|taula2|0|SELECT * FROM DETALLES_FAC AS det,ARTICULO AS art WHERE det.DET_CODE_ART=art.ART_ID;
+Servers\mysql\QueryHistory\11<|||>1<|||>2022-12-07 16:39:26|FACTURA|0|<{{{><}}}>UPDATE FACTURA SET FACTURA.FAC_CONDICION_PAGO='EFECTIVO' WHERE FACTURA.FAC_CONDICION_PAGO='TARJETA';<{{{><}}}>
+Servers\mysql\QueryHistory\12<|||>1<|||>2022-12-07 16:50:26|FACTURA|41|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN' WHERE CLI_NOMBRE='RUBEN E HIJOS';
+Servers\mysql\QueryHistory\13<|||>1<|||>2022-12-07 16:52:12|FACTURA|40|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN' WHERE CLI_NOMBRE='RUBEN E HIJOS';<{{{><}}}>INSERT INTO ARTICULO (ART_PRECIO_UNIDAD) VALUES ('598');
+Servers\mysql\QueryHistory\14<|||>1<|||>2022-12-07 17:28:36|taula2|0|<{{{><}}}>SELECT det.DET_NOMBRE_FAC AS 'factura' FROM DETALLES_FAC AS det,ARTICULO AS art WHERE det.DET_CODE_ART=art.ART_ID;
+Servers\mysql\QueryHistory\15<|||>1<|||>2022-12-07 17:28:48|taula2|1|<{{{><}}}>SELECT * FROM DETALLES_FAC AS det,ARTICULO AS art WHERE det.DET_CODE_ART=art.ART_ID;
+Servers\mysql\QueryHistory\16<|||>1<|||>2022-12-07 21:11:22|facturas_RuthVacas|0|UPDATE cliente SET nombre_cliente='artura' WHERE nombre_cliente='ruben';<{{{><}}}>
+Servers\mysql\QueryHistory\17<|||>1<|||>2022-12-07 21:13:39|facturas_RuthVacas|1|UPDATE cliente SET nombre_cliente='ruben' WHERE nombre_cliente='artura';<{{{><}}}>
+Servers\mysql\QueryHistory\18<|||>1<|||>2022-12-07 21:19:07|facturas_RuthVacas|31|INSERT INTO articulo (articulo.cod_articulo) VALUES ('3');<{{{><}}}>
+Servers\mysql\QueryHistory\19<|||>1<|||>2022-12-07 21:15:02|facturas_RuthVacas|1|UPDATE cliente SET nombre_cliente='ruben' WHERE nombre_cliente='artura';<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\mysql\QueryHistory\2<|||>1<|||>2022-11-15 20:03:34|FACTURA|34|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN E HIJOS' WHERE CLI_NOMBRE='RUBEN';<{{{><}}}>UPDATE FACTURA SET FAC_IMPORTE_NETO='2' WHERE FAC_IMPORTE_NETO='26';
+Servers\mysql\QueryHistory\20<|||>1<|||>2022-12-07 21:18:20|facturas_RuthVacas|43|UPDATE cliente SET nombre_cliente='ruben' WHERE nombre_cliente='pluto';<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\mysql\QueryHistory\21<|||>1<|||>2022-12-07 21:17:43|facturas_RuthVacas|1|UPDATE cliente SET nombre_cliente='ruben' WHERE nombre_cliente='arturo';<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\mysql\QueryHistory\22<|||>1<|||>2022-12-07 21:23:22|facturas_RuthVacas|1|SELECT * FROM detalle_factura AS det,articulo AS art WHERE det.cod_articulo=art.art_id;<{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}><{{{><}}}>
+Servers\mysql\QueryHistory\24<|||>1<|||>2022-12-07 21:23:44|facturas_RuthVacas|0|SELECT * FROM detalle_factura AS det,articulo AS art WHERE det.cod_articulo=art.art_id;
+Servers\mysql\QueryHistory\3<|||>1<|||>2022-12-01 21:40:50|taula2|0|SELECT det.DET_NOMBRE_FAC AS 'factura' FROM DETALLES_FAC AS det,ARTICULO AS art WHERE det.DET_CODE_ART=art.ART_ID;<{{{><}}}>
+Servers\mysql\QueryHistory\4<|||>1<|||>2022-12-01 21:43:39|taula2|0|SELECT det.DET_NOMBRE_FAC AS 'factura' FROM DETALLES_FAC AS det,ARTICULO AS art WHERE det.DET_CODE_ART=art.ART_ID;<{{{><}}}>SELECT * FROM DETALLES_FAC AS det, FACTURA AS fac WHERE det.DET_NOMBRE_FAC=fac.FAC_ID;
+Servers\mysql\QueryHistory\5<|||>1<|||>2022-12-07 16:38:22|FACTURA|0|<{{{><}}}>UPDATE FACTURA SET FACTURA.FAC_CONDICION_PAGO='TARJETA' WHERE FACTURA.FAC_CONDICION_PAGO='EFECTIVO';<{{{><}}}>
+Servers\mysql\QueryHistory\6<|||>1<|||>2022-11-15 19:48:56|FACTURA|1|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN' WHERE CLI_NOMBRE='RUBEN E HIJOS';<{{{><}}}>
+Servers\mysql\QueryHistory\7<|||>1<|||>2022-12-07 16:48:05|FACTURA|41|UPDATE FACTURA SET FAC_CONDICION_PAGO='TARJETA' WHERE FAC_CONDICION_PAGO='EFECTIVO';<{{{><}}}>
+Servers\mysql\QueryHistory\8<|||>1<|||>2022-11-16 21:16:04|FACTURA|33|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN E HIJOS' WHERE CLI_NOMBRE='RUBEN';<{{{><}}}>UPDATE FACTURA SET FAC_IMPORTE_NETO='2' WHERE FAC_IMPORTE_NETO='26';<{{{><}}}>INSERT INTO VENDEDOR (VEN_NOMBRE) VALUES ('ALBA');<{{{><}}}>
+Servers\mysql\QueryHistory\9<|||>1<|||>2022-11-16 21:23:07|FACTURA|159|UPDATE CLIENTE SET CLI_NOMBRE='RUBEN E HIJOS' WHERE CLI_NOMBRE='RUBEN';<{{{><}}}>UPDATE FACTURA SET FAC_IMPORTE_NETO='2' WHERE FAC_IMPORTE_NETO='26';<{{{><}}}>INSERT INTO VENDEDOR (VEN_NOMBRE) VALUES ('ALBAVENDEDOR');<{{{><}}}>INSERT INTO ARTICULO (ART_PRECIO_UNIDAD) VALUES ('5');<{{{><}}}>INSERT INTO ARTICULO (ART_CODIGO) VALUES ('3');
