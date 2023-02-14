@@ -1,3 +1,4 @@
+Ruth Vacas Miñana 
 1-
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -49,8 +50,20 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nom" type="xs:string" />
-              <xs:element name="cif" type="xs:string" />
-              <xs:element name="telefon" type="xs:unsignedInt" />
+              <xs:element name="cif">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{8}-[A-Z]" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{9}" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -58,15 +71,27 @@
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nom" type="xs:string" />
-              <xs:element name="cif" type="xs:string" />
-              <xs:element name="telefon" type="xs:unsignedInt" />
+              <xs:element name="cif">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{8}-[A-Z]" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefon">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{9}" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="detall-factura">
           <xs:complexType>
             <xs:sequence>
-              <xs:element maxOccurs="unbounded" name="linea">
+              <xs:element maxOccurs="15" name="linea">
                 <xs:complexType>
                   <xs:sequence>
                     <xs:element name="descripcio" type="xs:string" />
@@ -83,9 +108,6 @@
           </xs:complexType>
         </xs:element>
       </xs:sequence>
-      <xs:attribute name="número" type="xs:unsignedByte" use="required" />
-      <xs:attribute name="data" type="xs:date" use="required" />
-      <xs:attribute name="moneda" type="xs:string" use="required" />
     </xs:complexType>
   </xs:element>
 </xs:schema>
