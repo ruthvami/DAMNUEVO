@@ -46,6 +46,7 @@ public class Persona {
     }
 
     public int calcularIMC() {
+        System.out.println((this.peso / Math.pow(this.altura, 2)));
         if ((this.peso / Math.pow(this.altura, 2)) < 20) {
             return BAJO;
         } else if ((peso / Math.pow(this.altura, 2)) >= 20 && (this.peso / Math.pow(this.altura, 2)) <= 25) {
