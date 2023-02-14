@@ -6,8 +6,9 @@
     <xs:complexType>
       <xs:all>
         <xs:element name="nom" type="xs:string"/>
-        <xs:element name="vols">
-          <xs:complexType>
+          <xs:element name="data" type="xs:date"/>
+           <xs:element name="vols">
+            <xs:complexType>
             <xs:sequence>
               <xs:element name="vol" maxOccurs="unbounded" minOccurs="0">
                 <xs:complexType>
@@ -33,7 +34,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="data" type="xs:date"/>
       </xs:all>
     </xs:complexType>
   </xs:element>
