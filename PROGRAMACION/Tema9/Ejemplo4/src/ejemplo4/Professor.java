@@ -17,7 +17,7 @@ public class Professor extends Persona {
     private ArrayList moduls;
     private String horari;
 
-    public Professor(String nom, String dni, String adreça, int telefon, int code, String dept, ArrayList moduls, String horari) {
+    public Professor(String nom, String dni, String adreça, int telefon, String dept, int code, ArrayList moduls, String horari) {
         super(nom, dni, adreça, telefon);
         this.code = code;
         this.dept = dept;
