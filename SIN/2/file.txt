@@ -53,7 +53,7 @@ La imagen no existe
 5. What command will you type to automatically return to your connection directory?
 What command will you type to return to the last visited directory?
 
-cd /
+cd +Enter
 cd ..
 
 6. Enter the /dev directory. What kind of files do you find inside?
