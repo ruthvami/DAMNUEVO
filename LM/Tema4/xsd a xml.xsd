@@ -45,7 +45,7 @@ Ruth Vacas Miñana
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="factura">
     <xs:complexType>
-      <xs:sequence>
+      <xs:all>
         <xs:element name="dades-emissor">
           <xs:complexType>
             <xs:sequence>
@@ -66,8 +66,8 @@ Ruth Vacas Miñana
               </xs:element>
             </xs:sequence>
           </xs:complexType>
-        </xs:element>
-        <xs:element name="dades-client">
+        </xs:group>
+        <xs:group name="dades-client">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nom" type="xs:string" />
@@ -87,8 +87,8 @@ Ruth Vacas Miñana
               </xs:element>
             </xs:sequence>
           </xs:complexType>
-        </xs:element>
-        <xs:element name="detall-factura">
+        </xs:group>
+        <xs:group name="detall-factura">
           <xs:complexType>
             <xs:sequence>
               <xs:element maxOccurs="15" name="linea">
@@ -96,7 +96,7 @@ Ruth Vacas Miñana
                   <xs:sequence>
                     <xs:element name="descripcio" type="xs:string" />
                     <xs:element name="quantitat" type="xs:unsignedByte" />
-                    <xs:element minOccurs="0" name="oferta" />
+                    <xs:element  name="oferta" minOccurs="0" />
                     <xs:element name="pvp" type="xs:decimal" />
                   </xs:sequence>
                   <xs:attribute name="codi-article" type="xs:string" use="required" />
@@ -106,8 +106,40 @@ Ruth Vacas Miñana
             </xs:sequence>
             <xs:attribute name="import" type="xs:decimal" use="required" />
           </xs:complexType>
-        </xs:element>
-      </xs:sequence>
+        </xs:group>
+      </xs:all>
     </xs:complexType>
   </xs:element>
+</xs:schema>
+
+<simpleType name="tipustext">
+    <restriction base="xs:string"/>
+    <xs:minlenght=""/>
+</simpleType>
+
+<simpleType name="tipuspreu">
+    <restriction base="xs:decimal"/>
+    <xs:minExclusive value="0"/>
+    <xs:maxInclusive value="999"/>
+</simpleType>
+<xs:attributegroup name ="atributs factura">
+    <xs:attribute name="numero" use="required"/>
+    <xs:attribute name="data" type="xs:date"use="required" />
+    <xs:attribute name="euro" fixed="euro" use="required"/>
+
+</xs:attributegroup>
+
+
+
+
+1-1
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="redistre">
+  <xs:complexType>
+    <xs:sequence>
+      <xs:group ref="usuari-empleat"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:element>
 </xs:schema>

@@ -1,0 +1,95 @@
+1. Open a terminal. What is the current directory? What command will you use to find
+out?
+rutvac@INF01-PC21:~$ pwd
+/home/rutvac
+2. Change the current directory to the system root. Get a detailed listing. Identify the
+function of the directories that appear.
+rutvac@INF01-PC21:/$ cd /
+rutvac@INF01-PC21:/$ ls -l
+total 2097272
+drwxr-xr-x   2 root root       4096 de se  6  2021 bin
+drwxr-xr-x   3 root root       4096 de no 15 20:20 boot
+drwxr-xr-x   2 root root       4096 d’oct 24  2019 cdrom
+drwxr-xr-x  20 root root       4660 de fe 16 20:16 dev
+drwxr-xr-x 177 root root      12288 de fe 16 13:35 etc
+drwxr-xr-x  36 root root       4096 de fe 15 09:57 home
+lrwxrwxrwx   1 root root         34 de se  6  2021 initrd.img -> boot/initrd.img-4.15.0-151-generic
+lrwxrwxrwx   1 root root         34 de se  6  2021 initrd.img.old -> boot/initrd.img-4.15.0-118-generic
+drwxr-xr-x  23 root root       4096 de ma 10  2021 lib
+drwxr-xr-x   2 root root       4096 de ma 10  2021 lib64
+drwx------   2 root root      16384 d’oct 24  2019 lost+found
+drwxr-xr-x  14 root root       4096 d’oct  4 19:51 media
+drwxr-xr-x   2 root root       4096 de ju 25  2019 mnt
+drwxr-xr-x   9 root root       4096 de ge 19 19:53 opt
+dr-xr-xr-x 249 root root          0 de fe 16 12:13 proc
+drwx------  10 root root       4096 de ge 19 20:46 root
+drwxr-xr-x  43 root root       1400 de fe 16 18:09 run
+drwxr-xr-x   2 root root      12288 de ge 19 19:53 sbin
+drwxr-xr-x  20 root root       4096 de ge 19 20:34 snap
+drwxr-xr-x   4 root root       4096 de ge 19 20:29 srv
+-rw-------   1 root root 2147483648 d’oct 24  2019 swapfile
+dr-xr-xr-x  13 root root          0 de fe 16 12:13 sys
+drwxrwxrwt  19 root root      20480 de fe 16 20:16 tmp
+drwxr-xr-x  12 root root       4096 de ma 10  2021 usr
+drwxr-xr-x  13 root root       4096 de ju 25  2019 var
+lrwxrwxrwx   1 root root         31 de se  6  2021 vmlinuz -> boot/vmlinuz-4.15.0-151-generic
+lrwxrwxrwx   1 root root         31 de se  6  2021 vmlinuz.old -> boot/vmlinuz-4.15.0-118-generic
+
+3. Go to the /bin directory and get a long listing. What's in this directory? What types of
+files do you find?
+
+Binari files, it used to storage big amounts of data.
+
+4. /boot/vmlinuz is a symbolic link that points to the kernel image used when booting
+the operating system. What is the name of this image on your machine? How many
+bytes does it occupy?
+La imagen no existe 
+-rw------- 1 root root  8380064 de ju 23  2020 vmlinuz-4.15.0-109-generic
+-rw------- 1 root root  8388256 de se  8  2020 vmlinuz-4.15.0-118-generic
+-rw------- 1 root root  8453792 de ju  9  2021 vmlinuz-4.15.0-151-generic
+-rw-r--r-- 1 root root  8294136 de ju 25  2019 vmlinuz-4.15.0-52-generic
+-rw-r--r-- 1 root root  8294136 de ju 25  2019 vmlinuz-4.15.0-52-generic.efi.signed
+
+5. What command will you type to automatically return to your connection directory?
+What command will you type to return to the last visited directory?
+
+cd /
+cd ..
+
+6. Enter the /dev directory. What kind of files do you find inside?
+
+Contains the special device files for all hardware devices
+
+7. Enter the /etc directory. What does this directory contain? View the contents of the
+/etc/passwd file. What do you think it contains?
+
+store configuration files both at the component level of the operating system itself, as well as for programs and applications installed afterwards.
+
+8. Can you get a listing of the contents of /root? What if this function of this directory?
+
+9. Return to your connection directory and create the 'files_tree' directory. Inside,
+create directories: 'branch1', 'branch2' and 'branch3'.
+
+    
+10.Copy the /usr/share/pixmaps/debian-logo.png file to ~/files_tree/branch1
+11. Go to ~/files_tree/branch2 directory. Use the cp command to copy the
+~/files_tree/rama1/debian-logo.png file up to here using a relative path.
+12. Copy from here (using absolute paths), the file used in point 10 into the branch3
+directory.
+13. Rename the ~/files_tree/branch3/debian-logo.png file to letter.txt
+14. Use the file command as follows: 'file ~/files_tree/branch1/debian-logo.png' What
+happens, what output does the file command present?
+15. Use the file command on the letter.txt, does the file name confuse the system?
+16.Delete the letter.txt file
+17. What hidden files do you find in the system root? And in your home directory?
+18. What does the ~/.bashrc file contain ?
+19. How much it occupies:
+a. The /etc directory ?
+b. Your personal home directory?
+c. The entire file system?
+20. Run the mount command and interpret its output
+21. Run the df -h command and interpret its output
+22. If you want to copy a directory with all its contents you must performe a recursive
+copy. Refer to the cp manual page to see which option will be used.
+23. If you want to delete a directory with all its contents. Recursive deletion must be
+performed. See the rm manual page to see which option will be used
