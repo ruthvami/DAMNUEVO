@@ -33,6 +33,10 @@ public class POLIMOSFISME {
         mare2 = fi2;
         System.out.println("Variable mare2: ");
         mare2.crida();
+        
+        fi2.crida(23);
+        fi2.crida(23, "obrera");
+        fi2.crida(23, 5000);
     }
 }
 
@@ -47,6 +51,7 @@ class Filla1 extends Mare {
 
     public void crida() {
         System.out.println("Estic a la Filla1");
+        
     }
 }
 
@@ -54,5 +59,14 @@ class Filla2 extends Mare {
 
     public void crida() {
         System.out.println("Estic a la Filla2");
+    }
+    public void crida(int edat) {
+        System.out.println("Estic a la Filla2 i tinc "+edat);
+    }
+    public void crida(int edat,String feina) {
+        System.out.println("Estic a la Filla2 i tinc "+edat+" i treballe de "+feina);
+    }
+    public void crida(int edat, double feina) {
+        System.out.println("Estic a la Filla2 i tinc "+edat+" i el meu dou es de "+feina);
     }
 }
