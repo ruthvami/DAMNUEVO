@@ -1,9 +1,12 @@
 1. Open a terminal. What is the current directory? What command will you use to find
 out?
+
 rutvac@INF01-PC21:~$ pwd
 /home/rutvac
+
 2. Change the current directory to the system root. Get a detailed listing. Identify the
 function of the directories that appear.
+
 rutvac@INF01-PC21:/$ cd /
 rutvac@INF01-PC21:/$ ls -l
 total 2097272
@@ -43,6 +46,7 @@ Binari files, it used to storage big amounts of data.
 4. /boot/vmlinuz is a symbolic link that points to the kernel image used when booting
 the operating system. What is the name of this image on your machine? How many
 bytes does it occupy?
+
 La imagen no existe 
 -rw------- 1 root root  8380064 de ju 23  2020 vmlinuz-4.15.0-109-generic
 -rw------- 1 root root  8388256 de se  8  2020 vmlinuz-4.15.0-118-generic
@@ -63,33 +67,98 @@ Contains the special device files for all hardware devices
 7. Enter the /etc directory. What does this directory contain? View the contents of the
 /etc/passwd file. What do you think it contains?
 
-store configuration files both at the component level of the operating system itself, as well as for programs and applications installed afterwards.
+Store configuration files both at the component level of the operating system itself, as well as for programs and applications installed afterwards.
 
 8. Can you get a listing of the contents of /root? What if this function of this directory?
+
+rutvac@INF01-PC21:~$ cd /
 
 9. Return to your connection directory and create the 'files_tree' directory. Inside,
 create directories: 'branch1', 'branch2' and 'branch3'.
 
+rutvac@INF01-PC21:~$ mkdir files_tree
+rutvac@INF01-PC21:~$ cd files_tree/
+rutvac@INF01-PC21:~/files_tree$ mkdir branch1
+rutvac@INF01-PC21:~/files_tree$ mkdir branch2
+rutvac@INF01-PC21:~/files_tree$ mkdir branch3
     
 10.Copy the /usr/share/pixmaps/debian-logo.png file to ~/files_tree/branch1
+
+rutvac@INF01-PC21:~/files_tree/branch2$ cp /usr/share/pixmaps/debian-logo.png  ~/files_tree/branch1
+
 11. Go to ~/files_tree/branch2 directory. Use the cp command to copy the
 ~/files_tree/rama1/debian-logo.png file up to here using a relative path.
+
+rutvac@INF01-PC21:~/files_tree/branch2$ cp ~/files_tree/branch1/debian-logo.png ~/files_tree/branch2
+rutvac@INF01-PC21:~/files_tree/branch2$ ls -l
+total 4
+-rw-r--r-- 1 rutvac rutvac 1718 de fe 17 17:22 debian-logo.png
+
 12. Copy from here (using absolute paths), the file used in point 10 into the branch3
 directory.
+
+rutvac@INF01-PC21:~/files_tree/branch2$ cp /usr/share/pixmaps/debian-logo.png ~/files_tree/branch3
+
 13. Rename the ~/files_tree/branch3/debian-logo.png file to letter.txt
+
+rutvac@INF01-PC21:~/files_tree/branch3$ mv ~/files_tree/branch3/debian-logo.png ~/files_tree/branch3/letter.txt
+rutvac@INF01-PC21:~/files_tree/branch3$ ls
+letter.txt
+
 14. Use the file command as follows: 'file ~/files_tree/branch1/debian-logo.png' What
 happens, what output does the file command present?
+
+rutvac@INF01-PC21:~$ file file ~/files_tree/branch1/debian-logo.png
+file:                                            cannot open `file' (No such file or directory)
+/home/rutvac/files_tree/branch1/debian-logo.png: PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
+
 15. Use the file command on the letter.txt, does the file name confuse the system?
+
+rutvac@INF01-PC21:~/files_tree/branch3$ file letter.txt
+letter.txt: PNG image data, 48 x 48, 8-bit/color RGBA, non-interlaced
+
 16.Delete the letter.txt file
+
+rutvac@INF01-PC21:~/files_tree/branch3$ rm letter.txt 
+rutvac@INF01-PC21:~/files_tree/branch3$ ls
+debian-logo.png
+
 17. What hidden files do you find in the system root? And in your home directory?
+
+rutvac@INF01-PC21:/$ ls -a
+.     cdrom  initrd.img      lost+found  proc  snap      tmp      vmlinuz.old
+..    dev    initrd.img.old  media       root  srv       usr      .xinputrc
+bin   etc    lib             mnt         run   swapfile  var
+boot  home   lib64           opt         sbin  sys       vmlinuz
+
 18. What does the ~/.bashrc file contain ?
+
+rutvac@INF01-PC21:/$ ls ~/.bashrc
+/home/rutvac/.bashrc
+
+
 19. How much it occupies:
 a. The /etc directory ?
+
+rutvac@INF01-PC21:/$ sudo du -sh /etc
+[sudo] contrasenya per a rutvac: 
+27M     /etc
+
 b. Your personal home directory?
+
+rutvac@INF01-PC21:/$ sudo du -sh /home
+178G    /home
+
 c. The entire file system?
+
+
 20. Run the mount command and interpret its output
+
 21. Run the df -h command and interpret its output
+
 22. If you want to copy a directory with all its contents you must performe a recursive
 copy. Refer to the cp manual page to see which option will be used.
+
 23. If you want to delete a directory with all its contents. Recursive deletion must be
 performed. See the rm manual page to see which option will be used
+
