@@ -1,0 +1,35 @@
+---------------------------------------ACTIVIDADES-----------------------------------
+10. Localizar aquellas líneas que contengan el patrón “root” en el fichero /etc/passwd
+
+− Crear un fichero de texto para trabajar con él de nombre Pirata.txt y con el siguiente
+contenido:
+
+Con diez cañones por banda,
+viento en popa a toda vela,
+no corta el mar, sino vuela,
+un velero bergantín:
+bajel pirata que llaman
+por su bravura el Temido,
+en todo mar conocido
+del uno al otro confín.
+
+− Listar aquellas líneas que tengan el patrón “el mar”, mostrando además el número de
+línea donde se encuentren dentro del fichero
+
+− Mostrar aquellas líneas con palabras que tienen una “u” seguidas de cualquier otro
+carácter
+
+− Mostrar aquellas líneas que con palabras que empiezan con “u” seguida de cualquier
+otro carácter
+
+− Mostrar aquellas líneas que comienzan por “en”
+
+− Mostrar aquellas líneas que terminan en “,”
+
+− Mostrar aquellas líneas que comiencen por “C”, seguidas de cero o más repeticiones
+de cualquier carácter y terminen en “,”
+
+− Mostrar aquellas líneas que contengan cadenas de caracteres que no contienen una
+letra mayúscula, seguida del carácter “a” y del carácter “,”
+
+− Mostrar aquellas líneas que no contengan la palabra “en”
