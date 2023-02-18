@@ -153,12 +153,69 @@ c. The entire file system?
 
 
 20. Run the mount command and interpret its output
+rutvac@INF01-PC21:/$ mount 
+sysfs on /sys type sysfs (rw,nosuid,nodev,noexec,relatime)
+proc on /proc type proc (rw,nosuid,nodev,noexec,relatime)
+udev on /dev type devtmpfs (rw,nosuid,relatime,size=1973644k,nr_inodes=493411,mode=755,inode64)
+devpts on /dev/pts type devpts (rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000)
+tmpfs on /run type tmpfs (rw,nosuid,nodev,noexec,relatime,size=401800k,mode=755,inode64)
+/dev/sda3 on / type ext4 (rw,relatime,errors=remount-ro)
+securityfs on /sys/kernel/security type securityfs (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev,inode64)
+tmpfs on /run/lock type tmpfs (rw,nosuid,nodev,noexec,relatime,size=5120k,inode64)
+cgroup2 on /sys/fs/cgroup type cgroup2 (rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot)
+pstore on /sys/fs/pstore type pstore (rw,nosuid,nodev,noexec,relatime)
+bpf on /sys/fs/bpf type bpf (rw,nosuid,nodev,noexec,relatime,mode=700)
+systemd-1 on /proc/sys/fs/binfmt_misc type autofs (rw,relatime,fd=29,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14055)
+hugetlbfs on /dev/hugepages type hugetlbfs (rw,relatime,pagesize=2M)
+mqueue on /dev/mqueue type mqueue (rw,nosuid,nodev,noexec,relatime)
+debugfs on /sys/kernel/debug type debugfs (rw,nosuid,nodev,noexec,relatime)
+tracefs on /sys/kernel/tracing type tracefs (rw,nosuid,nodev,noexec,relatime)
+fusectl on /sys/fs/fuse/connections type fusectl (rw,nosuid,nodev,noexec,relatime)
+none on /run/credentials/systemd-sysusers.service type ramfs (ro,nosuid,nodev,noexec,relatime,mode=700)
+configfs on /sys/kernel/config type configfs (rw,nosuid,nodev,noexec,relatime)
+/var/lib/snapd/snaps/bare_5.snap on /snap/bare/5 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/code_113.snap on /snap/code/113 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/firefox_2088.snap on /snap/firefox/2088 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/core_14399.snap on /snap/core/14399 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/core20_1738.snap on /snap/core20/1738 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/firefox_2154.snap on /snap/firefox/2154 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-38-2004_119.snap on /snap/gnome-3-38-2004/119 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gtk-common-themes_1535.snap on /snap/gtk-common-themes/1535 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/gnome-3-38-2004_112.snap on /snap/gnome-3-38-2004/112 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_599.snap on /snap/snap-store/599 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/netbeans_69.snap on /snap/netbeans/69 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snapd_17883.snap on /snap/snapd/17883 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snapd-desktop-integration_43.snap on /snap/snapd-desktop-integration/43 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/dev/sda3 on /var/snap/firefox/common/host-hunspell type ext4 (ro,noexec,noatime,errors=remount-ro)
+/dev/sda2 on /boot/efi type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro)
+binfmt_misc on /proc/sys/fs/binfmt_misc type binfmt_misc (rw,nosuid,nodev,noexec,relatime)
+tmpfs on /run/user/1000 type tmpfs (rw,nosuid,nodev,relatime,size=401796k,nr_inodes=100449,mode=700,uid=1000,gid=1000,inode64)
+gvfsd-fuse on /run/user/1000/gvfs type fuse.gvfsd-fuse (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+portal on /run/user/1000/doc type fuse.portal (rw,nosuid,nodev,relatime,user_id=1000,group_id=1000)
+tmpfs on /run/snapd/ns type tmpfs (rw,nosuid,nodev,noexec,relatime,size=401800k,mode=755,inode64)
+nsfs on /run/snapd/ns/snap-store.mnt type nsfs (rw)
+/var/lib/snapd/snaps/core20_1778.snap on /snap/core20/1778 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snapd-desktop-integration_49.snap on /snap/snapd-desktop-integration/49 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/snap-store_638.snap on /snap/snap-store/638 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+/var/lib/snapd/snaps/code_116.snap on /snap/code/116 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+nsfs on /run/snapd/ns/snapd-desktop-integration.mnt type nsfs (rw)
+/var/lib/snapd/snaps/netbeans_74.snap on /snap/netbeans/74 type squashfs (ro,nodev,relatime,errors=continue,x-gdu.hide)
+nsfs on /run/snapd/ns/firefox.mnt type nsfs (rw)
+
+Running mount without arguments will output a list of filesystems mounted according to the table of mounted filesystems in /etc/mtab
 
 21. Run the df -h command and interpret its output
+rutvac@INF01-PC21:/$ df -h
+S.ficheros     Tamaño Usados  Disp Uso% Montado en
+tmpfs            393M   1,6M  391M   1% /run
+/dev/sda3         49G    19G   28G  41% /
+tmpfs            2,0G      0  2,0G   0% /dev/shm
+tmpfs            5,0M   4,0K  5,0M   1% /run/lock
+/dev/sda2        512M   5,3M  507M   2% /boot/efi
+tmpfs            393M   4,7M  388M   2% /run/user/1000
 
-22. If you want to copy a directory with all its contents you must performe a recursive
-copy. Refer to the cp manual page to see which option will be used.
-
-23. If you want to delete a directory with all its contents. Recursive deletion must be
-performed. See the rm manual page to see which option will be used
+22. If you want to copy a directory with all its contents you must performe a recursive copy. Refer to the cp manual page to see which option will be used.
+ 
+23. If you want to delete a directory with all its contents. Recursive deletion must be performed. See the rm manual page to see which option will be used
 
