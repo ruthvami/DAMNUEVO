@@ -1,0 +1,136 @@
+Ruth Vacas Miñana 
+1-
+c)
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="id">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[UE][0-9]{1,5}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="cognoms-i-nom">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-zA-Z ]{1,30},[a-zA-Z ]{1,20}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="email">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[a-z]{1,15}@[a-z]{1,25}\.[a-z]{2,4}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="temps">
+    <xs:restriction base="xs:integer">
+      <xs:minExclusive value="0"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="registre">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="usuari" type="tipusPersona" maxOccurs="unbounded"/>
+        <xs:element name="empleat" type="tipusEmpleat" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:complexType name="tipusPersona">
+    <xs:sequence>
+      <xs:element name="cognoms-i-nom" type="cognoms-i-nom"/>
+      <xs:element name="email" type="email"/>
+      <xs:element name="connexions" type="connexions" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute name="identificador" type="id" use="required"/>
+  </xs:complexType>
+  <xs:complexType name="tipusEmpleat">
+    <xs:complexContent>
+      <xs:extension base="tipusPersona">
+        <xs:sequence>
+          <xs:element name="departament" type="departament"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="connexions">
+    <xs:sequence>
+      <xs:element name="connexio" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="departament">
+    <xs:choice>
+      <xs:element name="administració"/>
+      <xs:element name="informàtica"/>
+      <xs:element name="màrketing"/>
+    </xs:choice>
+  </xs:complexType>
+</xs:schema>
+
+d)
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  
+
+  <xs:simpleType name="tipusText">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:simpleType name="tipusDepartament">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Administració"/>
+      <xs:enumeration value="Informàtica"/>
+      <xs:enumeration value="Màrketing"/>
+      <xs:enumeration value="Recursos humans"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  <xs:complexType name="tipusEmpleat">
+    <xs:sequence>
+      <xs:element name="nom-i-cognoms" type="tipusText"/>
+      <xs:element name="baixa" type="xs:string" minOccurs="0"/>
+      <xs:element name="salari" type="xs:decimal"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="tipusDadesGenerals">
+    <xs:sequence>
+      <xs:element name="nom-empresa" type="tipusText"/>
+      <xs:element name="número-treballadors" type="xs:positiveInteger"/>
+      <xs:element name="sector">
+        <xs:complexType>
+          <xs:choice>
+            <xs:element name="educació"/>
+            <xs:element name="finances"/>
+            <xs:element name="tecnologia"/>
+          </xs:choice>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:element name="personal">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="dades-generals" type="tipusDadesGenerals"/>
+          <xs:element name="dades-departaments">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element name="departament" maxOccurs="unbounded">
+                  <xs:complexType>
+                    <xs:sequence>
+                      <xs:element name="cap">
+                        <xs:complexType>
+                          <xs:sequence>
+                            <xs:element name="nom-i-cognoms" type="tipusText"/>
+                            <xs:element name="salari" type="xs:decimal"/>
+                            <xs:element name="clau" type="xs:string" minOccurs="0" maxOccurs="1" default="123456"/>
+                          </xs:sequence>
+                          <xs:attribute name="usuari" type="tipusText"/>
+                        </xs:complexType>
+                      </xs:element>
+                      <xs:element name="empleat" type="tipusEmpleat" minOccurs="0" maxOccurs="3"/>
+                    </xs:sequence>
+                    <xs:attribute name="codi" type="xs:string" use="required" />
+                   
+
