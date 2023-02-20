@@ -132,5 +132,16 @@ d)
                       <xs:element name="empleat" type="tipusEmpleat" minOccurs="0" maxOccurs="3"/>
                     </xs:sequence>
                     <xs:attribute name="codi" type="xs:string" use="required" />
-                   
-
+                  <xs:attribute name="nom-departament" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="fecha" type="xs:date" use="required" />
+      <xs:attribute name="multinacional" type="xs:boolean" use="required" />
+      <xs:attribute name="moneda" type="xs:string" use="required" />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
