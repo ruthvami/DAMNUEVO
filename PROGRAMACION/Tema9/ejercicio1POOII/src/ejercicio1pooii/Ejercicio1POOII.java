@@ -28,10 +28,26 @@ public class Ejercicio1POOII {
         frutas.add(a4);
         frutas.add(a5);
         
+        iter(frutas);
         
+        frutas.remove(a4);
+        frutas.remove(a2);
         
+        frutas.add(1, new Aliment("Manzanas",2));
+        
+        System.out.println("------------------------------");
+        iter(frutas);
+        
+        frutas.clear();
+        if (frutas.isEmpty()) {
+            System.out.println("ArrayList vacio");
+        }else{
+            System.out.println("ArrayList no vacio");
+        }
+        
+
     }
-    public void iter(ArrayList frutas){
+    public static void iter(ArrayList frutas){
     Iterator iter = frutas.iterator();
 
         while (iter.hasNext()) {
