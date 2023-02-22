@@ -52,17 +52,21 @@ Ruth Vacas Miñana
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="html" />
-    <xsl:template match="ciclo">
+    <xsl:template match="ciclos">
         <html>
             <body>
                 <h1>GRADO SUPERIOR</h1>
-                <xsl:if test="grado='Superior'">
-                    <li>
-                        <u>
-                            <xsl:value-of select="@codigo" />: <xsl:value-of select="nombre" />
-                        </u>
-                    </li>
-                </xsl:if>
+                <ul>
+                    <xsl:for-each select="ciclo">
+                        <xsl:if test="grado='Superior'">
+                            <li>
+                                <u>
+                                    <xsl:value-of select="@codigo" />: <xsl:value-of select="nombre" />
+                                </u>
+                            </li>
+                        </xsl:if>
+                    </xsl:for-each>
+                </ul>
             </body>
         </html>
     </xsl:template>
