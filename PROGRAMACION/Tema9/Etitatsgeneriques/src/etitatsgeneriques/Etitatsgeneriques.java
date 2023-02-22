@@ -35,6 +35,9 @@ public class Etitatsgeneriques {
         String s1=al.get(0);
         String s2=al.get(1);
         String s3=al.get(2);
+        
+        
+       
     }
     
 }

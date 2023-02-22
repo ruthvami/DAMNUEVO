@@ -42,7 +42,7 @@ public class Interficie {
 
         float areas = 0;
         while (iter.hasNext()) {
-            Figura f =  iter.next(); // esto es para poder sumar las areas
+            Figura f = iter.next(); // esto es para poder sumar las areas
             areas = f.area() + areas;
             System.out.println(f);
         }
