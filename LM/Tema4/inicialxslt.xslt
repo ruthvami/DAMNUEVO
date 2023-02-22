@@ -56,10 +56,13 @@ Ruth Vacas Miñana
         <html>
             <body>
                 <h1>GRADO SUPERIOR</h1>
-                <li>
-                    <u><xsl:value-of select="@codigo" />: <xsl:value-of select="nombre" /></u>
-                </li>
-
+                <xsl:choose>
+                    <xsl:when test="grado == Superior">
+                        <li>
+                            <u><xsl:value-of select="@codigo" />: <xsl:value-of select="nombre" /></u>
+                        </li>
+                    </xsl:when>
+                </xsl:choose>
             </body>
         </html>
     </xsl:template>
