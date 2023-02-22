@@ -32,6 +32,6 @@ public class Aliment {
         this.quantitat=quantitat;
     }
     public String toString(){
-        return "Nom: "+this.nom+" Quantitat: "+this.quantitat;
+        return "Nom:"+this.nom+"    Quantitat: "+this.quantitat;
     }
 }

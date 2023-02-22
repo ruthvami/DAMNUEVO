@@ -28,7 +28,7 @@ public class Interficie {
         Figura r1 = new Rectangle(2, 4);
         Figura r2 = new Rectangle(9, 3);
 
-        ArrayList Figures = new ArrayList();
+        ArrayList<Figura> Figures = new ArrayList<>();
 
         Figures.add(q1);
         Figures.add(q2);
@@ -38,11 +38,11 @@ public class Interficie {
         Figures.add(c1);
         Figures.add(c2);
 
-        Iterator iter = Figures.iterator();
+        Iterator<Figura> iter = Figures.iterator();
 
         float areas = 0;
         while (iter.hasNext()) {
-            Figura f = (Figura) iter.next();
+            Figura f =  iter.next(); // esto es para poder sumar las areas
             areas = f.area() + areas;
             System.out.println(f);
         }
