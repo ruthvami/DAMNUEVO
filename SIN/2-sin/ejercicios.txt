@@ -1,0 +1,61 @@
+---------------------------------------ACTIVIDADES-----------------------------------
+10. Localizar aquellas líneas que contengan el patrón “root” en el fichero /etc/passwd
+rutvac@INF01-PC21:~$ grep  root /etc/passwd
+root:x:0:0:root:/root:/bin/bash
+nm-openvpn:x:120:126:NetworkManager OpenVPN,,,:/var/lib/openvpn/chroot:/usr/sbin/nologin
+
+− Crear un fichero de texto para trabajar con él de nombre Pirata.txt y con el siguiente
+contenido:
+
+Con diez cañones por banda,
+viento en popa a toda vela,
+no corta el mar, sino vuela,
+un velero bergantín:
+bajel pirata que llaman
+por su bravura el Temido,
+en todo mar conocido
+del uno al otro confín.
+
+− Listar aquellas líneas que tengan el patrón “el mar”, mostrando además el número de línea donde se encuentren dentro del fichero
+rutvac@INF01-PC21:~$ grep el.mar  Pirata.txt 
+no corta el mar, sino vuela,
+rutvac@INF01-PC21:~$ grep -c  el.mar  Pirata.txt 
+1
+
+− Mostrar aquellas líneas con palabras que tienen una “u” seguidas de cualquier otro carácter
+rutvac@INF01-PC21:~$ grep u.  Pirata.txt 
+no corta el mar, sino vuela,
+un velero bergantín:
+bajel pirata que llaman
+por su bravura el Temido,
+del uno al otro confín.
+
+− Mostrar aquellas líneas que con palabras que empiezan con “u” seguida de cualquier otro carácter
+rutvac@INF01-PC21:~$ grep ^u  Pirata.txt 
+un velero bergantín:
+
+− Mostrar aquellas líneas que comienzan por “en”
+rutvac@INF01-PC21:~$ grep ^en  Pirata.txt 
+en todo mar conocido
+
+− Mostrar aquellas líneas que terminan en “,”
+rutvac@INF01-PC21:~$ grep ,$ Pirata.txt 
+Con diez cañones por banda,
+viento en popa a toda vela,
+no corta el mar, sino vuela,
+por su bravura el Temido,
+
+− Mostrar aquellas líneas que comiencen por “C”, seguidas de cero o más repeticiones de cualquier carácter y terminen en “,”
+rutvac@INF01-PC21:~$grep ^C.*,$ Pirata.txt 
+Con diez cañones por banda,
+
+− Mostrar aquellas líneas que contengan cadenas de caracteres que no contienen una letra mayúscula, seguida del carácter “a” y del carácter “,”
+rutvac@INF01-PC21:~$
+− Mostrar aquellas líneas que no contengan la palabra “en”
+rutvac@INF01-PC21:~$grep -v en Pirata.txt 
+Con diez cañones por banda,
+no corta el mar, sino vuela,
+un velero bergantín:
+bajel pirata que llaman
+por su bravura el Temido,
+del uno al otro confín.
