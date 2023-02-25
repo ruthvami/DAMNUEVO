@@ -21,4 +21,62 @@ Ruth Vacas Miñana
     </xsl:template>
 </xsl:stylesheet>
 
-2-
+2-NO VA
+<xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match=" /">
+        <inventari>
+            <xsl:if select="inventari/producte">
+            <xsl:if test="@edifici=' A'">
+            <producte>
+                <pes>
+                    <xsl:value-of select="pes" />
+                </pes>
+                <nom>
+                    <xsl:value-of select="nom" />
+                </nom>
+                <lloc>
+                    <xsl:attribute name="edifici">
+                        <xsl:value-of
+                            select="lugar/@edifici" />
+                    </xsl:attribute>
+                    <aula>
+                        <xsl:value-of
+                            select="lloc/aula" />
+                    </aula>
+                </lloc>
+            </producte>
+        </inventari>
+    </xsl:for-each>
+    </xsl:template>
+</xsl:stylesheet>
+3-
+<xsl:stylesheet
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+    <xsl:template match="/">
+        <inventari>
+            <xsl:for-each select="inventari/producte">
+                <xsl:if test="pes &lt; 7">
+                    <producte>
+                        <pes>
+                            <xsl:value-of select="pes" />
+                        </pes>
+                        <nom>
+                            <xsl:value-of select="nom" />
+                        </nom>
+                        <lloc>
+                            <xsl:attribute name="edifici">
+                                <xsl:value-of
+                                    select="lloc/@edifici" />
+                            </xsl:attribute>
+                            <aula>
+                                <xsl:value-of
+                                    select="lloc/aula" />
+                            </aula>
+                        </lloc>
+                    </producte>
+                </xsl:if>
+            </xsl:for-each>
+        </inventari>
+    </xsl:template>
+</xsl:stylesheet>
