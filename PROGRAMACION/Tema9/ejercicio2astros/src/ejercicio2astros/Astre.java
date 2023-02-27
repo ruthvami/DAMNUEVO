@@ -27,7 +27,7 @@ public class Astre {
         
     }
    public void mostrar(){
-       System.out.println("****Caracteristicas del Astre***");
+       System.out.println("****Caracteristicas del Planeta/Satellit***");
        System.out.println("Nom:"+this.nom+"\tMassa:"+this.massa);
        System.out.println("Radi:"+this.radi+"\tTemperatura:"+this.temperatura);
        System.out.println("Gravetat:"+this.gravetat+"\tRotacio:"+this.rotacio);
