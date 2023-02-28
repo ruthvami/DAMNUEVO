@@ -10,4 +10,11 @@ Ruth Vacas Miñana
 //@id
 5-
 //@any
-
+6-
+//cicle[grau='Mitjà']
+7-
+//nom[../grau='Superior']
+8-
+//nom[../decretTitol/@any<2010]/text()
+9-
+//nom[../decretTitol/@any=2010]/text() or //nom[../decretTitol/@any=2008]/text()
