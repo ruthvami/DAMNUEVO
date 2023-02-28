@@ -64,7 +64,7 @@ Ruth Vacas Miñana
         <html>
             <body>
                 <ul>
-                    <xsl:for-each select="producte[pes>'7' ]">
+                    <xsl:for-each select="producte[pes>='7' ]">
                         <li>
                             <xsl:value-of select="@codi" />
                             <ul>
@@ -118,9 +118,10 @@ Ruth Vacas Miñana
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
     <xsl:template match="/">
+    
         <html>
             <body>
-                <table>
+                <table border="1">
                     <xsl:for-each select="inventari/producte">
                         <tr>
 
@@ -237,6 +238,7 @@ Ruth Vacas Miñana
                 <h1>Aula 6</h1>
                 <table>
                     <xsl:for-each select="producte[lloc/@edifici='A' and pes < 7]">
+                    <xsl:if test="pes/@unitat?=kg">
                         <tr>
                             <td>
                                 <xsl:value-of select="nom" />
