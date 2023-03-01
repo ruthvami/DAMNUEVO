@@ -17,4 +17,4 @@ Ruth Vacas Miñana
 8-
 //nom[../decretTitol/@any<2010]/text()
 9-
-//nom[../decretTitol/@any=2010]/text() or //nom[../decretTitol/@any=2008]/text()
+//nom[../decretTitol/@any=2010]/text() or //nom[../decretTitol/@any=2008]/text() 

@@ -23,29 +23,40 @@ public class Empresaiempleados {
     Empleados empl4 = new Empleados("Pedro", "34567890C", 2000.0);
     
     ArrayList<Empleados> empleado = new ArrayList<>();
+    ArrayList<Empleados> empleado2 = new ArrayList<>();
     Empresas empresa1 = new Empresas("Company 1", "123456789A", 555555555, "789 Elm St", empleado);
-    Empresas empresa2 = new Empresas("Company 2", "234567890B", 666666666, "987 Maple St", empleado);
+    Empresas empresa2 = new Empresas("Company 2", "234567890B", 666666666, "987 Maple St", empleado2);
     
     empl1.imprimirEmp();
-    
+        
     empresa1.añadirempleado(empl1);
     empresa1.añadirempleado(empl2);
+    
+        System.out.println("");
     
     empresa2.añadirempleado(empl3);
     empresa2.añadirempleado(empl4);
     
+        System.out.println("");
+    
     System.out.println("Empresa 1");
     empresa1.mostartodo();
 
+        System.out.println("");
+    
     
     System.out.println("Sueldo bruto");
     empresa2.sumapreciosbrutos();
     System.out.println("Sueldo neto");
     empresa2.sumasueldosnetos();
     
+        System.out.println("");
+    
     empresa1.eliminarempleados(empl3);
     
-    empresa2.casitodo();
+        System.out.println("");
+    
+    empresa2.muestracasitodo();
     }
     
 }

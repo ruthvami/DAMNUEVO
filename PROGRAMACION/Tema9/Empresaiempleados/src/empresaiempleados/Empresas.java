@@ -36,14 +36,14 @@ public class Empresas {
         while (iter.hasNext()) {
             Empleados emp = iter.next();
             emp.imprimirEmp();
-            System.out.println("------------------------------------------------");
+            System.out.println("-------------------------------------------------------------------------------------------------------");
         }
     }
-    public void casitodo(){
+    public void muestracasitodo(){
        Iterator<Empleados> iter= empleados.iterator();
        for (int i = 0; i < empleados.size(); i++) {
            Empleados emp = iter.next();
-           emp.solotrescosas();
+           System.out.println("DNI:"+emp.getDNI()+" sueldo bruto "+emp.getSueldo()+" sueldo neto "+emp.sueldoneto());
         }
     }
     public void sumasueldosnetos(){
@@ -53,13 +53,15 @@ public class Empresas {
             Empleados emp = iter.next();
             suma+=emp.sueldoneto();
         }
+        System.out.println(suma);
     }
     public void sumapreciosbrutos(){
         double suma=0;
         Iterator<Empleados> iter = empleados.iterator();
         while (iter.hasNext()) {
             Empleados emp = iter.next();
-            suma+=emp.sueldoneto();
+            suma+=emp.getSueldo();
         }
+        System.out.println(suma);
     }
 }

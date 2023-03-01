@@ -10,6 +10,14 @@ package empresaiempleados;
  */
 public class Empleados {
 
+    public double getSueldo() {
+        return sueldo;
+    }
+
+    public void setSueldo(double sueldo) {
+        this.sueldo = sueldo;
+    }
+
     private final String NOM;
     private final String DNI;
     private double sueldo;
@@ -34,9 +42,9 @@ public class Empleados {
 
     public void imprimirEmp() {
         if (this.direccion == null) {
-            System.out.println(this.NOM+" con DNI "+this.DNI+" cobrara de sueldo bruto "+this.sueldo);
+            System.out.println(this.NOM+" con DNI "+this.getDNI()+" cobrara de sueldo bruto "+this.getSueldo());
         } else {
-            System.out.println(this.NOM+" con DNI "+this.DNI+" cobrara de sueldo bruto "+this.sueldo+" vive en "+this.direccion+" y su edad es de "+this.edad+" años\nTelefono:"+this.telefono);
+            System.out.println(this.NOM+" con DNI "+this.getDNI()+" cobrara de sueldo bruto "+this.getSueldo()+" vive en "+this.direccion+" y su edad es de "+this.edad+" años\nTelefono:"+this.telefono);
         }
     }
     public double sueldoneto(){
@@ -44,15 +52,17 @@ public class Empleados {
         double sueldos=(this.sueldo*12);
         if(sueldos<12000){
            irpf= 0.20;
-        }else if(sueldos>=12000&&this.sueldo<=25000){
+        }else if(sueldos>=12000&&sueldos<=25000){
              irpf=0.30;
              
         }else if(sueldos>25000){
              irpf=0.4;
         }
-        return (this.sueldo-(this.sueldo*irpf));
+        return (this.getSueldo()-(this.getSueldo()*irpf));
     }
-    public String solotrescosas(){
-        return "DNI:"+this.DNI+" sueldo bruto "+this.sueldo+" sueldo neto "+this.sueldoneto();
+
+    public String getDNI() {
+        return DNI;
     }
+    
 }
