@@ -34,23 +34,25 @@ public class Empleados {
 
     public void imprimirEmp() {
         if (this.direccion == null) {
-            System.out.println(this.NOM+"con DNI "+this.DNI+"cobrara de sueldo bruto"+this.sueldo);
+            System.out.println(this.NOM+" con DNI "+this.DNI+" cobrara de sueldo bruto "+this.sueldo);
         } else {
-            System.out.println(this.NOM+"con DNI "+this.DNI+"cobrara de sueldo bruto"+this.sueldo+"vive en "+this.direccion+"y su edad es de"+this.edad+"\nTelefono:"+this.telefono);
+            System.out.println(this.NOM+" con DNI "+this.DNI+" cobrara de sueldo bruto "+this.sueldo+" vive en "+this.direccion+" y su edad es de "+this.edad+" años\nTelefono:"+this.telefono);
         }
     }
     public double sueldoneto(){
-        int irpf = 0;
-        if((this.sueldo*12)<12000){
-           irpf= 20;
-        }else if((this.sueldo*12)>=12000&&this.sueldo<=25000){
-             irpf=30;
+        double irpf = 0;
+        double sueldos=(this.sueldo*12);
+        if(sueldos<12000){
+           irpf= 0.20;
+        }else if(sueldos>=12000&&this.sueldo<=25000){
+             irpf=0.30;
              
-        }else if((this.sueldo*12)>25000){
-             irpf=40;
+        }else if(sueldos>25000){
+             irpf=0.4;
         }
-        System.out.println(irpf);
-        return (this.sueldo-(this.sueldo*(irpf/100)));
+        return (this.sueldo-(this.sueldo*irpf));
     }
-    
+    public String solotrescosas(){
+        return "DNI:"+this.DNI+" sueldo bruto "+this.sueldo+" sueldo neto "+this.sueldoneto();
+    }
 }

@@ -32,9 +32,34 @@ public class Empresas {
         empleados.remove(empl);
     }
     public void mostartodo(){
-       Iterator inter= empleados.iterator();
+       Iterator<Empleados> iter = empleados.iterator();
+        while (iter.hasNext()) {
+            Empleados emp = iter.next();
+            emp.imprimirEmp();
+            System.out.println("------------------------------------------------");
+        }
+    }
+    public void casitodo(){
+       Iterator<Empleados> iter= empleados.iterator();
        for (int i = 0; i < empleados.size(); i++) {
-            System.out.print(i+"- "+empleados.get(i));
+           Empleados emp = iter.next();
+           emp.solotrescosas();
+        }
+    }
+    public void sumasueldosnetos(){
+        double suma=0;
+        Iterator<Empleados> iter = empleados.iterator();
+        while (iter.hasNext()) {
+            Empleados emp = iter.next();
+            suma+=emp.sueldoneto();
+        }
+    }
+    public void sumapreciosbrutos(){
+        double suma=0;
+        Iterator<Empleados> iter = empleados.iterator();
+        while (iter.hasNext()) {
+            Empleados emp = iter.next();
+            suma+=emp.sueldoneto();
         }
     }
 }
