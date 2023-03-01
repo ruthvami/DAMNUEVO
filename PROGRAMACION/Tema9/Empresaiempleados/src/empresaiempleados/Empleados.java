@@ -22,10 +22,10 @@ public class Empleados {
     private final String DNI;
     private double sueldo;
     private int edad;
-    private int telefono;
+    private String telefono;
     private String direccion;
 
-    public Empleados(String NOM, String DNI, double sueldo, int edad, int telefono, String direccion) {
+    public Empleados(String NOM, String DNI, double sueldo, int edad, String telefono, String direccion) {
         this.DNI = DNI;
         this.NOM = NOM;
         this.direccion = direccion;

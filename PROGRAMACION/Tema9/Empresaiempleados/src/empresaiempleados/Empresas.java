@@ -16,13 +16,13 @@ public class Empresas {
     private final String CIF;
     private int telefono;
     private String direccion;
-    private ArrayList <Empleados> empleados;
+    private ArrayList <Empleados> empleados=new ArrayList();
     
-    public Empresas(String NOM,String CIF,int telefono,String direccion,ArrayList empleados){
+    public Empresas(String NOM,String CIF,int telefono,String direccion){
     this.CIF=CIF;
     this.NOM=NOM;
     this.direccion=direccion;
-    this.empleados=empleados;
+    
     this.telefono=telefono;
     }
     public void añadirempleado(Empleados empl){
@@ -46,7 +46,7 @@ public class Empresas {
            System.out.println("DNI:"+emp.getDNI()+" sueldo bruto "+emp.getSueldo()+" sueldo neto "+emp.sueldoneto());
         }
     }
-    public void sumasueldosnetos(){
+    public void sumasueldosnetos(){// hecho con iterator
         double suma=0;
         Iterator<Empleados> iter = empleados.iterator();
         while (iter.hasNext()) {
@@ -55,12 +55,11 @@ public class Empresas {
         }
         System.out.println(suma);
     }
-    public void sumapreciosbrutos(){
+    public void sumapreciosbrutos(){//hecho con otro metodo pero lo mismo de arriba
         double suma=0;
-        Iterator<Empleados> iter = empleados.iterator();
-        while (iter.hasNext()) {
-            Empleados emp = iter.next();
-            suma+=emp.getSueldo();
+        
+        for (int i = 0; i < empleados.size(); i++){
+            suma+=empleados.get(i).getSueldo();
         }
         System.out.println(suma);
     }
