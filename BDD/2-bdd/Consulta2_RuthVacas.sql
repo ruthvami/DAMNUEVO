@@ -1,0 +1,1 @@
+SELECT *FROM subproducto WHERE sub_prod_id IN (SELECT prod_id FROM productos WHERE sub_nombre LIKE 'a%');

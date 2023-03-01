@@ -1,0 +1,1 @@
+SELECT *FROM productos WHERE prod_cat_id IN (SELECT CAT_ID FROM categorias WHERE cat_nombre LIKE 'a%');
