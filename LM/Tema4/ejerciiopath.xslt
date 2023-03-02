@@ -37,9 +37,10 @@ EJERCICIO 3-
 1-
 //modul[cicle =//cicle[nom='Sistemes Microinformàtics i Xarxes'/@id]]/nom/text()
 2-
-
+//cicle[modul[nom='lenguatges de marques i sistemes de gestió d'informació']]/nom/text()
 3-
-
-4-
-
+//modul[../cicles/cicle/grau='Superior']/nom
+ 4-
+//modul[cicle[@id]/decretTitol/@any='2008']/nom/text()
 5-
+//cicle[moduls/modul[curs=1]]/grau
