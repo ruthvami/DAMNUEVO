@@ -18,6 +18,6 @@ public class Motos extends Terrestres{
     @Override
     public void mostrar() {
          super.mostrar(); 
-         System.out.println("Tiene color"+this.color);
+         System.out.println("Tiene color "+this.color);
     }
 }
