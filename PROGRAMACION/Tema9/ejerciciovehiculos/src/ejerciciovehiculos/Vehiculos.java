@@ -9,7 +9,8 @@ package ejerciciovehiculos;
  * @author rutvac
  */
 public abstract class Vehiculos {
-    private final String matricula;
+    
+    private final String matricula;//ponerlo en mayuscula
     private final String modelo;
     
     public Vehiculos(String matricula,String modelo){

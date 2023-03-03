@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package ejerciciovehiculos;
 
 /**
@@ -13,8 +10,14 @@ public  class Terrestres extends Vehiculos{
     public Terrestres(String matricula,String modelo,int rodes){
         super(matricula,modelo);
         this.rodes=rodes;
+        comprovarMatricula();
     }
     public void  mostrar(){
         System.out.println( "El modelo "+this.getModelo()+" con matricula "+this.getMatricula()+" tiene "+this.rodes+" ruedas"); 
+    }
+     public void comprovarMatricula(){
+        if(!getMatricula().matches("^\\[0-9]{4}[A-Z]}{3}$")){
+            System.out.println("Error al introducir la matricula del vehiculo "+this.getClass().getSimpleName());
+        }
     }
 }
