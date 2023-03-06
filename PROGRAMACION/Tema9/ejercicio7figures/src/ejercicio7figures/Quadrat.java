@@ -8,31 +8,33 @@ package ejercicio7figures;
  *
  * @author rutvac
  */
-public class Quadrat implements iFigura2D{
+public class Quadrat implements iFigura2D {
+
     private double lados;
 
     public Quadrat(double lados) {
         this.lados = lados;
     }
-    
-    public double perimetre(){
-        return lados*4;
+
+    public double perimetre() {
+        return lados * 4;
     }
 
-    public double area(){
-        return lados*2;
+    public double area() {
+        return lados * lados;
     }
 
     public void escalar(double escala) {
-        if (escala >0) {
-            this.lados*=escala;
+        if (escala > 0) {
+
+            this.lados *= escala;
             
+        } else {
+            System.out.println("Error al introducir escala");
         }
-        System.out.println("Error al introducir escala");
-        
     }
 
-    public String imprimir(){
-        return this.getClass().getSimpleName()+"\nPerimetro: "+this.perimetre()+"\n Area: "+this.area()+"\n Lado:"+this.lados;
+    public String imprimir() {
+        return this.getClass().getSimpleName() + "\nPerimetro: " + this.perimetre() + "\nArea: " + this.area() + "\nLado:" + this.lados;
     }
 }

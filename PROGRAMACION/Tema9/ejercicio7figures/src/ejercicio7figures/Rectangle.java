@@ -30,9 +30,10 @@ public class Rectangle implements iFigura2D{
         if (escala >0) {
             this.ample*=escala;
             this.alt*=escala;
-        }
+            
+        }else{
         System.out.println("Error al introducir escala");
-        
+        }
     }
 
     public String imprimir(){

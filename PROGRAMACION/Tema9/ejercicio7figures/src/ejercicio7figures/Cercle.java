@@ -28,9 +28,9 @@ public class Cercle implements iFigura2D{
     public void escalar(double escala) {
         if (escala >0) {
             this.radi*=escala;
-        }
+        }else{
         System.out.println("Error al introducir escala");
-        
+        }
     }
 
     public String imprimir() {
