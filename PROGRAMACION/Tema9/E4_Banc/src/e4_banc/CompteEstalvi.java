@@ -27,6 +27,6 @@ public class CompteEstalvi extends CompteBancari {
     }
 
     public void mostrarDades() {
-        System.out.println(this.getClass().getSimpleName() + " El IBAN es " + this.getIBAN()  + " , el saldo de la cuenta es de " + this.getSaldo()+ " y tiene un interes de " + this.getInteresAnualBasic());
+        System.out.println(this.getClass().getSimpleName() + "- El IBAN es " + this.getIBAN()  + " , el saldo de la cuenta es de " + this.getSaldo()+ " y tiene un interes de " + this.getInteresAnualBasic());
     }
 }

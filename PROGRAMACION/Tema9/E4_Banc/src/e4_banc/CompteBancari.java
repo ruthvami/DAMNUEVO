@@ -25,12 +25,12 @@ public abstract class CompteBancari {
     }
 
     public void retirar(double compte) {
-        if (compte <= this.saldo && compte < MAXRETIRAR) {
-            this.modificarSaldo(-compte);
+        if (compte > this.saldo) {
+            System.out.println("***No se puede realizar la operacion***");
         } else if (compte > MAXRETIRAR) {
-            System.out.println("No es posible retirar mas de " + this.MAXRETIRAR + " euros");
+            System.out.println("***No es posible retirar mas de " + this.MAXRETIRAR + " euros***");
         } else {
-            System.out.println("No se puede realizar la operacion");
+            this.modificarSaldo(-compte);
         }
     }
 
@@ -39,7 +39,7 @@ public abstract class CompteBancari {
             bancari.ingressar(dinero);
             this.retirar(dinero);
         } else {
-            System.out.println("ERROR NO SE HA PODIDO REALIZAR LA OPERACION");
+            System.out.println("***Error no se puede trasppasar esa cantidad de dinero***");
         }
         return this.saldo;
     }
