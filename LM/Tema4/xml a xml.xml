@@ -5,26 +5,24 @@ EJERCICIO 1-
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="/">
   <museus>
-    <xsl:apply-templates />
-  </museus>
-</xsl:template>
-<xsl:template match="museu">
+    <xsl:for-each select="museu">
   <museu>
     <xsl:attribute name="nom"><xsl:value-of select="nom" /></xsl:attribute>
     <xsl:attribute name="ciutat"><xsl:value-of select="ciutat" /></xsl:attribute>
     <xsl:attribute name="pais"><xsl:value-of select="pais" /></xsl:attribute>
   </museu>
+</xsl:for-each>
+  </museus>
 </xsl:template>
+
 </xsl:stylesheet>
 2-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 <xsl:template match="/">
   <museus>
-    <xsl:apply-templates />
-  </museus>
-</xsl:template>
-<xsl:template match="museu">
+    <xsl:for-each select="museu" />
+ 
   <museu>
     <nom><xsl:value-of select="nom" /></ciutat>
     <ubicacio>
@@ -32,50 +30,49 @@ EJERCICIO 1-
       <xsl:attribute name="pais"><xsl:value-of select="pais" /></xsl:attribute>
     </ubicacio>
   </museu>
+</xsl:for-each >
+ </museus>
 </xsl:template>
 </xsl:stylesheet>
 3-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <ciutats>
-    <xsl:apply-templates />
-  </ciutats>
-</xsl:template>
+    <xsl:for-each select="museu" />
+
 <xsl:template match="museu">
   <ciutat>
     <nom><xsl:value-of select="ciutat" /></nom>
     <pais><xsl:value-of select="pais" /></pais>
     <museu><xsl:value-of select="nom" /></museu>
   </ciutat>
+</xsl:for-each>
+</ciutats>
 </xsl:template>
 </xsl:stylesheet>
 4-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <ciutats>
-    <xsl:apply-templates />
-  </ciutats>
-</xsl:template>
+    <xsl:for-each select="museu" />
 <xsl:template match="museu">
   <ciutat>
     <xsl:attribute name="nom"><xsl:value-of select="ciutat" /></xsl:attribute>
     <xsl:attribute name="pais"><xsl:value-of select="pais" /></xsl:attribute>
     <museu><xsl:value-of select="nom" /></museu>
   </ciutat>
+</xsl:for-each>
+</ciutats>
 </xsl:template>
 </xsl:stylesheet>
 5-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <paissos>
-    <xsl:apply-templates />
-  </paissos>
+    <xsl:for-each select="museu" />
 </xsl:template>
 <xsl:template match="museu">
   <pais>
@@ -85,13 +82,14 @@ EJERCICIO 1-
         <xsl:attribute name="ciutat"><xsl:value-of select="ciutat" /></xsl:attribute>
     </museu>
   </pais>
+  <xsl:for-each >
+</paissos>
 </xsl:template>
 </xsl:stylesheet>
 EJERCICIO 2-
 1-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <museus>
     <xsl:apply-templates />
@@ -115,7 +113,7 @@ EJERCICIO 2-
 </xsl:template>
 <xsl:template match="museu">
   <museu>
-    <xsl:attribute name="ubicacio"><xsl:value-of select="@ciutat" /> (<xsl:value-of select="@pais" />)</xsl:attribute>
+    <xsl:attribute name="ubicacio"><xsl:value-of select="@ciutat" />(<xsl:value-of select="@pais" />)</xsl:attribute>
     <xsl:value-of select="@nom" />
   </museu>
 </xsl:template>
@@ -123,7 +121,6 @@ EJERCICIO 2-
 3-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <ciutats>
     <xsl:apply-templates />
@@ -140,7 +137,6 @@ EJERCICIO 2-
 4-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <paissos>
     <xsl:apply-templates />
@@ -161,7 +157,6 @@ EJERCICIO 2-
 5-
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
-<xsl:strip-space elements="*" />
 <xsl:template match="/">
   <llocs>
     <xsl:apply-templates />
@@ -169,9 +164,10 @@ EJERCICIO 2-
 </xsl:template>
 <xsl:template match="museu">
   <lloc tipus="museu">
-    <ubicacio nom="ciutat"><xsl:value-of select="@ciutat" /></ubicacio>
-    <ubicacio nom="pais"><xsl:value-of select="@pais" /></ubicacio>
-    <nom><xsl:value-of select="@nom" /></nom>
+    <ubicacio nom="ciutat"><xsl:value-of select="@ciutat"/></ubicacio>
+    <ubicacio nom="pais"><xsl:value-of select="@pais"/></ubicacio>
+    <nom><xsl:value-of select="@nom"/></nom>
   </lloc>
+
 </xsl:template>
 </xsl:stylesheet>
