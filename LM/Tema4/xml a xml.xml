@@ -164,10 +164,9 @@ EJERCICIO 2-
 </xsl:template>
 <xsl:template match="museu">
   <lloc tipus="museu">
-    <ubicacio nom="ciutat"><xsl:value-of select="@ciutat"/></ubicacio>
-    <ubicacio nom="pais"><xsl:value-of select="@pais"/></ubicacio>
+    <ubicacio name="ciutat"><xsl:value-of select="@ciutat"/></ubicacio>
+    <ubicacio name="pais"><xsl:value-of select="@pais"/></ubicacio>
     <nom><xsl:value-of select="@nom"/></nom>
   </lloc>
-
 </xsl:template>
 </xsl:stylesheet>
