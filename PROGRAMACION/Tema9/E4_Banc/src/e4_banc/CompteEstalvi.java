@@ -15,7 +15,10 @@ public class CompteEstalvi extends CompteBancari {
     public CompteEstalvi(String IBAN, double saldo) {
         super(IBAN, saldo);
     }
-
+//La función calcularInteressos calcula el interres y lo ingresa
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -no tiene ninguno
     public void calcularInteressos() {
         double interessos = 0;
         if (SALDOMINIM > this.getSaldo()) {
@@ -25,7 +28,10 @@ public class CompteEstalvi extends CompteBancari {
         }
         this.ingressar(interessos);
     }
-
+//La función mostrarDades muestra por pantalla el IBAN,saldo y interes basico
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -no tiene ninguno
     public void mostrarDades() {
         System.out.println(this.getClass().getSimpleName() + "- El IBAN es " + this.getIBAN()  + " , el saldo de la cuenta es de " + this.getSaldo()+ " y tiene un interes de " + this.getInteresAnualBasic());
     }

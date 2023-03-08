@@ -19,11 +19,17 @@ public abstract class CompteBancari {
         this.IBAN = IBAN;
         this.saldo = saldo;
     }
-
+//La función ingressar ingresa el saldo introducido
+//      *Devuelve:el sueldo nuevo
+//      *Parámetros de entrada:
+//          -double compte: que es el dinero que se ingresara
     public double ingressar(double compte) {
         return this.modificarSaldo(compte);
     }
-
+//La función retirar retira el saldo introducido
+//      *Devuelve:nada ya que es un void
+//      *Parámetros de entrada:
+//          -double compte: que es el dinero que se retirara
     public void retirar(double compte) {
         if (compte > this.saldo) {
             System.out.println("***No se puede realizar la operacion***");
@@ -33,17 +39,24 @@ public abstract class CompteBancari {
             this.modificarSaldo(-compte);
         }
     }
-
-    public double traspassar(CompteBancari bancari, double dinero) {
+//La función traspassar transpasa el dinero de una cuenta a otra
+//      *Devuelve:nada ya que es un void
+//      *Parámetros de entrada:
+//          -CompteBancari bancari:es la cuenta a la que se va a pasar el dinero
+//          -double dinero:es el dinero que se transpasara
+    public void traspassar(CompteBancari bancari, double dinero) {
         if (dinero <= this.saldo) {
             bancari.ingressar(dinero);
             this.retirar(dinero);
         } else {
             System.out.println("***Error no se puede trasppasar esa cantidad de dinero***");
         }
-        return this.saldo;
+        
     }
-
+//La función modificarSaldo se modifica el saldo añadiendo la cantidad introducida
+//      *Devuelve:el sueldo nuevo
+//      *Parámetros de entrada:
+//          -double cantidad: sueldo que se añade
     public double modificarSaldo(double cantidad) {
         return this.saldo += cantidad;
     }
