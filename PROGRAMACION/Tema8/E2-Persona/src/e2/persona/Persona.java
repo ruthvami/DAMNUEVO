@@ -16,15 +16,11 @@ public class Persona {
     private int edat;
     private static final int MAJOREDAT = 18;
 
-    public Persona(String dni, String nom, String cognom, int edat) {
-        while(!validarDNI(dni)){
-            
-        }
-        
+    public Persona(String dni, String nom, String cognom, int edat) throws Exception {
         this.dni = dni;
         this.nom = nom;
         this.cognom = cognom;
-        this.edat = edat;
+        this.setEdat(edat);
     }
 
     public void imprimeix() {
@@ -91,8 +87,12 @@ public class Persona {
     /**
      * @param edat the edat to set
      */
-    public void setEdat(int edat) {
-        this.edat = edat;
+    public void setEdat(int edat) throws Exception {
+        if (edat < 0) {
+            throw new Exception("L'edat no pot ser negativa");
+        } else {
+            this.edat = edat;
+        }
     }
 
     public final boolean major() {
@@ -107,6 +107,5 @@ public class Persona {
     public static boolean validarDNI(String dni) {
         return dni.toUpperCase().matches("\\d{8}[A-HJ-NP-TV-Z]");
     }
+
 }
-
-

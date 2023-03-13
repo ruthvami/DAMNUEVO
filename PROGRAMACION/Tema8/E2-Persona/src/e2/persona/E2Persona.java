@@ -15,7 +15,7 @@ public class E2Persona {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
 
         String dni, nom, cognom;
@@ -48,7 +48,7 @@ public class E2Persona {
 
 //      
         p1.imprimeix();
-        validarDNI(dni);
+        p1.validarDNI(dni);
         
         if (p1.major() ) {
             System.out.print("Es mayor de edad");
