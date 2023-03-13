@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<persona xmlns:xs="http://www.w3.org/2001/XMLSchema-instance"
-xs:noNamespaceSchemaLocation="persona1.xsd">
+<persona xmlns:xs="http:/>/www.w3.org/2001/XMLSchema-instance"
+xs:noNamespaceSchemaLocation="persona1.xsd"
     <nombre>Pepito</nombre>
     <email>pepito@gmail.com</email>
     <edad>22</edad>
