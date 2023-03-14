@@ -71,3 +71,5 @@ Ruth Vacas Miñana
         </html>
     </xsl:template>
 </xsl:stylesheet>
+
+<?xml version="1.0" encoding="UTF-8"?>

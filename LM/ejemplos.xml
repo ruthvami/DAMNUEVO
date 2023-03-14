@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-    <xsl:template match="musica/musicos/musico">
-    
-    </xsl:template>
-</xsl:stylesheet>
+<?xml-model href="ejemplos.dtd"?>
+<novedades
+	<novedad fecha="20100708">
+		<titulo>Inagurada la Web WML en Castellano</titulo>
+		<url>index.htm</url>
+		<descripcion>El 8 de Julio del 2010 se inagura
+		oficialmente la Web de WML en castellano.</descripcion>
+	</novedad>
+	<novedad fecha="20100708">
+		<titulo>Generar WML desde un Servlet</titulo>
+		<url>articulos/wmlservlet.htm</url>
+		<descripcion>Inagurada la sección artículos con un
+		interesante artículo sobre como generar WML desde un
+		Servlet.</descripcion>
+	</novedad>
+</novedades>

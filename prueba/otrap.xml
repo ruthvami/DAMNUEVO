@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<agenda xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="otrap.xsd">
+      <persona1>
+        <nombre>pepe</nombre>
+        <apellido>Lopez</apellido>        
+      </persona1>            
+      <persona2 edad="20">
+        <nombre>pepe</nombre>
+        <apellido>Lopez</apellido>
+        <direccion>C/Mayor</direccion>
+        <añosactivo>3</añosactivo>
+      </persona2> 
+</agenda>

@@ -110,11 +110,11 @@ Ruth Vacas Miñana
       </xs:all>
     </xs:complexType>
   </xs:element>
-</xs:schema>
+
 
 <simpleType name="tipustext">
     <restriction base="xs:string"/>
-    <xs:minlenght=""/>
+   
 </simpleType>
 
 <simpleType name="tipuspreu">
@@ -129,7 +129,7 @@ Ruth Vacas Miñana
 
 </xs:attributegroup>
 
-
+</xs:schema>
 
 
 1-1
