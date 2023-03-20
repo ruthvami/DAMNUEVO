@@ -1,0 +1,7 @@
+ 
+SELECT * FROM Hospital WHERE Hospital.hos_id IN
+(SELECT Especialidades.esp_id FROM Especialidades WHERE Especialidades.esp_nombre LIKE 'o%');
+
+SELECT * FROM Hospital WHERE Hospital.hos_id IN
+(SELECT Especialidades.esp_id FROM Especialidades WHERE Especialidades.esp_id IN 
+(SELECT Medico.med_nombre FROM Medico WHERE Medico.med_nombre LIKE 'r%'));
