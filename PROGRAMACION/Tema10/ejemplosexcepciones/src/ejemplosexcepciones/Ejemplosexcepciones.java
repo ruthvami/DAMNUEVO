@@ -52,10 +52,14 @@ public class Ejemplosexcepciones {
             System.out.println("El numero es "+v[sc.nextInt()]);
 
         } catch (ArithmeticException e) {
+            System.out.println(e.getMessage());
             System.out.println("No se puede dividir entre 0");
         } catch (IndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
             System.out.println("El numero introducido esta fuera del rango");
         } catch (InputMismatchException e) {
+            System.out.println(e.getMessage());
+          e.printStackTrace();
             System.out.println("No se puede añadir un valor diferente a un int");
         } finally {
             System.out.println("Fin del programa");
