@@ -1,0 +1,13 @@
+
+SELECT med_nombre FROM Medico WHERE med_esp_id IN 
+(SELECT esp_id FROM Especialidades WHERE esp_hos_id = 
+(SELECT hos_id FROM Hospital WHERE hos_nombre = 'hosp1'));
+
+SELECT * FROM detalle_factura 
+JOIN articulo ON detalle_factura.cod_articulo = articulo.cod_articulo;
+
+SELECT * FROM factura 
+JOIN cliente ON factura.codigo_cliente = cliente.codigo_cliente;
+
+SELECT * FROM factura 
+JOIN vendedor ON factura.codigo_vendedor = vendedor.codigo_vendedor;
