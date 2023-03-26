@@ -1,0 +1,79 @@
+1-
+for $b in doc("llibres.xml")//libro
+where $b
+return $b/titulo
+2-
+let $b in doc("llibres.xml")//libro
+where $b
+return $b/titulo
+3-
+for $l in doc("llibres.xml")//libro
+let $t = $l/titulo
+let $a = $l/autor
+return
+    <llibre>
+        <titol>{ $t }</titol>
+        <autors>{ $a }</autors>
+    </llibre>
+4-
+for $l in //libro
+let $t = $l/titulo
+let $a = $l/autor
+let $p = //prestamos/entrada[titulo=$t]
+where $p
+order by $p/prestamo/inicio
+return
+  <libro>
+    {$t}
+    {$a}
+    {$p/prestamo/inicio}
+    {$p/prestamo/devolucion}
+  </libro>
+5-
+for $l in /biblioteca/libros/libro
+return 
+    <llibre>
+        <titol>{data($l/titulo)}</titol>
+        <autor1>{data($l/autor[1]/nombre/text())} {data($l/autor[1]/apellido/text())}</autor1>
+        <autor2>
+            {
+                if (count($l/autor) > 1)
+                then "cia"
+                else ()
+            }
+        </autor2>
+    </llibre>
+6-
+for $b in doc("balls.xml")//baile
+where $b
+return $b/nombre
+7-
+for $b in doc("balls.xml")//baile
+where $b
+return 
+    <baile>
+        <nombre>{$b/nombre} </nombre>
+        <precio>{$b/precio}</precio>      
+    </baile>
+8-
+for $b in doc("balls.xml")//baile
+where $b/precio>40
+return 
+    <baile>
+        <nombre>{$b/nombre} </nombre>
+        <precio>{$b/precio}</precio>      
+    </baile>
+9-
+for $b in doc("balls.xml")//baile
+where $b
+order by $b[A-Z]
+return 
+    <baile>{$b}
+    </baile>
+10-
+for $b in doc("balls.xml")//baile
+where $b/nombre[*a*]
+return 
+    <baile>
+    <nombre>{$b/nombre}</nombre>
+    </baile>
