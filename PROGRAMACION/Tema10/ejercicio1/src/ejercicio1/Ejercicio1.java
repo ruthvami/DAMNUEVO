@@ -17,7 +17,7 @@ public class Ejercicio1 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         // TODO code application logic here
 //        ejercicio1
         Scanner sc = new Scanner(System.in);
@@ -64,28 +64,62 @@ public class Ejercicio1 {
 //        }
 //        mostrar(v);
 //ejercicio4
-        int MIN = 1, MAX1 = 10, MAX2 = 100, pos;
-        int N = MIN + (int) (Math.random() * (MAX1 - MIN + 1));
-        int[] vector = new int[N];
-        for (int i = 0; i < vector.length; i++) {
-            vector[i] = MIN + (int) (Math.random() * (MAX2 - MIN + 1));
-        }
-        for (int i = 0; i < vector.length; i++) {
-            try {
-                System.out.println("Que posicion quieres enseñar: (array:"+vector.length+")");
-                pos = sc.nextInt();
-                if (pos < 0) {
-                  
-                }
-                System.out.println(vector[i]);
-            } catch (InputMismatchException e) {
-                System.out.println("Error al introducir un numero");
-            }
-//catch ( e) {
+//        int MIN = 1, MAX1 = 100, MAX2 = 10, pos=0;
+//        int N = MIN + (int) (Math.random() * (MAX1 - MIN + 1));
+//        int[] vector = new int[N];
+//        for (int i = 0; i < vector.length; i++) {
+//            vector[i] = MIN + (int) (Math.random() * (MAX2 - MIN + 1));
+//        }
+//       do{
+//            try {
+//                System.out.println("Que posicion quieres enseñar: (array: 0-"+(N-1)+")");
+//                pos = sc.nextInt();
+//                if(pos>=0) System.out.println("Valor : "+vector[pos]);
+//            } catch (InputMismatchException e) {
 //                System.out.println("Error al introducir un numero");
+//            }catch (ArrayIndexOutOfBoundsException e) {
+//                System.out.println("Numero fuera de rango ");
+//            }catch(Exception e){
+//                System.out.println("Error no previsto");
 //            }
-
+//
+//        }while(pos>=0);
+//ejercicio6
+        try {
+            Gat g1 = new Gat("P", 3);
+            g1.imprimir();
+            g1.setEdat(-6);
+            g1.setNom("Alte");
+            g1.imprimir();
+            
+        } catch (InputMismatchException e) {
+            System.out.println("Error al introducir un numero");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
+        try {
+            Gat g1 = new Gat("aaaaaa", 3);
+            g1.imprimir();
+            g1.setEdat(-6);
+            g1.setNom("Alte");
+            g1.imprimir();
+            
+        } catch (InputMismatchException e) {
+            System.out.println("Error al introducir un numero");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        try {
+            Gat g2 = new Gat("Pepe3", 3);
+            g2.imprimir();
+            g2.setEdat(-3);
+            g2.imprimir();
+        } catch (InputMismatchException e) {
+            System.out.println("Error al introducir un numero");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        
     }
 
 //    public static void mostrar(double v[]) {
