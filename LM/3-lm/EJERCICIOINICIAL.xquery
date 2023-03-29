@@ -1,3 +1,4 @@
+Ruth Vacas Miñana
 1-
 for $b in doc("llibres.xml")//libro
 where $b
@@ -73,7 +74,7 @@ return
 for $b in doc("balls.xml")//baile
 where matches($b/nombre,"a")
 return 
-    <baile>$b/nombre}</baile>
+    <baile>{$b/nombre}</baile>
 11-
 for $b in doc("balls.xml") //baile
 where matches($b/profesor,"Lozano")
@@ -83,52 +84,52 @@ for $b in doc("balls.xml")//baile
 where $b/@id!=3 and $b/@id!=5
 return $b/nombre
 13-
-for $b in //baile
+for $b in doc("balls.xml")//baile
 where $b/precio/@cuota="mensual"
 return $b/profesor
 14-
-for $b in //baile
+for $b in doc("balls.xml")//baile
 where $b/precio/@moneda="euro" and $b/sala=1 and $b/precio < 35
 return $b/nombre
 15-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 return $b/titulo
 16-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 order by $b/@anyo
 return 
     <libro>
         {$b/titulo,<año>($b/anyo)</año>}
     </libro>
 17-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 order by $b/precio=65.95
 return $b
 18-
-for $b in //libro
+for $b in doc("llibres2.xml") //libro
 order by $b/@anyo<2000
 return $b
 19-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 order by $b/@anyo>1992 and $b/@b/editorial="Addison-Wesley"
 return <llibre any="{$b/@anyo}">{$b/titulo}</llibre>
 20-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 where count($b/autor)>1
 return <llibre any="{$b/@anyo}">{$b/titulo}</llibre>
 21-
-for $b in //libro
+for $b in doc("llibres2.xml")//libro
 where empty($b/autor)
 return <llibre any="{$b/@anyo}">{$b/titulo}</llibre>
 22-
-for $b in distinct-values(//libro/autor/apellido)
+for $b in distinct-values(doc("llibres2.xml")//libro/autor/apellido)
 order by $b
 return $b
 23-
 let $n:=//libro
 return <result>{$n/titulo,<autores>{$n/autor}</autores>}</result>
 24-
-for $n in//libro
+for $n in doc("llibres2.xml")//libro
 return <llibre>{$n/titulo,<autores>{count($n/autor)}</autores>}</llibre>
 25-
 <html>
@@ -136,11 +137,24 @@ return <llibre>{$n/titulo,<autores>{count($n/autor)}</autores>}</llibre>
 <h1>LLISTAT LLIBRES</h1>
 <table border ="1">
 <tr><th>TITOL</th><th>EDITORIAL</th><th>PREU</th></tr>
-{for $n in//libro
+{for $n in doc("llibres2.xml")//libro
 return <tr><td>{data($n/titulo)}</td><td>{data($n/editorial)}</td><td>{data($n/precio)}</td></tr>
 }
 </table>
 </body>
 </html>
 26-
+<html>
+<body>
+<h1>LIBROS DE STEVENS</h1>
+<table border ="1">
+<tr><th>TITOL</th><th>PRECIO</th></tr>
+{for $n in doc("llibres2.xml")//libro
+where $n/autor/apellido="Stevens"
+return <tr><td>{data($n/titulo)}</td><td>{data($n/precio)}</td></tr>
+<tr><td>PRECIO TOTAL</td><td>$n/titulo</td></tr>
+}
+</table>
+</body>
+</html>
 
