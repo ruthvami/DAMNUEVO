@@ -40,12 +40,9 @@ public class EJERCICIO7 {
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Error indice incorrecto");
                 i--;
-            } catch (ExceptionNom e) {
+            } catch (ExceptionNom | ExceptionEdat e) {
                 System.out.println(e);
                 sc.nextLine();
-            } catch (ExceptionEdat e) {
-                System.out.println(e);
-                 sc.nextLine();
             }
         }
         imprimir(gatos);
