@@ -10,7 +10,7 @@ package e4_banc;
  */
 public abstract class CompteBancari {
 
-    private String IBAN;
+    private final String IBAN;
     private double saldo;
     private final double INTERESANUALBASIC = 2.5;
     private final double MAXRETIRAR = 1000;
@@ -30,11 +30,11 @@ public abstract class CompteBancari {
 //      *Devuelve:nada ya que es un void
 //      *Parámetros de entrada:
 //          -double compte: que es el dinero que se retirara
-    public void retirar(double compte) {
+    public void retirar(double compte) throws Excepoperacionfallida, Excepretirada {
         if (compte > this.saldo) {
-            System.out.println("***No se puede realizar la operacion***");
+            throw new Excepoperacionfallida(compte,this.saldo);
         } else if (compte > MAXRETIRAR) {
-            System.out.println("***No es posible retirar mas de " + this.MAXRETIRAR + " euros***");
+            throw new Excepretirada(compte,this.MAXRETIRAR);
         } else {
             this.modificarSaldo(-compte);
         }
@@ -44,12 +44,12 @@ public abstract class CompteBancari {
 //      *Parámetros de entrada:
 //          -CompteBancari bancari:es la cuenta a la que se va a pasar el dinero
 //          -double dinero:es el dinero que se transpasara
-    public void traspassar(CompteBancari bancari, double dinero) {
+    public void traspassar(CompteBancari bancari, double dinero) throws Excepoperacionfallida, Excepretirada {
         if (dinero <= this.saldo) {
             bancari.ingressar(dinero);
             this.retirar(dinero);
         } else {
-            System.out.println("***Error no se puede trasppasar esa cantidad de dinero***");
+            throw new Excepoperacionfallida(dinero,this.saldo);
         }
         
     }
@@ -65,7 +65,10 @@ public abstract class CompteBancari {
 
     public abstract void mostrarDades();
 
-    public String getIBAN() {
+    public String getIBAN() throws Expibanmal {
+        if(!this.IBAN.matches("[A-Z]{2}[0-9]{10}")){
+            throw new Expibanmal(this.IBAN);
+        }
         return IBAN;
     }
 
@@ -77,12 +80,11 @@ public abstract class CompteBancari {
         return INTERESANUALBASIC;
     }
 
-    public void setIBAN(String IBAN) {
-        this.IBAN = IBAN;
-    }
 
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
+
+   
 
 }

@@ -33,7 +33,6 @@ public class EXERCICI5EXTRA {
                 sc.nextLine();
             } catch (Exception e) {
                 System.out.println(e.toString());
-                sc.nextLine();
             }
             try {
                 System.out.println("Introduce un numero negativo:");
@@ -45,7 +44,6 @@ public class EXERCICI5EXTRA {
                 sc.nextLine();
             } catch (Exception e) {
                 System.out.println(e.toString());
-                sc.nextLine();
             }
 
         }
@@ -58,7 +56,7 @@ public class EXERCICI5EXTRA {
     public static void imprimeixPositiu(int p) throws Exception {
         if (p < 0) {
             throw new Exception("El numero introducido no es positivo");
-        }
+        }System.out.println("Numero: "+p);
     }
 //La función imprimeixNegatiu si es positivo el numero lanza un error
 //      *Devuelve:es un void por lo que no devuelve nada
@@ -69,5 +67,6 @@ public class EXERCICI5EXTRA {
         if (n >= 0) {
             throw new Exception("El numero introducido no es negativo");
         }
+        System.out.println("Numero: "+n);
     }
 }
