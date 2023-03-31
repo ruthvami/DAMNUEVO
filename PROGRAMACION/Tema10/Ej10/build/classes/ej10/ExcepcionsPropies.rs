@@ -1,0 +1,5 @@
+ej10.Excepcioneliminar
+ej10.Excepcionedadm
+ej10.Excepcionnomostrar
+ej10.ExcepcionsPropies
+ej10.Excepcionnombre
