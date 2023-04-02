@@ -46,3 +46,26 @@ for $b in distinct-values(/bailes/baile/profesor)
 let $s := /bailes/baile[profesor = $b]/sala
 order by $b
 return <profesor nombre="{$b}">{data($s)}</profesor>
+h)
+let $b :=/bailes/baile
+let $p := sum($b/precio)
+let $n := count($b)
+return <media>{$p div $n}</media>
+i)
+let $b := /bailes/baile
+return <suma>{sum($b[sala = 1]/precio)}</suma>
+j)
+let $b := /bailes/baile
+return <plazas>{count($b[profesor = "Jesús Lozano"]/plazas)}</plazas>
+k)
+let $b := /bailes/baile
+return <plazas>{sum($b[profesor = "Laura Mendiola"]/precio)*{sum($b/plazas)}}</plazas>
+l)
+let $b := /bailes/baile
+return <plazas>{sum($b[profesor = "Jesús Lozano"]/precio)*{sum($b/plazas)}}</plazas>
+m)
+for $b in //baile[profesor[contains(., 'Laura')]]
+where $b/plazas = 15
+return <guanyaria>{data($b/precio) * $b/plazas}</guanyaria>
+n)
+
