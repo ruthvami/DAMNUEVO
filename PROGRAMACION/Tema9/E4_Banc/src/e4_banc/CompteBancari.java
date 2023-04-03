@@ -15,7 +15,10 @@ public abstract class CompteBancari {
     private final double INTERESANUALBASIC = 2.5;
     private final double MAXRETIRAR = 1000;
 
-    public CompteBancari(String IBAN, double saldo) {
+    public CompteBancari(String IBAN, double saldo) throws Expibanmal {
+        if (!IBAN.matches("[A-Z]{2}[0-9]{10}")) {
+            throw new Expibanmal(IBAN);
+        }
         this.IBAN = IBAN;
         this.saldo = saldo;
     }
@@ -23,6 +26,7 @@ public abstract class CompteBancari {
 //      *Devuelve:el sueldo nuevo
 //      *Parámetros de entrada:
 //          -double compte: que es el dinero que se ingresara
+
     public double ingressar(double compte) {
         return this.modificarSaldo(compte);
     }
@@ -30,11 +34,12 @@ public abstract class CompteBancari {
 //      *Devuelve:nada ya que es un void
 //      *Parámetros de entrada:
 //          -double compte: que es el dinero que se retirara
+
     public void retirar(double compte) throws Excepoperacionfallida, Excepretirada {
         if (compte > this.saldo) {
-            throw new Excepoperacionfallida(compte,this.saldo);
+            throw new Excepoperacionfallida(compte, this.saldo);
         } else if (compte > MAXRETIRAR) {
-            throw new Excepretirada(compte,this.MAXRETIRAR);
+            throw new Excepretirada(compte, this.MAXRETIRAR);
         } else {
             this.modificarSaldo(-compte);
         }
@@ -44,19 +49,21 @@ public abstract class CompteBancari {
 //      *Parámetros de entrada:
 //          -CompteBancari bancari:es la cuenta a la que se va a pasar el dinero
 //          -double dinero:es el dinero que se transpasara
+
     public void traspassar(CompteBancari bancari, double dinero) throws Excepoperacionfallida, Excepretirada {
         if (dinero <= this.saldo) {
             bancari.ingressar(dinero);
             this.retirar(dinero);
         } else {
-            throw new Excepoperacionfallida(dinero,this.saldo);
+            throw new Excepoperacionfallida(dinero, this.saldo);
         }
-        
+
     }
 //La función modificarSaldo se modifica el saldo añadiendo la cantidad introducida
 //      *Devuelve:el sueldo nuevo
 //      *Parámetros de entrada:
 //          -double cantidad: sueldo que se añade
+
     public double modificarSaldo(double cantidad) {
         return this.saldo += cantidad;
     }
@@ -66,9 +73,7 @@ public abstract class CompteBancari {
     public abstract void mostrarDades();
 
     public String getIBAN() throws Expibanmal {
-        if(!this.IBAN.matches("[A-Z]{2}[0-9]{10}")){
-            throw new Expibanmal(this.IBAN);
-        }
+
         return IBAN;
     }
 
@@ -80,11 +85,8 @@ public abstract class CompteBancari {
         return INTERESANUALBASIC;
     }
 
-
     public void setSaldo(double saldo) {
         this.saldo = saldo;
     }
-
-   
 
 }

@@ -10,7 +10,7 @@ package e4_banc;
  */
 public class CompteCorrent extends CompteBancari {
 
-    public CompteCorrent(String IBAN, double saldo) {
+    public CompteCorrent(String IBAN, double saldo) throws Expibanmal {
         super(IBAN, saldo);
     }
 //La función calcularInteressos calcula el interres y lo ingresa

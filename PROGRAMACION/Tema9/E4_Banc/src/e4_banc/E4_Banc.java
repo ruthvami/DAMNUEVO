@@ -17,7 +17,15 @@ public class E4_Banc {
         // Creem un compte de cada tipus
         CompteBancari corrent = new CompteCorrent("ES6256465847", 1000);
         CompteBancari estalvi = new CompteEstalvi("ES9956415656", 3000);
-
+        try{
+        CompteBancari cor = new CompteCorrent("ES625646", 1000);
+        cor.mostrarDades();
+        }catch (InputMismatchException e) {
+            System.out.println("Error detectado: el parametro "+e+" es ");
+        } 
+        catch (Exception e) {
+            System.out.println(e);
+        }
         // Mostrem les dades dels comptes
         System.out.println("### Mostrem les dades dels comptes ###");
         mostrarComptes(corrent, estalvi);

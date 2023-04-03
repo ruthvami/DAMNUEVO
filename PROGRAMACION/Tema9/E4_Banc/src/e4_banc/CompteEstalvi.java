@@ -12,7 +12,7 @@ public class CompteEstalvi extends CompteBancari {
 
     private final double SALDOMINIM = 100;
 
-    public CompteEstalvi(String IBAN, double saldo) {
+    public CompteEstalvi(String IBAN, double saldo) throws Expibanmal {
         super(IBAN, saldo);
     }
 //La función calcularInteressos calcula el interres y lo ingresa
