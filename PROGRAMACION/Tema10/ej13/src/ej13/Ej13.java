@@ -2,7 +2,6 @@ package ej13;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.lang.AbstractMethodError;
 
 /**
  *
@@ -15,15 +14,18 @@ public class Ej13 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        int MIN = 1, MAX = 5;
-        ArrayList valor = new ArrayList();
+        
+        ArrayList <Exception>valor = new ArrayList<>();
         valor.add(new InputMismatchException());
         valor.add(new ArrayIndexOutOfBoundsException());
         valor.add(new NumberFormatException());
-        valor.add(new AbstractMethodError());
         valor.add(new ArithmeticException());
-        int x = MIN + (int) (Math.random() * (MAX - MIN + 1));
-        System.out.println(valor.get(x));
+        valor.add(new NullPointerException());
+        try {
+            throw valor.get((int)(Math.random() * valor.size()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
