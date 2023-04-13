@@ -10,20 +10,14 @@ package uf10.excepcions.ruth;
  */
 public abstract class Personatges {
 
-    private String nom;
     private int posx;
     private int posy;
-    private double velocidad;
+    private String nom;
 
-    public Personatges(String nom, int posx, int posy, double velocidad) throws LimitDePantalla {
+    public Personatges(String nom,int posx,int posy) throws LimitDePantalla {
         this.nom = nom;
         this.setPosx(posx);
         this.setPosy(posy);
-        this.velocidad = velocidad;
-    }
-
-    public String getNom() {
-        return nom;
     }
 
     public int getPosx() {
@@ -34,8 +28,8 @@ public abstract class Personatges {
         return posy;
     }
 
-    public double getVelocidad() {
-        return velocidad;
+    public String getNom() {
+        return nom;
     }
 
     public void setPosx(int posx) throws LimitDePantalla {
@@ -52,13 +46,5 @@ public abstract class Personatges {
         }
     }
 
-    public void mourex(int a) {
-        posx += a;
-    }
-
-    public void mourey(int a) {
-        posy += a;
-        velocidad *= 2;
-    }
     public abstract void estat();
 }

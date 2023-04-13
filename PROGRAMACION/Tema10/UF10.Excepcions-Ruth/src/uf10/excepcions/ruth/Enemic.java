@@ -11,20 +11,22 @@ package uf10.excepcions.ruth;
 public class Enemic extends Personatges{
     private int vida;
 
-    public Enemic(int vida, String nom, int posx, int posy, double velocidad) throws LimitDePantalla {
-        super(nom, posx, posy, velocidad);
+    public Enemic(int vida, String nom, int posx, int posy) throws LimitDePantalla {
+        super(nom, posx, posy);
         this.vida = vida;
     }
 
     public int getVida() {
         return vida;
     }
+
+
     public void decrement(){
         vida--;
     }
     public void estat(){
         System.out.println("Nom: "+this.getNom() );
-        System.out.println("Tipus de personatge: "+this.getClass());
+        System.out.println("Tipus de personatge: "+this.getClass().getSimpleName());
         System.out.println("Posició: x("+this.getPosx()+"), y("+this.getPosy()+")");
         System.out.println("Vidas: "+this.getVida());
     }
