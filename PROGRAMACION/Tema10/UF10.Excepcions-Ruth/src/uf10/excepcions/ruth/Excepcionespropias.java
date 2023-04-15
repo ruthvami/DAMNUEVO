@@ -27,12 +27,13 @@ class LimitDePantalla extends Exception {
             return "*** LimitDePantalla {No es pot col·locar/moure a " + this.per.getNom() + " fins a la posició " + this.per.getPosy() + " vertical}";
         }
     }
-
 }
 //La función SenseBales muestra el mensaje de error si te quedas sin balas
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:nada
-class SenseBales extends Exception{
+
+class SenseBales extends Exception {
+
     @Override
     public String toString() {
         return "*** SenseBales {No pots disparar. T'has quedat sense trets disponibles}";
@@ -43,10 +44,10 @@ class SenseBales extends Exception{
 //La función EnemicMort muestra el mensaje de error si el enemigo esta muerto ya
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:nada
-class EnemicMort extends Exception{
+class EnemicMort extends Exception {
 
     public String toString() {
-       return "*** EnemicMort {L'enemic ja estava mort}";
+        return "*** EnemicMort {L'enemic ja estava mort}";
     }
 
 }

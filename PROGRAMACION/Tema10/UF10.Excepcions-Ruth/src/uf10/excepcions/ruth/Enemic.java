@@ -20,6 +20,7 @@ public class Enemic extends Personatges {
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
 //    -int dany:el saño que se le hace
+
     public void rebreTret(int dany) throws EnemicMort {
         if (vida <= 0) {
             throw new EnemicMort();
@@ -31,7 +32,7 @@ public class Enemic extends Personatges {
                 System.out.println("Enemic " + getNom() + " tocat!!! Vida restant: " + vida);
             }
         }
-        
+
     }
 
     public int getVida() {
@@ -45,6 +46,7 @@ public class Enemic extends Personatges {
 //La función estat muestra el estado del objeto
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:nada
+
     public void estat() {
         System.out.println("Nom: " + this.getNom());
         System.out.println("Tipus de personatge: " + this.getClass().getSimpleName());

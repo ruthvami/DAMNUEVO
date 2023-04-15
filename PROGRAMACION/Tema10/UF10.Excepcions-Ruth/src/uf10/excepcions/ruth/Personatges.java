@@ -19,7 +19,9 @@ public abstract class Personatges {
     }
 //La función mourey se mueve dependiendo de si el valor es poditivo o negativo hacia la arriba o hacia abajo
 //      *Devuelve:es un void por lo que no devuelve nada
-//      *Parámetros de entrada:nada
+//      *Parámetros de entrada:
+//          -int a:el numero de posiciones que quiere moverse
+
     public void mourey(int a) throws LimitDePantalla {
         this.setPosy((int) (this.getPosy() + this.velocidad * 2 * a));
         System.out.println("Jugador " + this.getNom() + " se ha movido a la posicion " + this.posy);
@@ -28,6 +30,10 @@ public abstract class Personatges {
             throw new LimitDePantalla(this);
         }
     }
+//La función mourex se mueve dependiendo de si el valor es poditivo o negativo hacia la derecha o izquierda
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int a:el numero de posiciones que quiere moverse
 
     public void mourex(int a) throws LimitDePantalla {
         this.setPosx((int) (this.getPosx() + this.velocidad * a));
@@ -48,6 +54,10 @@ public abstract class Personatges {
     public String getNom() {
         return nom;
     }
+//La función setPosx si la posicion es mayor que 200 y -200 saltara un error
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int posx:posicion establecida
 
     public void setPosx(int posx) throws LimitDePantalla {
         this.posx = posx;
@@ -55,6 +65,10 @@ public abstract class Personatges {
             throw new LimitDePantalla(this);
         }
     }
+//La función setPosy si la posicion es mayor que 200 y -200 saltara un error
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:
+//          -int posx:posicion establecida
 
     public void setPosy(int posy) throws LimitDePantalla {
         this.posy = posy;

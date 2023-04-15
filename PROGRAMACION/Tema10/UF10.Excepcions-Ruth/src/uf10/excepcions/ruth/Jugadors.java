@@ -36,6 +36,7 @@ public class Jugadors extends Personatges {
 //        e.rebreTret(nomtrets);
 //        j.disparar(j, e);
 //    }
+
     public void disparar(Enemic e) throws SenseBales, EnemicMort {
         System.out.println("Jugador " + this.getNom() + " dispara a enemigo " + e.getNom());
 
@@ -47,18 +48,13 @@ public class Jugadors extends Personatges {
             throw new EnemicMort();
 
         }
-        if (e.getVida() == 0) {
-            System.out.println("Enemic " + e.getNom() + " ha estat eliminat!!!");
-        } else {
-            System.out.println("Enemic " + e.getNom() + " tocat!!! Vida restant: " + e.getVida());
-        }
-        e.rebreTret(nomtrets);
-//        this.disparar(e);
 
+        e.rebreTret(nomtrets);
     }
 //La función estat muestra el estado del objeto
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:nada
+
     public void estat() {
         System.out.println("Nom: " + this.getNom());
         System.out.println("Tipus de personatge: " + this.getClass().getSimpleName());
@@ -67,4 +63,3 @@ public class Jugadors extends Personatges {
         System.out.println(" ");
     }
 }
-
