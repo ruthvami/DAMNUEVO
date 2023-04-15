@@ -8,6 +8,9 @@ package uf10.excepcions.ruth;
  *
  * @author ruthv
  */
+//La función LimitDePantalla muestra el mensaje de error si te pasas del limite de posicion
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:nada
 class LimitDePantalla extends Exception {
 
     private Personatges per;
@@ -26,7 +29,9 @@ class LimitDePantalla extends Exception {
     }
 
 }
-
+//La función SenseBales muestra el mensaje de error si te quedas sin balas
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:nada
 class SenseBales extends Exception{
     @Override
     public String toString() {
@@ -34,23 +39,10 @@ class SenseBales extends Exception{
     }
 
 }
-class DisparosEnem extends Exception{
-private Personatges ene;
 
-    public DisparosEnem(Enemic ene) {
-        this.ene = ene;
-    }
-
-    @Override
-    public String toString() {
-        int i;
-        if(i!=this.ene.getVida()) return "Enemic "+ this.ene.getNom()+" tocat!!! Vida restant: "+this.ene.getVida();
-        else return "Enemic "+this.ene.getNom()+" ha estat eliminat!!!";
-        i++;
-    }
-
-}
-
+//La función EnemicMort muestra el mensaje de error si el enemigo esta muerto ya
+//      *Devuelve:es un void por lo que no devuelve nada
+//      *Parámetros de entrada:nada
 class EnemicMort extends Exception{
 
     public String toString() {

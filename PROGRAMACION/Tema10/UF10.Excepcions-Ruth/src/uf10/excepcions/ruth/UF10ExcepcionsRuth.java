@@ -17,39 +17,78 @@ public class UF10ExcepcionsRuth {
      */
     public static void main(String[] args) throws Exception {
         // TODO code application logic here
-        Jugadors luke = new Jugadors(5, "Luke", 0, 0, 1);
-        Jugadors leia = new Jugadors(50, "Leia", 0, 0, 2);
-        Enemic snoke = new Enemic(2, "Snoke", 0, 5);
+        Jugadors j1 = new Jugadors(10, "Juan", 50, 50, 2.5);
+        Jugadors j2 = new Jugadors(8, "María", 75, 100, 3.0);
+        Jugadors j3 = new Jugadors(12, "Pedro", 25, 75, 2.0);
+        Enemic e1 = new Enemic(1, "Enemic1", 50, 50, 2.0);
+        Enemic e2 = new Enemic(0, "Enemic2", 100, 100, 1.5);
+        Enemic e3 = new Enemic(120, "Enemic3", 34, 66, 3.0);
 
         // Los añadimos a una lista para gestionarlos de forma conjunta
         ArrayList<Personatges> personatges = new ArrayList<>();
-        personatges.add(luke);
-        personatges.add(leia);
-        personatges.add(snoke);
+        personatges.add(j1);
+        personatges.add(j2);
+        personatges.add(j3);
+        personatges.add(e1);
+        personatges.add(e2);
+        personatges.add(e3);
+        
+         for (Personatges personatge : personatges) {
+                personatge.estat();
+            }
         
         try {
-            luke.mourex(20);
-            luke.mourey(-45);
-            leia.mourey(8);
+            j1.mourex(20);
             
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+
+        } catch (LimitDePantalla e) {
+            System.out.println(e.toString());
+        }try {
+            
+            j2.mourey(-34);
+            
+
+        } catch (LimitDePantalla e) {
+            System.out.println(e.toString());
+        }try {
+            
+            j3.mourey(8);
+
+        } catch (LimitDePantalla e) {
+            System.out.println(e.toString());
         }
 
         // Disparamos a un enemigo
-        try {
-            luke.disparar(snoke);
-            luke.disparar(snoke);
-            leia.disparar(snoke);
+        
+         try {
+            
+            j3.disparar(e1);
+            
         } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+            System.out.println(e.toString());
 
-        // Mostramos el estado de los personajes
+        } try {
+            j1.disparar(e2);
+           
+        } catch (Exception e) {
+            System.out.println(e.toString());
+
+        } try {
+            
+            j2.disparar(e3);
+            
+        } catch (Exception e) {
+            System.out.println(e.toString());
+
+        } try {
+            
+            j2.disparar(e1);
+        } catch (Exception e) {
+            System.out.println(e.toString());
+
+        }
         for (Personatges personatge : personatges) {
-            personatge.estat();
-        }
+                personatge.estat();
+            }
     }
-    }
-
-
+}
