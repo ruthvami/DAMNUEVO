@@ -21,21 +21,6 @@ public class Jugadors extends Personatges {
 //      *Devuelve:es un void por lo que no devuelve nada
 //      *Parámetros de entrada:
 //          -Enemic en:el enemigo al que disparas
-//    public void disparar(Enemic en) throws SenseBales {
-//        if (nomtrets == 0) {
-//            throw new SenseBales();
-//        }
-//        System.out.println("Jugador " + this.getNom() + " dispara a enemigo " + en.getNom());
-//        en.decrement();
-//        nomtrets--;
-//        if (en.getVida() == 0) {
-//            System.out.println("Enemic " + en.getNom() + " ha estat eliminat!!!");
-//        } else {
-//            System.out.println("Enemic " + en.getNom() + " tocat!!! Vida restant: " + en.getVida());
-//        }
-//        e.rebreTret(nomtrets);
-//        j.disparar(j, e);
-//    }
 
     public void disparar(Enemic e) throws SenseBales, EnemicMort {
         System.out.println("Jugador " + this.getNom() + " dispara a enemigo " + e.getNom());
