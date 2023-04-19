@@ -100,7 +100,22 @@ public class Ej1 {
             System.out.println(entry);
         }
         System.out.println("\nEntrades del diccionari extretes una a una:(Lambda)");
-        m.entrySet().forEach(entry->System.out.println(entry));
+        m.entrySet().forEach(entry -> System.out.println(entry));
+
+        mostrarMapa(m);
+
     }
 
+    public static void mostrarMapa(Map<Integer, String> m) {
+        System.out.println("Codi\tNom");
+        System.out.println("-----\t-------------");
+        for (Map.Entry entry : m.entrySet()) {
+            System.out.println(entry.getKey() + "\t" + entry.getValue());
+        }
+
+        System.out.println("\nAhora con lambda\n\nCodi\tNom");
+        System.out.println("-----\t-------------");
+        m.entrySet().forEach(entry -> System.out.println(entry.getKey() + "\t" + entry.getValue()));
+
+    }
 }
