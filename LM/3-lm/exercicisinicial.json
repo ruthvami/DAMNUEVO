@@ -1,0 +1,37 @@
+Ruth Vacas Miñana
+1-
+{
+"Nom llenguatge": "Java",
+"Any creació":"1995",
+"Noms autors":"James Gosling",
+"Compilat ":true
+}
+2-
+{
+"Equip":"",
+"Color equipament":"",
+"Estadi":"",
+"Entrenador":"",
+"Jugadors":[
+     ""
+]
+}
+5-FALTA UN ERROR
+{
+    “pelicula” : “El resplandor”,
+    “director” : “Stanley Kubrick”,
+    “estrena” : 1980,
+    “repartiment” : [
+        {
+        “nom” : “Jack Nicholson”,
+        “personatge” : “Jack Torrance”
+        },
+        {
+        “nom” : “Shelley Duvall”,
+        “personatge” : “Wendy Torrance”
+        },
+        {
+        “nom” : “Danny Lloid”,
+        “personatge” : “Danny Torrance”}
+        ]
+}
