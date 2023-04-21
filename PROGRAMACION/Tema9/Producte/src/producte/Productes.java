@@ -11,10 +11,20 @@ package producte;
 public class Productes {
     private String nom;
     private int quantitat;
+
+    /**
+     *
+     * @param nom nombre del producto
+     * @param quantitat cantidad de producto
+     */
     public Productes(String nom,int quantitat){//esto es un constructor
         this.nom=nom;
         this.quantitat=quantitat;
     }
+
+    /**
+     *
+     */
     public Productes(){//esto es un constructor
        this.nom="NoData";
        this.quantitat=0;

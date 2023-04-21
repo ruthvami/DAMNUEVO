@@ -12,6 +12,15 @@ public class Enemic extends Personatges {
 
     private int vida;
 
+    /**
+     *
+     * @param vida vida de los enemigo
+     * @param NOM nombre del enemigo
+     * @param posx posicion horizontal
+     * @param posy posicion vertical
+     * @param velocidad velocidad a la que se mueve
+     * @throws LimitDePantalla excepcion de limite de pantalla a 200 horizontal y 100 vertical
+     */
     public Enemic(int vida, String NOM, int posx, int posy, double velocidad) throws LimitDePantalla {
         super(NOM, posx, posy, velocidad);
         this.vida = vida;
@@ -21,6 +30,11 @@ public class Enemic extends Personatges {
 //      *Parámetros de entrada:
 //    -int dany:el saño que se le hace
 
+    /**
+     *
+     * @param dany daño que se in
+     * @throws EnemicMort
+     */
     public void rebreTret(int dany) throws EnemicMort {
         if (vida <= 0) {
             throw new EnemicMort();
