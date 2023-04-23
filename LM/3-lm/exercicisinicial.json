@@ -8,30 +8,95 @@ Ruth Vacas Miñana
 }
 2-
 {
-"Equip":"",
-"Color equipament":"",
-"Estadi":"",
-"Entrenador":"",
-"Jugadors":[
-     ""
-]
+    "Equip": "Valencia Basket",
+    "Equipament": "Naranja",
+    "Estadi": "La Fonteta",
+    "Entrenador": "Jaume Ponsarnau",
+    "plantilla_històrica": false,
+    "web": "https://www.valenciabasket.com",
+    "jugadors": {
+        "base": [
+            {
+                "nom": "Sam Van Rossom",
+                "dorsal": 9
+            },
+            {
+                "nom": "Klemen Prepelic",
+                "dorsal": 6
+            }
+        ],
+        "aler": [
+            {
+                "nom": "Joan Sastre",
+                "dorsal": 43
+            },
+            {
+                "nom": "Fernando San Emeterio",
+                "dorsal": 20
+            }
+        ],
+        "pivot": [
+            {
+                "nom": "Mike Tobey",
+                "dorsal": 10
+            },
+            {
+                "nom": "Bojan Dubljevic",
+                "dorsal": 8
+            }
+        ]
+    }
+}
+3-
+{
+    "títol": "La Gioconda",
+    "autor": "Leonardo da Vinci",
+    "any_creació": 1503,
+    "Museu": true,
+    "nom_museu": "Musée du Louvre"
+}
+4-
+{
+    "Pintor": "Pablo Picasso",
+    "Naixement": "25 d'octubre de 1881",
+    "lloc_naixement": "Málaga, Espanya",
+    "data_defunció": "8 d'abril de 1973",
+    "lloc_defunció": "Mougins, França",
+    "obres": [
+        {
+            "títol": "Les Demoiselles d'Avignon",
+            "any_creació": 1907,
+            "url_imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Pablo_Picasso%2C_1907%2C_Les_Demoiselles_d%27Avignon%2C_Oil_on_canvas%2C_243.9_x_233.7_cm%2C_Museum_of_Modern_Art%2C_New_York.jpg/800px-Pablo_Picasso%2C_1907%2C_Les_Demoiselles_d%27Avignon%2C_Oil_on_canvas%2C_243.9_x_233.7_cm%2C_Museum_of_Modern_Art%2C_New_York.jpg"
+        },
+        {
+            "títol": "Guernica",
+            "any_creació": 1937,
+            "url_imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Pablo_picasso%2C_guernica%2C_1937.jpg/800px-Pablo_picasso%2C_guernica%2C_1937.jpg"
+        },
+        {
+            "títol": "La Celestina",
+            "any_creació": 1904,
+            "url_imatge": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/La_celestina%2C_by_Pablo_Picasso%2C_1904.jpg/800px-La_celestina%2C_by_Pablo_Picasso%2C_1904.jpg"
+        }
+    ]
 }
 5-FALTA UN ERROR
 {
-    “pelicula” : “El resplandor”,
-    “director” : “Stanley Kubrick”,
-    “estrena” : 1980,
-    “repartiment” : [
+    "pelicula": "El resplandor",
+    "director": "Stanley Kubrick",
+    "estrena": 1980,
+    "repartiment": [
         {
-        “nom” : “Jack Nicholson”,
-        “personatge” : “Jack Torrance”
+            "nom": "Jack Nicholson",
+            "personatge": "Jack Torrance"
         },
         {
-        “nom” : “Shelley Duvall”,
-        “personatge” : “Wendy Torrance”
+            "nom": "Shelley Duvall",
+            "personatge": "Wendy Torrance"
         },
         {
-        “nom” : “Danny Lloid”,
-        “personatge” : “Danny Torrance”}
-        ]
+            "nom": "Danny Lloid",
+            "personatge": "Danny Torrance"
+        }
+    ]
 }
