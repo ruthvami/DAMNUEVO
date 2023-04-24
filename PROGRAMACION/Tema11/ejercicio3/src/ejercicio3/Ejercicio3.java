@@ -30,13 +30,12 @@ public class Ejercicio3 {
         m.put("faves", 1.60);
         boolean fin = false;
         String prod, desc;
-        int quant, i = 0;
+        int quant;
         double coste = 0;
-        Map<Integer, String> cuenta = new TreeMap<>();
+        Map< String,Integer> cuenta = new TreeMap<>();
 
         Scanner sc = new Scanner(System.in);
         do {
-
             System.out.println("Producte: ");
             prod = sc.nextLine();
             if (prod.equals("fi")) {
@@ -47,16 +46,13 @@ public class Ejercicio3 {
             if (m.containsKey(prod)) {
                 System.out.println("Quantitat: ");
                 quant = sc.nextInt();
-
-                cuenta.put(quant, prod);
+                coste+=quant*m.get(prod);
+                cuenta.put(prod, quant);
                 sc.nextLine();
             }
 
         } while (!fin);
-        ArrayList<Integer> pre = new ArrayList<>(cuenta.keySet());
-//        for (Map.Entry entry : cuenta.entrySet()) {
-//           coste+=(entry.getValue()*pre.get(prod));
-//        }
+        ArrayList<Double> pre = new ArrayList<>(m.values());
         System.out.print("Introduce un codigo de descuento(INTRO si no tiene): ");
         desc = sc.nextLine();
         if (desc == "ECODTO") {
@@ -64,9 +60,12 @@ public class Ejercicio3 {
         }
         System.out.println("Producte Preu Quantitat Subtotal");
         System.out.println("---------------------------------");
-        for (Map.Entry entry : m.entrySet()) {
-            System.out.println(entry.getKey() + "\t" + entry.getValue() + pre);
-            i++;
+        for (Map.Entry articulo : cuenta.entrySet()) {
+            prod=(String) articulo.getKey();
+            double subtotal;
+            subtotal = coste/(m.get(prod));
+            System.out.println(prod + "\t" +m.get(prod) +"\t" + articulo.getValue() +"\t"+subtotal );
+            
         }
     }
 

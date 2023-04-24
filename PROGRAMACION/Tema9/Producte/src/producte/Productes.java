@@ -24,6 +24,8 @@ public class Productes {
 
     /**
      *
+     * @param nom nombre del producto si no tiene
+     * @param quantitat cantidad de producto si no tiene ninguno
      */
     public Productes(){//esto es un constructor
        this.nom="NoData";
@@ -57,7 +59,12 @@ public class Productes {
     public void setQuantitat(int quantitat) {
         this.quantitat = quantitat;
     }
-//    public String toString(){
-//        return "Nom: "+this.nom+"Cantidad: "+this.quantitat ;
-//    }
+
+    /**
+     *
+     * @return el nombre y la cantidad de la pelicula
+     */
+    public String toString(){
+        return "Nom: "+this.nom+"Cantidad: "+this.quantitat ;
+    }
 }
