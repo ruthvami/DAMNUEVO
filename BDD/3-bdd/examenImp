@@ -22,12 +22,21 @@ COUNT(*)AS Operaciones
 FROM ventas GROUP BY Cliente,Año,Mes;
 
 SELECT DISTINCT (Cod_ciudad) FROM Ventas;
+
 SELECT * FROM Ventas WHERE Cod_ciudad IN (1,2,5);
+
 SELECT * FROM Ventas WHERE Ciudad IN ('Valencia','Gandia');
+
 SELECT * FROM Ventas WHERE Fecha BETWEEN '2023-01-01';
+
 SELECT * FROM Ventas WHERE Nota BETWEEN 0 AND 4;
+
 SELECT * FROM Ventas WHERE Ciudad LIKE 'G%';
-SELECT * FROM Ventas WHERE CONCAT(Codigo_postal,ciudad) LIKE '46702G%'
+
+SELECT * FROM Ventas WHERE CONCAT(Codigo_postal,ciudad) LIKE '46702G%';
+
 SELECT * FROM Ventas JOIN CURSOS ON CURSO_ALUMNO_ID =ALUMNO_ID;
+
 SELECT * FROM Ventas LEFT JOIN -------------------------------;
+
 SELECT * FROM Ventas RIGHT JOIN -------------------------------;
