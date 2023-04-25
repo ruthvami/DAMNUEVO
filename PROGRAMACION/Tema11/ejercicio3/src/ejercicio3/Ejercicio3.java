@@ -35,8 +35,13 @@ public class Ejercicio3 {
             }
             System.out.println("Quantitat: ");
             quant = sc.nextInt();
+            if (cuenta.containsKey(prod)) {
+                cuenta.replace(prod, cuenta.get(prod) + quant);//para poner una cantidad mas si ya existe este producto
+            } else {
+                cuenta.put(prod, quant);
+            }
             coste += quant * m.get(prod);
-            cuenta.put(prod, quant);
+
             sc.nextLine();
 
         } while (!fin);
@@ -48,7 +53,7 @@ public class Ejercicio3 {
             coste *= 0.90;
             descuento = precio - coste;
         }
-        System.out.println("Producte Preu Quantitat Subtotal");
+        System.out.println("*** TICKET ***\nProducte Preu Quantitat Subtotal");
         System.out.println("---------------------------------");
         for (Map.Entry<String, Integer> articulo : cuenta.entrySet()) {
             prod = articulo.getKey();
@@ -60,5 +65,6 @@ public class Ejercicio3 {
         System.out.printf("Descompte: %.2f\n", descuento);
         System.out.println("---------------------------------");
         System.out.printf("Total: %.2f", coste);
+        System.out.println(" ");
     }
 }
