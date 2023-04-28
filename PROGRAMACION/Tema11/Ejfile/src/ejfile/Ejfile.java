@@ -39,10 +39,10 @@ public class Ejfile {
         File a1 = new File("/home/rutvac/Temporal/Fotos");
         File a2 = new File("/home/rutvac/Temporal/Document.txt");
 //
-//        mostrarEstat(a1);
-//        mostrarEstat(a2);
-//        
-//        codigo(a2);
+        mostrarEstat(a1);
+        mostrarEstat(a2);
+        
+        codigo(a2);
 
     }
 
