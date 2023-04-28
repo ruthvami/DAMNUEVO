@@ -45,8 +45,7 @@ public class A2 {
                     if (mas == false) {
                         System.out.println(" ");
                     } else {
-                        Date fecha = new Date(lista1.lastModified());
-                        System.out.println("[" + lista1.length() + "]" + "[" + fecha + "]");
+                        System.out.println("[" + lista1.length() + "]" + "[" +new Date(lista1.lastModified())  + "]");
                     }
                 }
             }
