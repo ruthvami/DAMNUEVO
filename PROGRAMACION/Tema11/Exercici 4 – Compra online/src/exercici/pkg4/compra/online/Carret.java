@@ -4,26 +4,50 @@
  */
 package exercici.pkg4.compra.online;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  *
  * @author rutvac
  */
 class Carret {
-    String nom;
-    double preu;
-    double quantitat;
 
-    public Carret(String nom, double preu, double quantitat) {
-        this.nom = nom;
-        this.preu = preu;
-        this.quantitat = quantitat;
+    private final ArrayList<Element> elMeuCarret = new ArrayList<>();
+    Map<String, Integer> productes = new HashMap<>();
+
+    public void agrega(Element ele) {
+        if (productes.containsKey(ele.getNom())) {
+            int quantitat = productes.get(ele.getNom());
+            productes.replace(ele.getNom(), quantitat + ele.getQuantitat());
+        } else {
+            elMeuCarret.add(ele);
+            productes.put(ele.getNom(), ele.getQuantitat());
+        }
     }
 
-    public Carret() {
-        this.nom=" ";
-        this.preu=0;
-        this.quantitat=0;
+    public int numElements() {
+        return elMeuCarret.size();
     }
-    
-    
+
+     public double importTotal() {
+         double total = 0;
+        for (Element elemento : elMeuCarret) {
+            int cantidad = productes.get(elemento.getNom());
+            total += elemento.getPreu() * cantidad;
+        }
+        return total;
+    }
+
+    @Override
+    public String toString() {
+        String resultat = "";
+        for (Element element : elMeuCarret) {
+            int quantitat = productes.get(element.getNom());
+            double importTotal = element.getQuantitat() * element.getPreu();
+            resultat += element.getNom() + " (" + quantitat + " x " + element.getPreu() + " euros) = " + importTotal + " euros\n";
+        }
+        return resultat;
+    }
 }

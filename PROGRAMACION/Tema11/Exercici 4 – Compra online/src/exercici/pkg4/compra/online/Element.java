@@ -10,6 +10,30 @@ package exercici.pkg4.compra.online;
  */
 public class Element {
 
-   
-    
+    private String nom;
+    private double preu;
+    private int quantitat;
+
+    public Element(String nom, double preu, int quantitat) {
+        this.nom = nom;
+        this.preu = preu;
+        this.quantitat = quantitat;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public double getPreu() {
+        return preu;
+    }
+
+    public int getQuantitat() {
+        return quantitat;
+    }
+
+    public double importTotal() {
+        return preu * quantitat;
+    }
+
 }
