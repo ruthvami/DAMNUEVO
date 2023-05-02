@@ -17,8 +17,8 @@ public class A4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        File carp1 = new File("C:/Users/ruthv/Documents/DAMNUEVO/PROGRAMACION/Tema11/A4/Documents/LesMeuesCoses");
-        File carp2 = new File("C:/Users/ruthv/Documents/DAMNUEVO/PROGRAMACION/Tema11/A4/Documents/Alfabet");
+        File carp1 = new File("Documents/LesMeuesCoses");
+        File carp2 = new File("Documents/Alfabet");
         carp1.mkdir();
         carp2.mkdir();
         File foto = new File("C:/Users/ruthv/Documents//DAMNUEVO/PROGRAMACION/Tema11/A4/Documents/Fotografies");
