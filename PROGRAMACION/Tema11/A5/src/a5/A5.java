@@ -33,8 +33,8 @@ public class A5 {
     public static boolean esborraTot(File f) throws FileNotFoundException {
         if (f.exists()) {
             if (f.isFile()) {
-                f.delete();
-                System.out.println("Intento de borrar " + f.getName());
+                return f.delete();
+                
             } else if (f.isDirectory()) {
                 for (File elements : f.listFiles()) {
                     elements.delete();

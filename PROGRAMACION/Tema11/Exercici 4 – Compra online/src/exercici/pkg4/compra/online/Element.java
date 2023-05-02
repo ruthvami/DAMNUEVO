@@ -14,12 +14,19 @@ public class Element {
     private double preu;
     private int quantitat;
 
+    /**
+     *Constructor de la clase Element.
+     * @param nom nombre del producto
+     * @param preu precio del producto
+     * @param quantitat cantidad del producto
+     */
     public Element(String nom, double preu, int quantitat) {
         this.nom = nom;
         this.preu = preu;
         this.quantitat = quantitat;
     }
 
+    
     public String getNom() {
         return nom;
     }
@@ -32,8 +39,5 @@ public class Element {
         return quantitat;
     }
 
-    public double importTotal() {
-        return preu * quantitat;
-    }
 
 }
