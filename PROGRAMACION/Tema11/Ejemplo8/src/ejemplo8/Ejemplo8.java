@@ -22,22 +22,22 @@ public class Ejemplo8 {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        File f = new File("Enters.txt");
-        FileWriter nuevo = new FileWriter(f, false);
-        try {
-            int resultado = 1;
-            for (int i = 0; i < 20; i++) {
-                nuevo.write(" " + resultado);
-                resultado *= 2;
-            }
-            nuevo.close();
-            System.out.println("Fitxer '" + f.getName() + "' escrit correctament");
-
-        } catch (IOException e) {
-            System.out.println(e);
-        } catch (Exception e) {
-            System.out.println("Algo ha ocurrido que no tenias previsto");
-        }
+//        File f = new File("Enters.txt");
+//        FileWriter nuevo = new FileWriter(f, false);
+//        try {
+//            int resultado = 1;
+//            for (int i = 0; i < 20; i++) {
+//                nuevo.write(" " + resultado);
+//                resultado *= 2;
+//            }
+//            nuevo.close();
+//            System.out.println("Fitxer '" + f.getName() + "' escrit correctament");
+//
+//        } catch (IOException e) {
+//            System.out.println(e);
+//        } catch (Exception e) {
+//            System.out.println("Algo ha ocurrido que no tenias previsto");
+//        }
     }
 
 }
