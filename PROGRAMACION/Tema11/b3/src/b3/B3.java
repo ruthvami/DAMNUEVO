@@ -4,13 +4,14 @@
  */
 package b3;
 
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
 /**
- *
+ * @version 5/5/2023
  * @author rutvac
  */
 public class B3 {

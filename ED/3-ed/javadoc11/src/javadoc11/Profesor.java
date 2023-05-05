@@ -15,7 +15,7 @@ public class Profesor {
     private int nativo;
 
     private static final String[] idiomas = {"Frances", "Ingles", "aleman"};
-    private static final String[] natividad = {"No", "Si"};
+    private static final String[] natividad = {"Sí", "No"};
 
     /**
      *
