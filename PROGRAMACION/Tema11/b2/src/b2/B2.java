@@ -9,6 +9,7 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
@@ -24,26 +25,47 @@ public class B2 {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        File f = new File("alumnes_notes.txt");
-        ArrayList n = new ArrayList();
+        String archivo = "alumnes_notes.txt";
 
+        ArrayList alumnos = new ArrayList();
         try {
-            Scanner sc = new Scanner(f);
-            String[] es=sc.nextLine().split(" ");
-            while (sc.hasNextLine()) {
-                n.add(es);
+            Scanner scanner = new Scanner(new File(archivo));
+            while (scanner.hasNextLine()) {
+                String linea = scanner.nextLine();
+                String[] datos = linea.split(" ");
+                if (datos.length < 3) {
+                    System.out.println("Error en la estructura de datos: " + linea);
+                    continue;
+                }
+                String nombre = datos[0];
+                String apellido = datos[1];
+                ArrayList<Integer> notas = new ArrayList<>();
+                for (int i = 2; i < datos.length; i++) {
+                    try {
+                        notas.add(Integer.parseInt(datos[i]));
+                    } catch (NumberFormatException e) {
+                        System.out.println("Error en el formato de la nota: " + datos[i]);
+                        notas.clear();
+                        break;
+                    }
+                }
+                if (!notas.isEmpty()) {
+                    alumnos.add(nombre + " " + apellido + " " + notas);
+                }
             }
-            
-
-            sc.close();
+            scanner.close();
         } catch (FileNotFoundException e) {
-            System.out.println("Error no se ha encontrado el archivo->" + f.getName());
-        } catch (InputMismatchException e) {
-            System.out.println("Error al escribir");
-        } catch (NoSuchElementException e) {
-            System.out.println("Error no hay nada más para leer");
-        } catch (Exception e) {
-            System.out.println("Algo ha ocurrido que no tenias previsto");
+            System.out.println("No se pudo encontrar el archivo " + archivo);
+            e.printStackTrace();
+            return;
+        }
+
+        Collections.sort(alumnos);
+
+        for (int i = 0; i < alumnos.size(); i++) {
+
+            System.out.println(alumnos.get(i));
+
         }
     }
 }

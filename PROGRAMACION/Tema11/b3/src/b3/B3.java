@@ -4,10 +4,11 @@
  */
 package b3;
 
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -21,20 +22,21 @@ public class B3 {
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        Scanner sc=new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.println("Que archivo quieres ordenar?");
-        File f = new File(" "+sc.nextLine());
+        File f = new File(" " + sc.nextLine());
         System.out.println("A donde lo quieres guardar?");
-        File n = new File(" "+sc.nextLine());
-        FileWriter nuevo = new FileWriter(n, false);
+        File n = new File(" " + sc.nextLine());
+//        FileWriter nuevo = new FileWriter(n, false);
         try {
-           File[]h= f.listFiles();
-            for (int i = 0; i <f.length(); i++) {
-                
-                nuevo.write(resultado+"\n");
-                resultado *= 2;
+            ArrayList<String> linies = new ArrayList<>();
+            Scanner scanner = new Scanner(f);
+            Collections.sort(linies);
+            while (scanner.hasNextLine()) {
+                linies.add(scanner.nextLine());
             }
-            nuevo.close();
+            scanner.close();
+            
             System.out.println("Fitxer '" + f.getName() + "' escrit correctament");
 
         } catch (IOException e) {
@@ -43,5 +45,5 @@ public class B3 {
             System.out.println("Algo ha ocurrido que no tenias previsto");
         }
     }
-    
+
 }
