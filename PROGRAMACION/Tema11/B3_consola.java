@@ -1,8 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package b3;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -15,20 +10,20 @@ import java.util.Scanner;
  * @version 5/5/2023
  * @author rutvac
  */
-public class B3 {
+public class B3_consola {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Que archivo quieres ordenar?");
-        File f = new File( sc.nextLine());
-        System.out.println("A donde lo quieres guardar?");
-        File n = new File(sc.nextLine());
+
+        
+        File f = new File(args[0]);
+        
+        File n = new File(args[1]);
         try {
-            ArrayList<String> linies = new ArrayList<>();
+            ArrayList linies = new ArrayList();
             Scanner scanner = new Scanner(f);
             
             while (scanner.hasNextLine()) {
@@ -36,8 +31,8 @@ public class B3 {
             }
             scanner.close();
             Collections.sort(linies);
-            FileWriter w=new FileWriter(n,false);
-            for (String a : linies) {
+            FileWriter w=new FileWriter(n);
+            for (Object a : linies) {
                 w.write(a+"\n");
             }
             w.close();
