@@ -7,6 +7,7 @@ package b7ruth;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Scanner;
 import java.util.Map;
@@ -22,56 +23,56 @@ public class B7Ruth {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        File directorio = new File("Llibres");
 
-//            File archivo = new File("C:/Users/ruthv/Documents/DAMNUEVO/PROGRAMACION/Tema11/B7Ruth/Llibres/lazarillo.txt");
-        File archivo = new File("Llibres");
-        File[] a = archivo.listFiles();
-        System.out.println("***Diccionario dels Llibres***");
-        System.out.println("----------------------------------");
-        for (int i = 0; i < a.length; i++) {
-            File file = a[i];
-            try {
-                Scanner sc = new Scanner(file);
+        // Lista los archivos en el directorio y recorre cada archivo
+        for (File archivo : directorio.listFiles()) {
+            // Ignora si el archivo es un directorio
+            if (!archivo.isDirectory()) {
+                System.out.println("Archivo: " + archivo.getName());
 
-                ArrayList let = new ArrayList();
-                Map<Character, Integer> nue = new HashMap<Character, Integer>();
-                int lineas = 0;
-                int palabras = 0;
-                int caracteres = 0;
+                try {
+                    Scanner scanner = new Scanner(archivo);
+                    int lineas = 0;
+                    int palabras = 0;
+                    int caracteres = 0;
+                    Map<String, Integer> contadorPalabras = new HashMap<>();
 
-                while (sc.hasNextLine()) {
-                    String linea = sc.nextLine();
-                    lineas++;
+                    // Recorre el archivo línea por línea
+                    while (scanner.hasNextLine()) {
+                        String linea = scanner.nextLine();
+                        lineas++;
 
-                    Scanner sclin = new Scanner(linea);
-                    while (sclin.hasNext()) {
-                        String palabra = sclin.next();
-                        palabras++;
-                        caracteres += palabra.length();
-                        let.add(caracteres);
-                    }
-                    for (int j = 0; j < let.size(); j++) {
-                        for (char letra = 'a'; letra < 'Z'; letra++) {
-                            if (let.contains(j)) {
-                                nue.put(letra, 1);
-                            }
-
+                        // Divide cada línea en palabras y actualiza las estadísticas
+                        String[] palabrasEnLinea = linea.trim().split("\\s+");
+                        palabras += palabrasEnLinea.length;
+                        for (String palabra : palabrasEnLinea) {
+                            caracteres += palabra.length();
+                            contadorPalabras.put(palabra, contadorPalabras.getOrDefault(palabra, 0) + 1);
                         }
                     }
-                    sclin.close();
+
+                    // Imprime las estadísticas
+                    System.out.println("Lineas: " + lineas);
+                    System.out.println("Palabras: " + palabras);
+                    System.out.println("Caracteres: " + caracteres);
+
+                    // Obtiene las 10 palabras más comunes y las imprime
+                    ArrayList<Map.Entry<String, Integer>> listaPalabras = new ArrayList<>(contadorPalabras.entrySet());
+                    listaPalabras.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
+                    System.out.println("Las 10 palabras más comunes son:");
+                    System.out.printf("%12s %12s", "Paraula", "Vegades");
+                    System.out.println(" ");
+                    for (int i = 0; i < 10 && i < listaPalabras.size(); i++) {
+                        System.out.printf("%10s %13s", "'" + listaPalabras.get(i).getKey()+"'",  "'" + listaPalabras.get(i).getValue()+"'");
+                        System.out.println(" ");
+                    }
+
+                } catch (FileNotFoundException e) {
+                    System.out.println("El archivo no existe: " + archivo.getName());
                 }
 
-                System.out.println("Llibre: " + file.getName());
-                System.out.println("Línies totals: " + lineas);
-                System.out.println("Nombre de paraules: " + palabras);
-                System.out.println("Nombre de caràcters: " + caracteres);
-                System.out.println("Les 10 paraules més comunes són:");
-                System.out.println("----------------------------------");
-                
-                sc.close();
-
-            } catch (FileNotFoundException e) {
-                System.out.println("El archivo no existe.");
+                System.out.println("--------------------------------------");
             }
         }
     }
