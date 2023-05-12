@@ -56,6 +56,8 @@ public class B7Ruth {
 
             } catch (FileNotFoundException e) {
                 System.out.println("El archivo no existe: " + archivo.getName());
+            } catch (Exception e) {
+                System.out.println("Error no detectado :"+e );
             }
 
         }
