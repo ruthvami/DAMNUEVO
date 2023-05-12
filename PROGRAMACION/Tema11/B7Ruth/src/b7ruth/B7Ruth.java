@@ -17,7 +17,7 @@ public class B7Ruth {
     /**
      * Método principal que ejecuta el programa.
      * @param args los argumentos de la línea de comandos 
-     * @
+     * 
      */
     public static void main(String[] args) {
         // TODO code application logic here
@@ -73,10 +73,10 @@ public class B7Ruth {
         listaPalabras.sort(Map.Entry.comparingByValue(Comparator.reverseOrder()));
 
         System.out.println("Les 10 paraules més comunes són:");
-        System.out.printf("%12s %12s\n", "Paraula", "Vegades");
+        System.out.printf("%11s %11s\n", "Paraula", "Vegades");
         for (int i = 0; i < 10 && i < listaPalabras.size(); i++) {
             Map.Entry<String, Integer> palabra = listaPalabras.get(i);
-            System.out.printf("%12s %12d\n", "'" + palabra.getKey() + "'", palabra.getValue());
+            System.out.printf("%10s %10d\n", "'" + palabra.getKey() + "'", palabra.getValue());
         }
     }
 
