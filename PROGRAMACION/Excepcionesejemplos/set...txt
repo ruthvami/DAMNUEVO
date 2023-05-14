@@ -1,0 +1,4 @@
+En HashMap, se permite una clave nula y también puede haber múltiples valores asociados con diferentes claves.
+En TreeMap, las claves no pueden ser nulas y se mantienen únicas. Si se inserta una clave duplicada, el valor se actualizará en lugar de insertarse como una nueva entrada.
+HashSet y Set en general no permiten elementos duplicados. Si se intenta agregar un elemento duplicado, no se realizará ninguna acción y la estructura del conjunto no cambiará.
+En resumen, HashMap y HashSet son más eficientes y no garantizan un orden específico, mientras que TreeMap mantiene las claves ordenadas. Tanto HashMap como TreeMap son implementaciones de Map, mientras que HashSet es una implementación de Set.

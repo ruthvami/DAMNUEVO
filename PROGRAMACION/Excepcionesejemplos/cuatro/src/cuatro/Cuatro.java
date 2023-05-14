@@ -35,12 +35,14 @@ public class Cuatro {
             while (continua == 0) {
                 System.out.println("Introduce un nombre:");
                 String nom = sc.nextLine().toLowerCase();
-                if (nom == "salir") {
-                    continua = 1;
+                if ("salir".equals(nom)) {
+                    break;
                 }
                 System.out.println("Introduce numero de telefono:");
                 String tel = sc.nextLine().toLowerCase();
-//                sc.nextLine();
+                if ("salir".equals(tel)) {
+                    break;
+                }
                 if (agenda.containsKey(nom)) {
                     throw new IllegalArgumentException("Error ya existe ese nombre");
                 }
