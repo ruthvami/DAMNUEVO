@@ -15,7 +15,8 @@ import java.util.TreeMap;
 public class Cuatro {
 
     /**
-     * @param args the command line arguments Completa el siguiente código para
+     * @param args the command line arguments 
+     * Completa el siguiente código para
      * crear un TreeMap llamado "agenda" que almacene nombres y números de
      * teléfono. El programa debe permitir al usuario ingresar nombres y números
      * de teléfono hasta que ingrese la palabra "salir". Maneja las siguientes
@@ -30,9 +31,8 @@ public class Cuatro {
         // TODO code application logic here
         Map<String, String> agenda = new TreeMap<>();
         Scanner sc = new Scanner(System.in);
-        int continua = 0;
         try {
-            while (continua == 0) {
+            while (true) {
                 System.out.println("Introduce un nombre:");
                 String nom = sc.nextLine().toLowerCase();
                 if ("salir".equals(nom)) {
@@ -53,5 +53,5 @@ public class Cuatro {
             System.out.println(e);
         }
     }
-
+ 
 }

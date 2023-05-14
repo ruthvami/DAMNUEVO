@@ -1,0 +1,10 @@
+Este es un archivo de texto de ejemplo.
+
+Contiene varias líneas con diferentes palabras y números.
+
+1234 es un número de ejemplo.
+
+También hay palabras repetidas, como "ejemplo".
+
+Algunas líneas están en blanco.
+

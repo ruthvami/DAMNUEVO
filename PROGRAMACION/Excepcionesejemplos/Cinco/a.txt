@@ -1,0 +1,6 @@
+El perro ladra.
+El gato maulla.
+El perro corre.
+El gato duerme.
+El perro ladra.
+El gato juega.

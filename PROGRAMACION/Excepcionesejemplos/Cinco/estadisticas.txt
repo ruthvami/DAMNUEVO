@@ -1,0 +1,8 @@
+ladra - 2
+duerme - 1
+perro - 3
+gato - 3
+el - 6
+juega - 1
+maulla - 1
+corre - 1
