@@ -7,6 +7,7 @@ package ejemplogui;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -50,7 +51,7 @@ public class interfazsimple extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jButtonExaminar = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonGuardar = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -126,10 +127,10 @@ public class interfazsimple extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Guardar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        jButtonGuardar.setText("Guardar");
+        jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                jButtonGuardarActionPerformed(evt);
             }
         });
 
@@ -161,7 +162,7 @@ public class interfazsimple extends javax.swing.JFrame {
                     .addGroup(jPanelPrincipalLayout.createSequentialGroup()
                         .addComponent(jButtonExaminar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2))
+                        .addComponent(jButtonGuardar))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30))
         );
@@ -191,7 +192,7 @@ public class interfazsimple extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonExaminar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                            .addComponent(jButtonGuardar))
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(19, 19, 19))))
@@ -262,39 +263,39 @@ public class interfazsimple extends javax.swing.JFrame {
             try {
                 BufferedReader in = new BufferedReader(new FileReader(fichero.getAbsolutePath()));
                 String frase;
-                frase=in.readLine();
-                while(frase !=null){
-                    jTextArea1.setText(jTextArea1.getText()+frase+"\n");
-                            frase=in.readLine();
+                frase = in.readLine();
+                while (frase != null) {
+                    jTextArea1.setText(jTextArea1.getText() + frase + "\n");
+                    frase = in.readLine();
                 }
                 in.close();
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this, "Error al leer fichero");
-                
+
             }
         }
     }//GEN-LAST:event_jButtonExaminarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         // TODO add your handling code here:
-        int seleccion = jFileChooserVentanaFicheros.showOpenDialog(this);
+        int seleccion = jFileChooserVentanaFicheros.showSaveDialog(this);
         if (seleccion == JFileChooser.APPROVE_OPTION) {
             File fichero = jFileChooserVentanaFicheros.getSelectedFile();
             try {
-                BufferedReader in = new BufferedReader(new FileReader(fichero.getAbsolutePath()));
-                String frase;
-                frase=in.readLine();
-                while(frase !=null){
-                    jTextArea1.setText(jTextArea1.getText()+frase+"\n");
-                            frase=in.readLine();
+                FileWriter nue = new FileWriter(fichero, true);
+
+                nue.write(jTextArea1.getText() + "\n");
+
+                nue.close();
+                if (fichero.exists()) {
+                    System.out.println("Fichero creado correctamente");
                 }
-                in.close();
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(this, "Error al leer fichero");
-                
+
             }
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -334,9 +335,9 @@ public class interfazsimple extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButtonBoton;
     private javax.swing.JButton jButtonExaminar;
+    private javax.swing.JButton jButtonGuardar;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JFileChooser jFileChooserVentanaFicheros;
     private javax.swing.JLabel jLabelEtiqueta;
