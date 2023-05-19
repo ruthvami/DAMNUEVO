@@ -71,7 +71,7 @@ public class calculadora2 extends javax.swing.JFrame {
             }
         });
 
-        jLabelRes.setBorder(new javax.swing.border.MatteBorder(null));
+        jLabelRes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,36 +136,34 @@ public class calculadora2 extends javax.swing.JFrame {
 
     private void jButtonCalculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalculaActionPerformed
         // TODO add your handling code here:
-        if (jTextFieldnum1.getText().isEmpty()||jTextFieldnum2.getText().isEmpty()) {
-                 JOptionPane.showMessageDialog(this, "Tienes que introducir un numero si o si", "Aviso", JOptionPane.WARNING_MESSAGE);
-                 return;
-            } if (buttonGroup1.isSelected(null)) {
-                 JOptionPane.showMessageDialog(this, "Tienes que seleccionar una opcion  si o si", "Aviso", JOptionPane.WARNING_MESSAGE);
-                 return;
-            }
+        if (jTextFieldnum1.getText().isEmpty() || jTextFieldnum2.getText().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Tienes que introducir un numero si o si", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        if (buttonGroup1.isSelected(null)) {
+            JOptionPane.showMessageDialog(this, "Tienes que seleccionar una opcion  si o si", "Aviso", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
         try {
             if (jRadioButtonSumatorio.isSelected()) {
-                 if ( Integer.parseInt(jTextFieldnum1.getText())> Integer.parseInt(jTextFieldnum2.getText())) {
-                 JOptionPane.showMessageDialog(this, "Tienes que poner el primer numero menor", "Aviso", JOptionPane.WARNING_MESSAGE);
-                 return;
-            }
+                if (Integer.parseInt(jTextFieldnum1.getText()) > Integer.parseInt(jTextFieldnum2.getText())) {
+                    JOptionPane.showMessageDialog(this, "Tienes que poner el primer numero menor", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 int res = 0;
                 for (int i = Integer.parseInt(jTextFieldnum1.getText()); i <= Integer.parseInt(jTextFieldnum2.getText()); i++) {
-
                     res += i;
-
                 }
                 jLabelRes.setText(String.valueOf(res));
             }
             if (jRadioButtonProductorio.isSelected()) {
-                 if ( Integer.parseInt(jTextFieldnum1.getText())> Integer.parseInt(jTextFieldnum2.getText())) {
-                 JOptionPane.showMessageDialog(this, "Tienes que poner el primer numero menor", "Aviso", JOptionPane.WARNING_MESSAGE);
-                 return;
-            }
+                if (Integer.parseInt(jTextFieldnum1.getText()) > Integer.parseInt(jTextFieldnum2.getText())) {
+                    JOptionPane.showMessageDialog(this, "Tienes que poner el primer numero menor", "Aviso", JOptionPane.WARNING_MESSAGE);
+                    return;
+                }
                 int res = Integer.parseInt(jTextFieldnum1.getText());
                 for (int i = Integer.parseInt(jTextFieldnum1.getText()) + 1; i <= Integer.parseInt(jTextFieldnum2.getText()); i++) {
                     res *= i;
-
                 }
                 jLabelRes.setText(String.valueOf(res));
             }
@@ -177,7 +175,7 @@ public class calculadora2 extends javax.swing.JFrame {
 
                 jLabelRes.setText(String.valueOf(res));
             }
-           
+
         } catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, e, "Aviso", JOptionPane.WARNING_MESSAGE);
 
