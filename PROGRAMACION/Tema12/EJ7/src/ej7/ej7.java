@@ -112,9 +112,9 @@ public class ej7 extends javax.swing.JFrame {
     private void jButtonACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonACActionPerformed
         // TODO add your handling code here:
         OperatingSystemMXBean osBean =(OperatingSystemMXBean)ManagementFactory.getOperatingSystemMXBean();
-        jProgressBarProceso.setValue((int) osBean.getProcessCpuLoad());
+        jProgressBarProceso.setOrientation((int) osBean.getProcessCpuLoad());
         jTextFieldmemoria.setText(String.valueOf(osBean.getTotalMemorySize()/Math.pow(10, 9)));
-        jProgressBarRAM.setValue((int) (osBean.getFreeSwapSpaceSize()));
+        jProgressBarRAM.setOrientation((int) osBean.getProcessCpuLoad());
     }//GEN-LAST:event_jButtonACActionPerformed
     
     
