@@ -40,6 +40,8 @@ public class ej7 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(204, 255, 204));
+
         jProgressBarProceso.setStringPainted(true);
 
         jProgressBarRAM.setStringPainted(true);
@@ -117,7 +119,7 @@ public class ej7 extends javax.swing.JFrame {
 
         jProgressBarProceso.setValue((int) (osBean.getCpuLoad() * 100));
         jProgressBarRAM.setValue((int) ((usedMemory / osBean.getTotalMemorySize()) * 100));
-        jTextFieldmemoria.setText(String.valueOf(osBean.getTotalMemorySize() / 1000000));
+        jTextFieldmemoria.setText(String.valueOf(osBean.getTotalMemorySize() / 1048576));
 
     }//GEN-LAST:event_jButtonACActionPerformed
 
