@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ej7;
+
 import java.lang.management.ManagementFactory;
 import com.sun.management.OperatingSystemMXBean;
 
@@ -111,13 +112,15 @@ public class ej7 extends javax.swing.JFrame {
 
     private void jButtonACActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonACActionPerformed
         // TODO add your handling code here:
-        OperatingSystemMXBean osBean =(OperatingSystemMXBean)ManagementFactory.getOperatingSystemMXBean();
-        jProgressBarProceso.setOrientation((int) osBean.getProcessCpuLoad());
-        jTextFieldmemoria.setText(String.valueOf(osBean.getTotalMemorySize()/Math.pow(10, 9)));
-        jProgressBarRAM.setOrientation((int) osBean.getProcessCpuLoad());
+        OperatingSystemMXBean osBean = (OperatingSystemMXBean) ManagementFactory.getOperatingSystemMXBean();
+        double usedMemory = osBean.getTotalMemorySize() - osBean.getFreeMemorySize();
+
+        jProgressBarProceso.setValue((int) (osBean.getCpuLoad() * 100));
+        jProgressBarRAM.setValue((int) ((usedMemory / osBean.getTotalMemorySize()) * 100));
+        jTextFieldmemoria.setText(String.valueOf(osBean.getTotalMemorySize() / 1000000));
+
     }//GEN-LAST:event_jButtonACActionPerformed
-    
-    
+
     /**
      * @param args the command line arguments
      */
