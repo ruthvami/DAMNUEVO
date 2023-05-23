@@ -275,7 +275,7 @@ public class repas extends javax.swing.JFrame {
         double desc = res * 0.21;
         jTextFieldRES1.setText(String.format("%.2f",res));
         jTextFieldRES2.setText(String.format("%.2f",desc));
-        jTextFieldRES3.setText(String.format("%.2f", res - desc));
+        jTextFieldRES3.setText(String.format("%.2f", res + desc));
     }//GEN-LAST:event_jButtonCalcActionPerformed
 
     /**
