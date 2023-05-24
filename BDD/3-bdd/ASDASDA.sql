@@ -35,15 +35,16 @@ CREATE TABLE IF NOT EXISTS `Alumnos` (
   `Alumno_ID` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `Alumno_Nombre` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`Alumno_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla Ventas.Alumnos: ~5 rows (aproximadamente)
+-- Volcando datos para la tabla Ventas.Alumnos: ~4 rows (aproximadamente)
 INSERT INTO `Alumnos` (`Alumno_ID`, `Alumno_Nombre`) VALUES
 	(1, 'Clara'),
 	(2, 'Alejandro'),
 	(3, 'Sofia'),
 	(4, 'Mateo'),
-	(5, 'Valentina');
+	(5, 'Valentina'),
+	(6, 'ASDASD');
 
 -- Volcando estructura para función Ventas.GananciaVentas
 DELIMITER //
@@ -108,7 +109,7 @@ DELIMITER ;
 CREATE TABLE IF NOT EXISTS `Ventas` (
   `Ventas_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Ventas_Fecha` date DEFAULT NULL,
-  `Ventas_Total` int(10) unsigned DEFAULT NULL,
+  `Ventas_Total` int(255) unsigned DEFAULT NULL,
   PRIMARY KEY (`Ventas_ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
@@ -130,6 +131,15 @@ CREATE TABLE IF NOT EXISTS `Ventas_detalle` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Volcando datos para la tabla Ventas.Ventas_detalle: ~0 rows (aproximadamente)
+
+-- Volcando estructura para disparador Ventas.NombreMayusculas
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `NombreMayusculas` BEFORE INSERT ON `Alumnos` FOR EACH ROW BEGIN
+SET NEW.Alumno_Nombre = UCASE(NEW.Alumno_Nombre);
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
