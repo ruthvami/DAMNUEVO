@@ -89,6 +89,21 @@ INSERT INTO Alumnos (Alumno_Id,Alumno_Nombre) VALUES(_AlumnoID,_AlumnoNombre);
 END//
 DELIMITER ;
 
+-- Volcando estructura para tabla Ventas.listadeproductos
+CREATE TABLE IF NOT EXISTS `listadeproductos` (
+  `ProductoID` int(11) NOT NULL,
+  `NombreProducto` varchar(100) DEFAULT NULL,
+  `Precio` decimal(10,2) DEFAULT NULL,
+  `Stock` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ProductoID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla Ventas.listadeproductos: ~3 rows (aproximadamente)
+INSERT INTO `listadeproductos` (`ProductoID`, `NombreProducto`, `Precio`, `Stock`) VALUES
+	(1, 'Producto 1', 10.99, 100),
+	(2, 'Producto 2', 15.99, 50),
+	(3, 'Producto 3', 24.99, 200);
+
 -- Volcando estructura para procedimiento Ventas.MaximaVenta
 DELIMITER //
 CREATE PROCEDURE `MaximaVenta`()
@@ -105,18 +120,50 @@ END IF;
 END//
 DELIMITER ;
 
+-- Volcando estructura para tabla Ventas.productos
+CREATE TABLE IF NOT EXISTS `productos` (
+  `Prod_Id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Prod_Precio` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`Prod_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla Ventas.productos: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla Ventas.productos_historial
+CREATE TABLE IF NOT EXISTS `productos_historial` (
+  `PH_Id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `PH_ProdId` mediumint(8) unsigned NOT NULL,
+  `PH_PrecioANT` decimal(10,0) unsigned NOT NULL,
+  `PH_PrecioNEW` decimal(10,0) unsigned NOT NULL,
+  `PH_Fecha` timestamp NOT NULL DEFAULT current_timestamp(),
+  `PH_Usuario` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`PH_Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Volcando datos para la tabla Ventas.productos_historial: ~0 rows (aproximadamente)
+
+-- Volcando estructura para función Ventas.ProveedorID
+DELIMITER //
+CREATE FUNCTION `ProveedorID`() RETURNS int(11)
+    DETERMINISTIC
+BEGIN
+return @ParamProvID;
+END//
+DELIMITER ;
+
 -- Volcando estructura para tabla Ventas.Ventas
 CREATE TABLE IF NOT EXISTS `Ventas` (
   `Ventas_ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `Ventas_Fecha` date DEFAULT NULL,
   `Ventas_Total` int(255) unsigned DEFAULT NULL,
   PRIMARY KEY (`Ventas_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla Ventas.Ventas: ~2 rows (aproximadamente)
+-- Volcando datos para la tabla Ventas.Ventas: ~3 rows (aproximadamente)
 INSERT INTO `Ventas` (`Ventas_ID`, `Ventas_Fecha`, `Ventas_Total`) VALUES
 	(1, '2023-05-24', 34),
-	(2, '2023-05-24', 5615);
+	(2, '2023-05-24', 5615),
+	(3, NULL, 30);
 
 -- Volcando estructura para tabla Ventas.Ventas_detalle
 CREATE TABLE IF NOT EXISTS `Ventas_detalle` (
@@ -132,6 +179,15 @@ CREATE TABLE IF NOT EXISTS `Ventas_detalle` (
 
 -- Volcando datos para la tabla Ventas.Ventas_detalle: ~0 rows (aproximadamente)
 
+-- Volcando estructura para vista Ventas.Vista
+-- Creando tabla temporal para superar errores de dependencia de VIEW
+CREATE TABLE `Vista` (
+	`ProductoID` INT(11) NOT NULL,
+	`NombreProducto` VARCHAR(100) NULL COLLATE 'utf8mb4_general_ci',
+	`Precio` DECIMAL(10,2) NULL,
+	`Stock` INT(11) NULL
+) ENGINE=MyISAM;
+
 -- Volcando estructura para disparador Ventas.NombreMayusculas
 SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
 DELIMITER //
@@ -140,6 +196,33 @@ SET NEW.Alumno_Nombre = UCASE(NEW.Alumno_Nombre);
 END//
 DELIMITER ;
 SET SQL_MODE=@OLDTMP_SQL_MODE;
+
+-- Volcando estructura para disparador Ventas.NoNegativo
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `NoNegativo` BEFORE INSERT ON `Ventas` FOR EACH ROW BEGIN
+IF NEW.Ventas_Total <0 THEN 
+UPDATE calls SET Ventas_Total =0;
+END IF;
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
+
+-- Volcando estructura para disparador Ventas.productos_after_update
+SET @OLDTMP_SQL_MODE=@@SQL_MODE, SQL_MODE='STRICT_TRANS_TABLES,ERROR_FOR_DIVISION_BY_ZERO,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION';
+DELIMITER //
+CREATE TRIGGER `productos_after_update` AFTER UPDATE ON `productos` FOR EACH ROW BEGIN
+IF NEW.Prod_Precio <> OLD.Prod_Precio THEN
+INSERT INTO productos_historial (PH_ProdId,PH_PrecioANT,PH_PrecioNEW,PH_Usuario) VALUES (NEW.Prod_Id, OLD.Prod_Precio, NEW.Prod_Precio, CURRENT_USER);
+END IF;
+END//
+DELIMITER ;
+SET SQL_MODE=@OLDTMP_SQL_MODE;
+
+-- Volcando estructura para vista Ventas.Vista
+-- Eliminando tabla temporal y crear estructura final de VIEW
+DROP TABLE IF EXISTS `Vista`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `Vista` AS select `listadeproductos`.`ProductoID` AS `ProductoID`,`listadeproductos`.`NombreProducto` AS `NombreProducto`,`listadeproductos`.`Precio` AS `Precio`,`listadeproductos`.`Stock` AS `Stock` from `listadeproductos`;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
