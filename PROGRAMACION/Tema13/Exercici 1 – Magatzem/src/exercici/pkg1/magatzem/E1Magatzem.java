@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package e1.magatzem;
+package exercici.pkg1.magatzem;
 import java.sql.*;
 
 /**
