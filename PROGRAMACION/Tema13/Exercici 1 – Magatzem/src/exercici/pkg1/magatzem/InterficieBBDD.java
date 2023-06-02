@@ -6,12 +6,11 @@ package exercici.pkg1.magatzem;
 
 import java.sql.*;
 
-
 /**
  *
  * @author rutvac
  */
-class InterficieBBDD  {
+class InterficieBBDD {
 
     private Connection conn;
 
@@ -21,31 +20,44 @@ class InterficieBBDD  {
 
     Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
 
-        ResultSet rs = stmt.executeQuery("SELECT * FROM productes");
-    
-  
+    ResultSet prod = stmt.executeQuery("SELECT * FROM productes");
+    ResultSet tot = stmt.executeQuery("SELECT * FROM totals");
 
-    public  double suma(boolean bien) throws SQLException {
+    public double suma(boolean bien) throws SQLException {
+        double sum = 0;
         if (bien == false) {
-            rs.getInt(4);
+            while (prod.next()) {
+                if (prod.getInt(4) == 1) {
+                    sum += prod.getInt("preu");
+                }
+            }
+        } else {
+            while (prod.next()) {
+                sum += prod.getInt("preu");
+            }
         }
-        return 0;
+        return sum;
     }
 
-    public  double suma() {
-
-        return 0;
+    public double suma() throws SQLException {
+        double sum = 0;
+        while (prod.next()) {
+            if (prod.getInt(4) == 1) {
+                sum += prod.getInt("preus");
+            }
+        }
+        return sum;
     }
 
-    public  void mostrarProductes() {
+    public void mostrarProductes() {
 
     }
 
-    public  void inserir(double suma) {
-
+    public void inserir(double suma) {
+        
     }
 
-    public  void mostrarTotals() {
+    public void mostrarTotals() {
 
     }
 
